@@ -1,13 +1,21 @@
 # HTTP Server
 [server]
-	Address     = ":8888"
-	ServerRoot  = "public"
-	ServerAgent = "gf-app"
-	LogPath     = "/tmp/log/gf-app/server"
+    Address          = ":7777"
+    ServerRoot       = ""
+    ServerAgent      = ""
+    IndexFiles       = []
+    AccessLogEnabled = true
+    ErrorLogEnabled  = true
+    PProfEnabled     = false
+    LogPath          = "./log/goframe-vue-admin/server"
+    SessionIdName    = ""
+    SessionPath      = ""
+    SessionMaxAge    = ""
+    DumpRouterMap    = true
 
 # Logger.
 [logger]
-    Path        = "/tmp/log/gf-app"
+    Path        = "./log/goframe-vue-admin/gf-app"
     Level       = "all"
     Stdout      = true
 
@@ -19,10 +27,10 @@
 
 # Database.
 [database]
-    link  = "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
+    link  = "mysql:root:gdkid,,..@tcp(127.0.0.1:3306)/gf-server"
     debug = true
     # Database logger.
     [database.logger]
-        Path   = "/tmp/log/gf-app/sql"
+        Path   = "../log/goframe-vue-admin/sql"
         Level  = "all"
         Stdout = true
