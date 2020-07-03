@@ -1,0 +1,26 @@
+# MySQL配置.
+[database]
+    [[database.default]]
+        host         = "127.0.0.1"
+        port         = "3306"
+        user         = "root"
+        pass         = "12345678"
+        name         = "test"
+        type         = "mysql"
+        role         = "master"
+        debug        = "true"
+        dryrun       = 1
+        weight       = "100"
+        prefix       = "gf_"
+        charset      = "utf8"
+        linkinfo     = ""
+        maxIdle      = "10"
+        maxOpen      = "100"
+        maxLifetime  = "30"
+    link  = "mysql:root:gdkid,,..@tcp(127.0.0.1:3306)/gf-server"
+    debug = true
+    # Database logger.
+    [database.logger]
+        Path   = "../log/goframe-vue-admin/sql"
+        Level  = "all"
+        Stdout = true
