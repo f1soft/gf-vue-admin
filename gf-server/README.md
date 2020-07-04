@@ -71,6 +71,29 @@
 
 ### 2.3 [database]
 
+```shell
+[database]
+    [[database.分组名称]]
+        Host         = "地址"
+        Port         = "端口"
+        User         = "账号"
+        Pass         = "密码"
+        Name         = "数据库名称"
+        Type         = "数据库类型(目前支持mysql/pgsql/sqlite)"
+        Role         = "(可选)数据库主从角色(master/slave)，不使用应用层的主从机制请均设置为master"
+        Debug        = "(可选)开启调试模式"
+        Prefix       = "(可选)表名前缀"
+        DryRun       = "(可选)ORM空跑(只读不写)"
+        Charset      = "(可选)数据库编码(如: utf8/gbk/gb2312)，一般设置为utf8"
+        Weight       = "(可选)负载均衡权重，用于负载均衡控制，不使用应用层的负载均衡机制请置空"
+        Linkinfo     = "(可选)自定义数据库链接信息，当该字段被设置值时，以上链接字段(Host,Port,User,Pass,Name)将失效，但是type必须有值"
+        MaxIdle      = "(可选)连接池最大闲置的连接数"
+        MaxOpen      = "(可选)连接池最大打开的连接数"
+        MaxLifetime  = "(可选，单位秒)连接对象可重复使用的时间长度"
+```
+
+
+
 ### 2.4 [redis]
 
 
