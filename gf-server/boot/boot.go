@@ -1,4 +1,2 @@
 package boot
 
-func init() {
-}

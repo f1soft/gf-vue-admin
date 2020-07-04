@@ -6,7 +6,7 @@ import (
 	"github.com/gogf/gf/frame/g"
 )
 
-// init
+// init 隐式初始化Mysql
 //func init() {
 //	db := g.DB("default")
 //	global.GFVA_DB = db

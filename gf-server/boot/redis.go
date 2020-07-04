@@ -7,15 +7,22 @@ import (
 	"github.com/gogf/gf/util/gconv"
 )
 
+// init 隐式初始化Redis
+//func init() {
+//	if g.Cfg().GetBool("system.UseMultipoint"){
+//		global.GFVA_REDIS = g.Redis()
+//	}
+//	ping()
+//}
+
 func InitializeRedis() {
-	fmt.Println(g.Cfg("system").GetBool("system.UseMultipoint"))
-	if g.Cfg("system").GetBool("system.UseMultipoint"){
+	if g.Cfg("system").GetBool("system.UseMultipoint") {
 		global.GFVA_REDIS = g.Redis()
 	}
 	ping()
 }
 
-func ping()  {
+func ping() {
 	conn, err := global.GFVA_REDIS.Do("PING")
 	if err != nil {
 		fmt.Println(err)

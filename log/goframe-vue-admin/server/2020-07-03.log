@@ -1,7 +1,0 @@
-
-  SERVER  | DOMAIN  | ADDRESS | METHOD | ROUTE |            HANDLER            | MIDDLEWARE  
-|---------|---------|---------|--------|-------|-------------------------------|------------|
-  default | default | :8888   | ALL    | /     | gf-server/app/api/hello.Hello |             
-|---------|---------|---------|--------|-------|-------------------------------|------------|
-
-2020-07-03 11:23:55.951 20147: http server started listening on [:8888]

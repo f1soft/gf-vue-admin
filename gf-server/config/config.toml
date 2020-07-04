@@ -7,7 +7,7 @@
     AccessLogEnabled = true
     ErrorLogEnabled  = true
     PProfEnabled     = false
-    LogPath          = "./log/goframe-vue-admin/server"
+    LogPath          = "./logs/server"
     SessionIdName    = ""
     SessionPath      = ""
     SessionMaxAge    = ""
@@ -33,14 +33,15 @@
 
 # casbin configuration
 [casbin]
-    ModelPath =  './resource/rbac_model.conf'
+    ModelPath =  "./public/resource/rbac_model.conf"
 
 # jwt configuration
 [jwt]
-    SigningKey  = 'qmPlus'
+    SigningKey  = "SliverHorn"
+
 # Logger
 [logger]
-    Path        = "./log/goframe-vue-admin/gf-app"
+    Path        = "./logs/log"
     Level       = "all"
     Stdout      = true
 
@@ -63,7 +64,7 @@
 
     # Database logger.
     [database.logger]
-        Path   = "../log/goframe-vue-admin/sql"
+        Path   = "./logs/sql"
         Level  = "all"
         Stdout = true
 

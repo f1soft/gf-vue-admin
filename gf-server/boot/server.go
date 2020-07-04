@@ -8,7 +8,7 @@ import (
 	"github.com/gogf/gf/frame/g"
 )
 
-// init 隐式
+// init 隐式初始化
 //func init() {
 //	global.GFVA_SERVER = g.Server()
 //	router.InitializeRouters()
