@@ -65,6 +65,24 @@
 | :-------------: | :------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 |     LogPath     |  string  |  LogPath specifies the directory for storing logging files.  |              LogPath指定用于存储日志文件的目录               |
 |    LogStdout    |   bool   | LogStdout specifies whether printing logging content to stdout. |        LogStdout指定是否将日志记录内容打印到stdout。         |
-|   ErrorStack    |   bool   | ErrorStack specifies whether logging stack information when error. | ErrorStack specifies whether logging stack information when error. |
+|   ErrorStack    |   bool   | ErrorStack specifies whether logging stack information when error. |         ErrorStack指定是否在发生错误时记录堆栈信息。         |
 |   ErrorStack    |   bool   |   ErrorLogEnabled enables error logging content to files.    |         ErrorLogEnabled允许将内容错误记录到文件中。          |
 | ErrorLogPattern |  string  | AccessLogPattern specifies the error log file pattern like: access-{Ymd}.log | AccessLogPattern指定错误日志文件模式，例如：access- {Ymd} .log |
+
+### 2.3 [database]
+
+### 2.4 [redis]
+
+
+
+| 配置项名称      | 是否必须 | 默认值 | 说明                                   |
+| :-------------- | -------- | ------ | -------------------------------------- |
+| host            | 是       | -      | 地址                                   |
+| port            | 是       | -      | 端口                                   |
+| db              | 否       | 0      | 数据库                                 |
+| pass            | 否       | -      | 授权密码                               |
+| maxIdle         | 否       | 0      | 允许限制的连接数(0表示不闲置)          |
+| maxActive       | 否       | 0      | 最大连接数量限制(0表示不限制)          |
+| idleTimeout     | 否       | 60     | 连接最大空闲时间(单位秒,不允许设置为0) |
+| maxConnLifetime | 否       | 60     | 连接最长存活时间(单位秒,不允许设置为0) |
+
