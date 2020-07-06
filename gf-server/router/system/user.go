@@ -9,7 +9,7 @@ import (
 // InitUserRouter 注册用户路由
 func InitUserRouter() {
 	// TODO 缺少CasbinHandler中间件
-	UserRouter := global.GFVA_SERVER.Group("user").Middleware(middleware.MiddlewareAuth)
+	UserRouter := global.GFVA_SERVER.Group("user").Middleware(middleware.JwtAuth)
 	{
 		UserRouter.POST("changePassword", v1.ChangePassword)   // 修改密码
 		UserRouter.POST("uploadHeaderImg", v1.UploadHeaderImg)  // 上传头像

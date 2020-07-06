@@ -6,8 +6,8 @@ import (
 	"github.com/gogf/gf/net/ghttp"
 )
 
-// MiddlewareAuth authHook is the HOOK function implements JWT logistics.
-func MiddlewareAuth(r *ghttp.Request) {
+// JwtAuth authHook is the HOOK function implements JWT logistics.
+func JwtAuth(r *ghttp.Request) {
 	auth.GfJWTMiddleware.MiddlewareFunc()(r)
 	r.Middleware.Next()
 }

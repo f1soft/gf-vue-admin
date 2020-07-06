@@ -9,7 +9,7 @@ import (
 // InitApiRouter 注册功能api路由
 func InitApiRouter() {
 	// TODO 缺少CasbinHandler中间件
-	ApiRouter := global.GFVA_SERVER.Group("api").Middleware(middleware.MiddlewareAuth)
+	ApiRouter := global.GFVA_SERVER.Group("api").Middleware(middleware.JwtAuth)
 	{
 		ApiRouter.POST("createApi", v1.CreateApi)  // 创建Api
 		ApiRouter.POST("deleteApi", v1.DeleteApi)  // 删除Api

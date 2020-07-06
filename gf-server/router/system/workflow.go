@@ -9,7 +9,7 @@ import (
 // InitWorkflowRouter 注册功能api路由
 func InitWorkflowRouter() {
 	// TODO 缺少CasbinHandler中间件
-	WorkflowRouter := global.GFVA_SERVER.Group("workflow").Middleware(middleware.MiddlewareAuth)
+	WorkflowRouter := global.GFVA_SERVER.Group("workflow").Middleware(middleware.JwtAuth)
 	{
 		WorkflowRouter.POST("createWorkFlow", v1.CreateWorkFlow) // 创建工作流
 	}

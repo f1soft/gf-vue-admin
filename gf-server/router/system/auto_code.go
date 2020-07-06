@@ -9,7 +9,7 @@ import (
 // InitJwtRouter 注册jwt相关路由
 func InitAutoCodeRouter() {
 	// TODO 缺少CasbinHandler中间件
-	AutoCodeRouter := global.GFVA_SERVER.Group("autoCode").Middleware(middleware.MiddlewareAuth)
+	AutoCodeRouter := global.GFVA_SERVER.Group("autoCode").Middleware(middleware.JwtAuth)
 	{
 		AutoCodeRouter.POST("createTemp", v1.CreateTemp) // 创建自动化代码
 	}

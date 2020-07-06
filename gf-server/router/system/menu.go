@@ -9,7 +9,7 @@ import (
 // InitMenuRouter 注册menu路由
 func InitMenuRouter() {
 	// TODO 缺少CasbinHandler中间件
-	MenuRouter := global.GFVA_SERVER.Group("menu").Middleware(middleware.MiddlewareAuth)
+	MenuRouter := global.GFVA_SERVER.Group("menu").Middleware(middleware.JwtAuth)
 	{
 		MenuRouter.POST("getMenu", v1.GetMenu)          // 获取菜单树
 		MenuRouter.POST("getMenuList", v1.GetMenuList)      // 分页获取基础menu列表
