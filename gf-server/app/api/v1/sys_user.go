@@ -1,7 +1,13 @@
 package v1
 
 import (
+	"gf-server/app/api/request"
+	"gf-server/app/model/user"
+	"gf-server/app/service"
+	"gf-server/library/response"
+	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
+	"github.com/gogf/gf/util/gvalid"
 )
 
 // @Tags Base
@@ -20,6 +26,19 @@ func Register(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"登陆成功"}"
 // @Router /base/login [post]
 func Login(r *ghttp.Request) {
+	var L request.LoginRequest
+	_ = r.Parse(&L)
+	if e := gvalid.CheckStruct(L, nil); e != nil {
+		g.Dump(e.Maps())
+	}
+	if store.Verify(L.CaptchaId, L.Captcha, true) {
+		u := &user.Entity{}
+		userReturn, err := service.Login(u)
+		if err != nil{
+			response.FailWithMessage(r, err.Error())
+		}
+		response.OkDetailed(r, userReturn, "登录成功!")
+	}
 }
 
 // @Tags SysUser

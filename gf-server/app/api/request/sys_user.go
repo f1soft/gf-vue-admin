@@ -2,7 +2,7 @@ package request
 
 
 // User login structure
-type LoginStruct struct {
+type LoginRequest struct {
 	Username  string `json:"username" valid:"username@required|length:1,30#请输入用户名称|您输入用户名称长度非法"`
 	Password  string `json:"password" valid:"password@required|length:6,30#请输入密码|您输入用户名称长度非法"`
 	Captcha   string `json:"captcha" valid:"captcha@required#请输入正确的验证码"`

@@ -8,6 +8,7 @@ import (
 	"database/sql"
 	"github.com/gogf/gf/database/gdb"
 	"github.com/gogf/gf/os/gtime"
+	"golang.org/x/crypto/bcrypt"
 )
 
 // Entity is the golang structure for table user.
@@ -64,4 +65,20 @@ func (r *Entity) Update() (result sql.Result, err error) {
 // Delete does "DELETE FROM...WHERE..." statement for deleting current object from table.
 func (r *Entity) Delete() (result sql.Result, err error) {
 	return Model.Where(gdb.GetWhereConditionOfStruct(r)).Delete()
+}
+// PasswordCheck 密码检查(工具类)
+func (r *Entity) CompareHashAndPassword(password string) bool {
+	if err := bcrypt.CompareHashAndPassword([]byte(r.Password), []byte(password)); err != nil {
+		return false
+	}
+	return true
+}
+
+// EncryptedPassword: 加密密码(工具类)
+func (r *Entity) EncryptedPassword() (userReturn *Entity, err error) {
+	if byTes, err := bcrypt.GenerateFromPassword([]byte(r.Password), bcrypt.DefaultCost); err == nil { // 加密密码
+		r.Password = string(byTes)
+		return r, nil
+	}
+	return r, err
 }

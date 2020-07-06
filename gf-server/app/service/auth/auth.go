@@ -24,10 +24,11 @@ var (
 // Initialization function,
 // rewrite this function to customized your own JWT settings.
 func init() {
+	signingKey := g.Cfg().GetString("jwt.SigningKey")
 	authMiddleware, err := jwt.New(&jwt.GfJWTMiddleware{
 		Realm:           "test zone",
-		Key:             []byte("secret key"),
-		Timeout:         time.Minute * 5,
+		Key:             []byte(signingKey),
+		Timeout:         time.Hour * 24,
 		MaxRefresh:      time.Minute * 5,
 		IdentityKey:     "id",
 		TokenLookup:     "header: Authorization, query: token, cookie: jwt",
@@ -103,7 +104,8 @@ func RefreshResponse(r *ghttp.Request, code int, token string, expire time.Time)
 // It must return user data as user identifier, it will be stored in Claim Array.
 // Check error (e) to determine the appropriate error message.
 func Authenticator(r *ghttp.Request) (interface{}, error) {
-	data := r.GetMap()
+
+		data := r.GetMap()
 	if e := gvalid.CheckMap(data, ValidationRules); e != nil {
 		return "", jwt.ErrFailedAuthentication
 	}
