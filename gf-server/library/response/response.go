@@ -16,12 +16,12 @@ type JsonResponse struct {
 	Message string      `json:"msg"`  // 提示信息
 }
 
-func Result(r *ghttp.Request, code int, data interface{}, msg string) {
+func Result(r *ghttp.Request, code int, data interface{}, message string) {
 	// 开始时间
 	_ = r.Response.WriteJson(JsonResponse{
 		code,
 		data,
-		msg,
+		message,
 	})
 }
 
@@ -39,6 +39,19 @@ func OkWithData(r *ghttp.Request, data interface{}) {
 
 func OkDetailed(r *ghttp.Request, data interface{}, message string) {
 	Result(r, SUCCESS, data, message)
+}
+
+
+func Fail(r *ghttp.Request) {
+	Result(r, ERROR, map[string]interface{}{}, "操作失败")
+}
+
+func FailWithMessage(r *ghttp.Request, message string) {
+	Result(r, ERROR, map[string]interface{}{}, message)
+}
+
+func FailWithDetailed(r *ghttp.Request, code int, data interface{}, message string) {
+	Result(r, code, data, message)
 }
 
 // 标准返回结果数据结构封装。
@@ -59,3 +72,4 @@ func JsonExit(r *ghttp.Request, err int, msg string, data ...interface{}) {
 	Json(r, err, msg, data...)
 	r.Exit()
 }
+
