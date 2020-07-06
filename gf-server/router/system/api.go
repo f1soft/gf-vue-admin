@@ -1,6 +1,8 @@
 package system
 
-import "gf-server/global"
+import (
+	"gf-server/global"
+)
 
 // InitApiRouter 注册功能api路由
 func InitApiRouter() {

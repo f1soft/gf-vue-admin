@@ -16,7 +16,7 @@ import (
 //}
 
 func InitializeRedis() {
-	if g.Cfg("system").GetBool("system.UseMultipoint") {
+	if g.Cfg().GetBool("system.UseMultipoint") {
 		global.GFVA_REDIS = g.Redis()
 	}
 	Ping()
@@ -27,5 +27,5 @@ func Ping() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(gconv.String(conn))
+	global.GFVA_LOG.Infof("redis connect ping response:%v", gconv.String(conn))
 }

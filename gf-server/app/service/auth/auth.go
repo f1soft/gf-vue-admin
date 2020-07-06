@@ -71,7 +71,7 @@ func IdentityHandler(r *ghttp.Request) interface{} {
 
 // Unauthorized is used to define customized Unauthorized callback function.
 func Unauthorized(r *ghttp.Request, code int, message string) {
-	r.Response.WriteJson(g.Map{
+	_ = r.Response.WriteJson(g.Map{
 		"code": code,
 		"msg":  message,
 	})
@@ -80,7 +80,7 @@ func Unauthorized(r *ghttp.Request, code int, message string) {
 
 // LoginResponse is used to define customized login-successful callback function.
 func LoginResponse(r *ghttp.Request, code int, token string, expire time.Time) {
-	r.Response.WriteJson(g.Map{
+	_ = r.Response.WriteJson(g.Map{
 		"code":   http.StatusOK,
 		"token":  token,
 		"expire": expire.Format(time.RFC3339),
@@ -90,7 +90,7 @@ func LoginResponse(r *ghttp.Request, code int, token string, expire time.Time) {
 
 // RefreshResponse is used to get a new token no matter current token is expired or not.
 func RefreshResponse(r *ghttp.Request, code int, token string, expire time.Time) {
-	r.Response.WriteJson(g.Map{
+	_ = r.Response.WriteJson(g.Map{
 		"code":   http.StatusOK,
 		"token":  token,
 		"expire": expire.Format(time.RFC3339),

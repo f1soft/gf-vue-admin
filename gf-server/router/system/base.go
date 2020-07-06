@@ -1,6 +1,8 @@
 package system
 
-import "gf-server/global"
+import (
+	"gf-server/global"
+)
 
 // InitBaseRouter 注册基础功能路由
 func InitBaseRouter() {

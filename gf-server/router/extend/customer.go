@@ -1,13 +1,17 @@
 package extend
 
 import (
+	"errors"
 	"gf-server/global"
+	"gf-server/library/response"
+	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 )
 
 // EmptyRequest 空函数
 func EmptyRequest(r *ghttp.Request) {
-	_ = r.Response.WriteJson("空函数, 功能开发ing")
+	global.GFVA_LOG.Error(errors.New("测试BUG打印"))
+	response.Json(r, 0,"操作成功",g.Map{})
 }
 
 // InitCustomerRouter 注册功能api路由

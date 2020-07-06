@@ -1,6 +1,8 @@
 package system
 
-import "gf-server/global"
+import (
+	"gf-server/global"
+)
 
 // InitAuthorityRouter 注册角色路由组
 func InitAuthorityRouter() {

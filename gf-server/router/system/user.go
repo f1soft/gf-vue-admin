@@ -2,14 +2,15 @@ package system
 
 import (
 	"gf-server/global"
+	"gf-server/library/response"
+	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 )
 
 // EmptyRequest 空函数
 func EmptyRequest(r *ghttp.Request) {
-	_ = r.Response.WriteJson("空函数, 功能开发ing")
+	response.Json(r, 0, "操作成功", g.Map{})
 }
-
 
 // InitUserRouter 注册用户路由
 func InitUserRouter() {
@@ -20,6 +21,6 @@ func InitUserRouter() {
 		UserRouter.POST("uploadHeaderImg", EmptyRequest)  // 上传头像
 		UserRouter.POST("getUserList", EmptyRequest)      // 分页获取用户列表
 		UserRouter.POST("setUserAuthority", EmptyRequest) // 设置用户权限
-		UserRouter.DELETE("deleteUser", EmptyRequest)       // 删除用户
+		UserRouter.DELETE("deleteUser", EmptyRequest)     // 删除用户
 	}
 }
