@@ -1,6 +1,7 @@
 package system
 
 import (
+	v1 "gf-server/app/api/v1"
 	"gf-server/global"
 )
 
@@ -8,8 +9,8 @@ import (
 func InitBaseRouter() {
 	BaseRouter := global.GFVA_SERVER.Group("base")
 	{
-		BaseRouter.GET("register", EmptyRequest) // 注册
-		BaseRouter.GET("login", EmptyRequest)    // 登录
-		BaseRouter.GET("captcha", EmptyRequest)  // 验证码
+		BaseRouter.GET("register", v1.Register) // 注册
+		BaseRouter.GET("login", v1.Login)       // 登录
+		BaseRouter.GET("captcha", v1.Captcha)       // 验证码
 	}
 }

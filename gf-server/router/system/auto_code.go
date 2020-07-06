@@ -1,14 +1,16 @@
 package system
 
 import (
+	v1 "gf-server/app/api/v1"
 	"gf-server/global"
+	"gf-server/middleware"
 )
 
 // InitJwtRouter 注册jwt相关路由
 func InitAutoCodeRouter() {
-	// TODO 缺少JWTAuth中间件与CasbinHandler中间件
-	AutoCodeRouter := global.GFVA_SERVER.Group("autoCode")
+	// TODO 缺少CasbinHandler中间件
+	AutoCodeRouter := global.GFVA_SERVER.Group("autoCode").Middleware(middleware.MiddlewareAuth)
 	{
-		AutoCodeRouter.POST("createTemp", EmptyRequest) // 创建自动化代码
+		AutoCodeRouter.POST("createTemp", v1.CreateTemp) // 创建自动化代码
 	}
 }

@@ -1,6 +1,7 @@
 package response
 
 import (
+	"gf-server/global"
 	"github.com/gogf/gf/net/ghttp"
 )
 
@@ -17,12 +18,13 @@ type JsonResponse struct {
 }
 
 func Result(r *ghttp.Request, code int, data interface{}, message string) {
-	// 开始时间
-	_ = r.Response.WriteJson(JsonResponse{
+	if err := r.Response.WriteJson(JsonResponse{
 		code,
 		data,
 		message,
-	})
+	}); err != nil{
+		global.GFVA_LOG.Error(err)
+	}
 }
 
 func Ok(r *ghttp.Request) {

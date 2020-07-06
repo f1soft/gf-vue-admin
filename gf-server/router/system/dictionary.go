@@ -1,18 +1,20 @@
 package system
 
 import (
+	v1 "gf-server/app/api/v1"
 	"gf-server/global"
+	"gf-server/middleware"
 )
 
 // InitDictionaryDetailRouter 注册字典详情管理
 func InitDictionaryRouter() {
-	// TODO 缺少JWTAuth中间件与CasbinHandler中间件
-	DictionaryRouter := global.GFVA_SERVER.Group("sysDictionary")
+	// TODO 缺少CasbinHandler中间件
+	DictionaryRouter := global.GFVA_SERVER.Group("sysDictionary").Middleware(middleware.MiddlewareAuth)
 	{
-		DictionaryRouter.POST("createSysDictionary", EmptyRequest)   // 新建SysDictionary
-		DictionaryRouter.DELETE("deleteSysDictionary", EmptyRequest) // 删除SysDictionary
-		DictionaryRouter.PUT("updateSysDictionary", EmptyRequest)    // 更新SysDictionary
-		DictionaryRouter.GET("findSysDictionary", EmptyRequest)      // 根据ID获取SysDictionary
-		DictionaryRouter.GET("getSysDictionaryList", EmptyRequest)   // 获取SysDictionary列表
+		DictionaryRouter.POST("createSysDictionary", v1.CreateSysDictionary) // 新建SysDictionary
+		DictionaryRouter.DELETE("deleteSysDictionary", v1.DeleteSysDictionary)         // 删除SysDictionary
+		DictionaryRouter.PUT("updateSysDictionary", v1.UpdateSysDictionary)            // 更新SysDictionary
+		DictionaryRouter.GET("findSysDictionary", v1.FindSysDictionary)              // 根据ID获取SysDictionary
+		DictionaryRouter.GET("getSysDictionaryList", v1.GetSysDictionaryList)           // 获取SysDictionary列表
 	}
 }

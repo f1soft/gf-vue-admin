@@ -1,14 +1,14 @@
 package auth
 
 import (
-	"net/http"
-	"time"
-
+	"gf-server/global"
+	"gf-server/library/response"
 	jwt "github.com/gogf/gf-jwt"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
-	"github.com/gogf/gf/os/glog"
 	"github.com/gogf/gf/util/gvalid"
+	"net/http"
+	"time"
 )
 
 var (
@@ -41,7 +41,7 @@ func init() {
 		PayloadFunc:     PayloadFunc,
 	})
 	if err != nil {
-		glog.Fatal("JWT Error:" + err.Error())
+		global.GFVA_LOG.Fatal("JWT Error:" + err.Error())
 	}
 	GfJWTMiddleware = authMiddleware
 }
@@ -64,21 +64,21 @@ func PayloadFunc(data interface{}) jwt.MapClaims {
 }
 
 // IdentityHandler sets the identity for JWT.
+// IdentityHandler 设置JWT的身份。
 func IdentityHandler(r *ghttp.Request) interface{} {
 	claims := jwt.ExtractClaims(r)
 	return claims["id"]
 }
 
 // Unauthorized is used to define customized Unauthorized callback function.
+// Unauthorized 用于定义自定义的未经授权的回调函数。
 func Unauthorized(r *ghttp.Request, code int, message string) {
-	_ = r.Response.WriteJson(g.Map{
-		"code": code,
-		"msg":  message,
-	})
+	response.FailWithDetailed(r, response.ERROR, g.Map{"reload": true},"未登录或非法访问")
 	r.ExitAll()
 }
 
 // LoginResponse is used to define customized login-successful callback function.
+// LoginResponse 用于定义自定义的登录成功回调函数
 func LoginResponse(r *ghttp.Request, code int, token string, expire time.Time) {
 	_ = r.Response.WriteJson(g.Map{
 		"code":   http.StatusOK,
@@ -89,6 +89,7 @@ func LoginResponse(r *ghttp.Request, code int, token string, expire time.Time) {
 }
 
 // RefreshResponse is used to get a new token no matter current token is expired or not.
+// RefreshResponse 用于获取新令牌，无论当前令牌是否过期。
 func RefreshResponse(r *ghttp.Request, code int, token string, expire time.Time) {
 	_ = r.Response.WriteJson(g.Map{
 		"code":   http.StatusOK,

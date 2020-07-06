@@ -1,14 +1,16 @@
 package system
 
 import (
+	v1 "gf-server/app/api/v1"
 	"gf-server/global"
+	"gf-server/middleware"
 )
 
 // InitWorkflowRouter 注册功能api路由
 func InitWorkflowRouter() {
-	// TODO 缺少JWTAuth中间件与CasbinHandler中间件
-	WorkflowRouter := global.GFVA_SERVER.Group("workflow")
+	// TODO 缺少CasbinHandler中间件
+	WorkflowRouter := global.GFVA_SERVER.Group("workflow").Middleware(middleware.MiddlewareAuth)
 	{
-		WorkflowRouter.POST("createWorkFlow", EmptyRequest) // 创建工作流
+		WorkflowRouter.POST("createWorkFlow", v1.CreateWorkFlow) // 创建工作流
 	}
 }
