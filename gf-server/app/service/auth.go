@@ -13,8 +13,10 @@ import (
 
 var (
 	// The underlying JWT middleware.
+	// 底层的JWT中间件
 	GfJWTMiddleware *jwt.GfJWTMiddleware
 	// Customized login parameter validation rules.
+	// 自定义的登录参数验证规则。
 	ValidationRules = g.Map{
 		"username": "required",
 		"password": "required",
@@ -22,14 +24,17 @@ var (
 )
 
 // Initialization function,
+// 初始化函数
+
 // rewrite this function to customized your own JWT settings.
+// 重写此函数以自定义您自己的JWT设置。
 func init() {
 	signingKey := g.Cfg().GetString("jwt.SigningKey")
 	authMiddleware, err := jwt.New(&jwt.GfJWTMiddleware{
 		Realm:           signingKey,
 		Key:             []byte(signingKey),
 		Timeout:         time.Hour * 24, // 1 天
-		MaxRefresh:      time.Hour * 24 * 7, // 一星期
+		MaxRefresh:      time.Hour * 24 * 7, // 刷新的token设置为一星期
 		IdentityKey:     "id",
 		TokenLookup:     "header: Authorization, query: token, cookie: jwt",
 		TokenHeadName:   "Bearer",
@@ -53,6 +58,13 @@ func init() {
 // Note that the payload is not encrypted.
 // The attributes mentioned on jwt.io can't be used as keys for the map.
 // Optional, by default no additional data will be set.
+
+// PayloadFunc是将在登录期间调用的回调函数。
+//使用此功能可以向网络令牌添加其他有效载荷数据。
+//然后在请求期间通过c.Get（“ JWT_PAYLOAD”）使数据可用。
+//请注意，有效负载未加密。
+// jwt.io上提到的属性不能用作地图的键。
+//可选，默认情况下不会设置其他数据。
 func PayloadFunc(data interface{}) jwt.MapClaims {
 	claims := jwt.MapClaims{}
 	params := data.(map[string]interface{})
@@ -103,14 +115,16 @@ func RefreshResponse(r *ghttp.Request, code int, token string, expire time.Time)
 // Authenticator is used to validate login parameters.
 // It must return user data as user identifier, it will be stored in Claim Array.
 // Check error (e) to determine the appropriate error message.
+// Authenticator用于验证登录参数。
+// 它必须返回用户数据作为用户标识符，并将其存储在Claim Array中。
+// 检查错误（e），以确定适当的错误消息。
 func Authenticator(r *ghttp.Request) (interface{}, error) {
-
-		data := r.GetMap()
+	data := r.GetMap()
 	if e := gvalid.CheckMap(data, ValidationRules); e != nil {
 		return "", jwt.ErrFailedAuthentication
 	}
 	if data["username"] == "admin" && data["password"] == "admin" {
-		return g.Map{
+		return g.Map {
 			"username": data["username"],
 			"id":       data["username"],
 		}, nil

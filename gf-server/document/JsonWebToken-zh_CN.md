@@ -199,8 +199,8 @@ func RefreshResponse(r *ghttp.Request, code int, token string, expire time.Time)
 
 
 // Authenticator 用于验证登录参数。
-// 它必须返回用户数据作为用户标识符，它将存储在索赔数组中。
-// 检查错误（e）以确定适当的错误消息。
+// 它必须返回用户数据作为用户标识符，并将其存储在Claim Array中。
+// 检查错误（e），以确定适当的错误消息。
 func Authenticator(r *ghttp.Request) (interface{}, error) {
 	data := r.GetMap()
 	if e := gvalid.CheckMap(data, ValidationRules); e != nil {
