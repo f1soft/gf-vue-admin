@@ -17,6 +17,11 @@ import (
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"注册成功"}"
 // @Router /base/register [post]
 func Register(r *ghttp.Request) {
+	var R request.RegisterRequest
+	_ = r.Parse(&R)
+	if e := gvalid.CheckStruct(R, nil); e != nil {
+		g.Dump(e.Maps())
+	}
 }
 
 // @Tags Base
@@ -34,7 +39,7 @@ func Login(r *ghttp.Request) {
 	if store.Verify(L.CaptchaId, L.Captcha, true) {
 		u := &user.Entity{}
 		userReturn, err := service.Login(u)
-		if err != nil{
+		if err != nil {
 			response.FailWithMessage(r, err.Error())
 		}
 		response.OkDetailed(r, userReturn, "登录成功!")

@@ -2,8 +2,8 @@ package system
 
 import (
 	v1 "gf-server/app/api/v1"
+	"gf-server/app/middleware"
 	"gf-server/global"
-	"gf-server/middleware"
 )
 
 // InitApiRouter 注册功能api路由

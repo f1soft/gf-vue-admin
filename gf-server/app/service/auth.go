@@ -1,4 +1,4 @@
-package auth
+package service
 
 import (
 	"gf-server/global"
@@ -26,10 +26,10 @@ var (
 func init() {
 	signingKey := g.Cfg().GetString("jwt.SigningKey")
 	authMiddleware, err := jwt.New(&jwt.GfJWTMiddleware{
-		Realm:           "test zone",
+		Realm:           signingKey,
 		Key:             []byte(signingKey),
-		Timeout:         time.Hour * 24,
-		MaxRefresh:      time.Minute * 5,
+		Timeout:         time.Hour * 24, // 1 天
+		MaxRefresh:      time.Hour * 24 * 7, // 一星期
 		IdentityKey:     "id",
 		TokenLookup:     "header: Authorization, query: token, cookie: jwt",
 		TokenHeadName:   "Bearer",

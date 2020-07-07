@@ -2,8 +2,8 @@ package extend
 
 import (
 	v1 "gf-server/app/api/v1"
+	"gf-server/app/middleware"
 	"gf-server/global"
-	"gf-server/middleware"
 )
 
 // InitCustomerRouter 注册功能api路由

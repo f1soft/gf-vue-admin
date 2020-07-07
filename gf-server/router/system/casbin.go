@@ -2,8 +2,8 @@ package system
 
 import (
 	v1 "gf-server/app/api/v1"
+	"gf-server/app/middleware"
 	"gf-server/global"
-	"gf-server/middleware"
 )
 
 // InitCasbinRouter 注册权限相关路由
