@@ -41,20 +41,20 @@ func Register(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"登陆成功"}"
 // @Router /base/login [post]
 func Login(r *ghttp.Request) {
-	var L request.LoginRequest
-	_ = r.Parse(&L)
-	if e := gvalid.CheckStruct(L, nil); e != nil {
-		g.Dump(e.Maps())
-	}
-	if store.Verify(L.CaptchaId, L.Captcha, true) {
-		u := &user.Entity{Username: L.Username, Password: L.Password}
-		userReturn, err := service.Login(u)
-		if err != nil {
-			response.FailWithMessage(r, err.Error())
-		}
-		//tokenNext(userReturn)
-		response.OkDetailed(r, userReturn, "登录成功!")
-	}
+	//var L request.LoginRequest
+	//_ = r.Parse(&L)
+	//if e := gvalid.CheckStruct(L, nil); e != nil {
+	//	g.Dump(e.Maps())
+	//}
+	//if store.Verify(L.CaptchaId, L.Captcha, true) {
+	//	u := &user.Entity{Username: L.Username, Password: L.Password}
+	//	userReturn, err := service.Login(u)
+	//	if err != nil {
+	//		response.FailWithMessage(r, err.Error())
+	//	}
+	//	//tokenNext(userReturn)
+	//	response.OkDetailed(r, userReturn, "登录成功!")
+	//}
 }
 
 func tokenNext(u *user.Entity)  {

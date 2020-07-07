@@ -4,4 +4,17 @@
 
 package user
 
-// Fill with you ideas below.
+import "gf-server/global"
+
+var entity *Entity
+
+// GetOne 查询单条数据
+func GetOne(where ...interface{}) *Entity {
+	res, err := Model.FindOne(where...)
+	if err != nil {
+		global.GFVA_LOG.Error("数据查询失败", err)
+		return entity
+	}
+
+	return res
+}

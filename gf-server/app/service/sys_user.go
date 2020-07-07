@@ -35,3 +35,4 @@ func Register(u *user.Entity) (userReturn *user.Entity, err error) {
 	}
 	return userReturn, nil
 }
+

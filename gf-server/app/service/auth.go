@@ -1,11 +1,16 @@
 package service
 
 import (
+	"errors"
+	"gf-server/app/api/request"
+	resp "gf-server/app/api/response"
+	"gf-server/app/model/user"
 	"gf-server/global"
 	"gf-server/library/response"
 	jwt "github.com/gogf/gf-jwt"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
+	"github.com/gogf/gf/util/gconv"
 	"github.com/gogf/gf/util/gvalid"
 	"net/http"
 	"time"
@@ -93,11 +98,16 @@ func Unauthorized(r *ghttp.Request, code int, message string) {
 // LoginResponse is used to define customized login-successful callback function.
 // LoginResponse 用于定义自定义的登录成功回调函数
 func LoginResponse(r *ghttp.Request, code int, token string, expire time.Time) {
-	_ = r.Response.WriteJson(g.Map{
-		"code":   http.StatusOK,
-		"token":  token,
-		"expire": expire.Format(time.RFC3339),
-	})
+	var L request.LoginRequest
+	_ = r.Parse(&L)
+	if e := gvalid.CheckStruct(L, nil); e != nil {
+		g.Dump(e.Maps())
+	}
+	userReturn := (*user.Entity)(nil)
+	if err := gconv.Struct(r.GetParam("user_info"), &userReturn); err != nil{
+		response.FailWithMessage(r, "登录失败")
+	}
+	response.OkDetailed(r, resp.LoginResponse{User:userReturn, Token:token, ExpiresAt:expire.Unix()}, "登录成功!")
 	r.ExitAll()
 }
 
@@ -119,15 +129,20 @@ func RefreshResponse(r *ghttp.Request, code int, token string, expire time.Time)
 // 它必须返回用户数据作为用户标识符，并将其存储在Claim Array中。
 // 检查错误（e），以确定适当的错误消息。
 func Authenticator(r *ghttp.Request) (interface{}, error) {
-	data := r.GetMap()
-	if e := gvalid.CheckMap(data, ValidationRules); e != nil {
-		return "", jwt.ErrFailedAuthentication
+	var L request.LoginRequest
+	_ = r.Parse(&L)
+	if e := gvalid.CheckStruct(L, nil); e != nil {
+		g.Dump(e.Maps())
 	}
-	if data["username"] == "admin" && data["password"] == "admin" {
-		return g.Map {
-			"username": data["username"],
-			"id":       data["username"],
-		}, nil
+	if store.Verify(L.CaptchaId, L.Captcha, true) {
+		userReturn := user.GetOne(g.Map{"username": L.Username, "password": L.Password})
+		if userReturn.CompareHashAndPassword(L.Password) { // 检查密码是否正确
+			// 设置参数保存到请求中
+			r.SetParam("user_info", userReturn)
+			r.SetParam("uuid", userReturn.UUID)
+			return userReturn, nil
+		}
+		return  nil, jwt.ErrFailedAuthentication
 	}
-	return nil, jwt.ErrFailedAuthentication
+	return nil, errors.New("验证码错误")
 }
