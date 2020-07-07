@@ -17,11 +17,21 @@ import (
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"注册成功"}"
 // @Router /base/register [post]
 func Register(r *ghttp.Request) {
-	var R request.RegisterRequest
+	var (
+		err error
+		userReturn *user.Entity
+		R request.RegisterRequest
+	)
 	_ = r.Parse(&R)
 	if e := gvalid.CheckStruct(R, nil); e != nil {
 		g.Dump(e.Maps())
 	}
+	u := &user.Entity{Username: R.Username, Password: R.Password,Nickname: R.NickName, HeaderImg: R.HeaderImg, AuthorityId: R.AuthorityId}
+	if userReturn, err = service.Register(u); err != nil{
+		response.FailWithMessage(r, err.Error())
+		r.ExitAll()
+	}
+	response.OkDetailed(r, userReturn, "注册成功!")
 }
 
 // @Tags Base
@@ -37,13 +47,18 @@ func Login(r *ghttp.Request) {
 		g.Dump(e.Maps())
 	}
 	if store.Verify(L.CaptchaId, L.Captcha, true) {
-		u := &user.Entity{}
+		u := &user.Entity{Username: L.Username, Password: L.Password}
 		userReturn, err := service.Login(u)
 		if err != nil {
 			response.FailWithMessage(r, err.Error())
 		}
+		//tokenNext(userReturn)
 		response.OkDetailed(r, userReturn, "登录成功!")
 	}
+}
+
+func tokenNext(u *user.Entity)  {
+
 }
 
 // @Tags SysUser

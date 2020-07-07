@@ -13,16 +13,16 @@ import (
 
 // Entity is the golang structure for table user.
 type Entity struct {
-    Id          uint        `orm:"id,primary"   json:"id"`           // 自增ID            
-    CreatedAt   *gtime.Time `orm:"created_at"   json:"created_at"`   // 创建时间          
-    UpdatedAt   *gtime.Time `orm:"updated_at"   json:"updated_at"`   // 修改时间          
-    DeletedAt   *gtime.Time `orm:"deleted_at"   json:"deleted_at"`   // 删除时间          
-    Uuid        []byte      `orm:"uuid"         json:"uuid"`         // 用户唯一标识UUID  
-    Username    string      `orm:"username"     json:"username"`     // 用户登录名        
-    Password    string      `orm:"password"     json:"password"`     // 用户登录密码      
-    Nickname    string      `orm:"nickname"     json:"nickname"`     // 用户昵称          
-    HeaderImg   string      `orm:"header_img"   json:"header_img"`   // 用户头像          
-    AuthorityId float64     `orm:"authority_id" json:"authority_id"` // 用户角色ID        
+	Id          uint        `orm:"id,primary"   json:"id"`           // 自增ID
+	CreatedAt   *gtime.Time `orm:"created_at"   json:"created_at"`   // 创建时间
+	UpdatedAt   *gtime.Time `orm:"updated_at"   json:"updated_at"`   // 修改时间
+	DeletedAt   *gtime.Time `orm:"deleted_at"   json:"deleted_at"`   // 删除时间
+	UUID        string      `orm:"uuid"         json:"uuid"`         // 用户唯一标识UUID
+	Username    string      `orm:"username"     json:"username"`     // 用户登录名
+	Password    string      `orm:"password"     json:"-"`     // 用户登录密码
+	Nickname    string      `orm:"nickname"     json:"nickname"`     // 用户昵称
+	HeaderImg   string      `orm:"header_img"   json:"header_img"`   // 用户头像
+	AuthorityId string     `orm:"authority_id" json:"authority_id"` // 用户角色ID
 }
 
 // OmitEmpty sets OPTION_OMITEMPTY option for the model, which automatically filers
@@ -66,6 +66,7 @@ func (r *Entity) Update() (result sql.Result, err error) {
 func (r *Entity) Delete() (result sql.Result, err error) {
 	return Model.Where(gdb.GetWhereConditionOfStruct(r)).Delete()
 }
+
 // PasswordCheck 密码检查(工具类)
 func (r *Entity) CompareHashAndPassword(password string) bool {
 	if err := bcrypt.CompareHashAndPassword([]byte(r.Password), []byte(password)); err != nil {
