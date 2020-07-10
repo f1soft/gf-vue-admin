@@ -3,7 +3,7 @@ package system
 import (
 	v1 "gf-server/app/api/v1"
 	"gf-server/app/middleware"
-	"gf-server/global"
+	"gf-server/library/global"
 )
 
 // InitJwtRouter 注册jwt相关路由

@@ -2,7 +2,7 @@ package system
 
 import (
 	v1 "gf-server/app/api/v1"
-	"gf-server/global"
+	"gf-server/library/global"
 )
 
 // InitDictionaryDetailRouter 注册字典详情管理路由

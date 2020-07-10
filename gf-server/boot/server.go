@@ -1,7 +1,7 @@
 package boot
 
 import (
-	"gf-server/global"
+	"gf-server/library/global"
 	"gf-server/router"
 	"time"
 

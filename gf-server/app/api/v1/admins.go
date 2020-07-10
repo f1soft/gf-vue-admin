@@ -6,6 +6,8 @@ import (
 	"gf-server/app/service"
 	"gf-server/library/response"
 
+	"github.com/gogf/gf/frame/g"
+
 	"github.com/gogf/gf/net/ghttp"
 )
 
@@ -16,20 +18,22 @@ import (
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"注册成功"}"
 // @Router /base/register [post]
 func Register(r *ghttp.Request) {
-	var (
-		err        error
-		userReturn *admins.Entity
-		R          request.RegisterRequest
-	)
-	if err = r.Parse(&R); err != nil {
+	var R request.RegisterRequest
+	if err := r.Parse(&R); err != nil {
 		response.FailWithMessage(r, err.Error())
 	}
-	u := &admins.Entity{Username: R.Username, Password: R.Password, Nickname: R.Nickname, HeaderImg: R.HeaderImg, AuthorityId: R.AuthorityId}
-	if userReturn, err = service.Register(u); err != nil {
+	u := &admins.Entity{
+		Username:    R.Username,
+		Password:    R.Password,
+		Nickname:    R.Nickname,
+		HeaderImg:   R.HeaderImg,
+		AuthorityId: R.AuthorityId,
+	}
+	if err := service.Register(u); err != nil {
 		response.FailWithMessage(r, err.Error())
 		r.ExitAll()
 	}
-	response.OkDetailed(r, userReturn, "注册成功!")
+	response.OkDetailed(r, g.Map{}, "注册成功!")
 }
 
 // @Tags Base

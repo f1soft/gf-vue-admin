@@ -2,10 +2,9 @@ package service
 
 import (
 	"gf-server/app/api/request"
-	resp "gf-server/app/api/response"
+	"gf-server/app/api/response"
 	"gf-server/app/model/admins"
-	"gf-server/global"
-	"gf-server/library/response"
+	"gf-server/library/global"
 	"time"
 
 	jwt "github.com/gogf/gf-jwt"
@@ -83,7 +82,7 @@ func IdentityHandler(r *ghttp.Request) interface{} {
 // Unauthorized is used to define customized Unauthorized callback function.
 // Unauthorized 用于定义自定义的未经授权的回调函数。
 func Unauthorized(r *ghttp.Request, code int, message string) {
-	response.FailWithDetailed(r, response.ERROR, g.Map{"reload": true}, "未登录或非法访问")
+	global.FailWithDetailed(r, global.ERROR, g.Map{"reload": true}, "未登录或非法访问")
 	r.ExitAll()
 }
 
@@ -92,9 +91,9 @@ func Unauthorized(r *ghttp.Request, code int, message string) {
 func LoginResponse(r *ghttp.Request, code int, token string, expire time.Time) {
 	userReturn := (*admins.Entity)(nil)
 	if err := gconv.Struct(r.GetParam("user_info"), &userReturn); err != nil {
-		response.FailWithMessage(r, "登录失败")
+		global.FailWithMessage(r, "登录失败")
 	}
-	response.OkDetailed(r, resp.LoginResponse{User: userReturn, Token: token, ExpiresAt: expire.Unix()}, "登录成功!")
+	global.OkDetailed(r, response.LoginResponse{User: userReturn, Token: token, ExpiresAt: expire.Unix()}, "登录成功!")
 }
 
 // RefreshResponse is used to get a new token no matter current token is expired or not.
@@ -119,7 +118,7 @@ func RefreshResponse(r *ghttp.Request, code int, token string, expire time.Time)
 func Authenticator(r *ghttp.Request) (interface{}, error) {
 	var L request.LoginRequest
 	if err := r.Parse(&L); err != nil {
-		response.FailWithMessage(r, err.Error())
+		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
 	//if !store.Verify(L.CaptchaId, L.Captcha, true) {  // 验证码校对

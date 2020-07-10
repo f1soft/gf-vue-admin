@@ -6,7 +6,7 @@ package admins
 
 import (
 	"database/sql"
-	"gf-server/global"
+	"gf-server/library/global"
 
 	"golang.org/x/crypto/bcrypt"
 )

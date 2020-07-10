@@ -2,7 +2,8 @@ package system
 
 import (
 	v1 "gf-server/app/api/v1"
-	"gf-server/global"
+	"gf-server/library/global"
+
 	"github.com/gogf/gf-jwt/example/auth"
 )
 
@@ -12,7 +13,7 @@ func InitBaseRouter() {
 	{
 		BaseRouter.POST("register", v1.Register) // 注册
 		//BaseRouter.GET("register", v1.Register) // 注册
-		BaseRouter.GET("login", auth.GfJWTMiddleware.LoginHandler)       // 登录
-		BaseRouter.GET("captcha", v1.Captcha)       // 验证码
+		BaseRouter.GET("login", auth.GfJWTMiddleware.LoginHandler) // 登录
+		BaseRouter.GET("captcha", v1.Captcha)                      // 验证码
 	}
 }

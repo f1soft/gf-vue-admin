@@ -3,7 +3,7 @@ package system
 import (
 	v1 "gf-server/app/api/v1"
 	"gf-server/app/middleware"
-	"gf-server/global"
+	"gf-server/library/global"
 )
 
 // InitSystemRouter 注册system配置相关路由

@@ -2,7 +2,7 @@ package extend
 
 import (
 	v1 "gf-server/app/api/v1"
-	"gf-server/global"
+	"gf-server/library/global"
 )
 
 // InitFileRouter 注册文件上传下载功能路由
