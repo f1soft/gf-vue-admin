@@ -71,5 +71,5 @@
 # Redis 配置
 [redis]
     # host:port[,db,pass?maxIdle=x&maxActive=x&idleTimeout=x&maxConnLifetime=x]
-    default = "127.0.0.1:6379,1,密码?idleTimeout=600"
-    cache   = "127.0.0.1:6379,1,密码?idleTimeout=600"
+    default = "127.0.0.1:6379,1,gdkid,,..?idleTimeout=600"
+    cache   = "127.0.0.1:6379,1,gdkid,,..?idleTimeout=600"

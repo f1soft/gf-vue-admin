@@ -1,0 +1,227 @@
+2020-07-10 18:20:56.048 [ERRO] [ 44 ms] SHOW FULL COLUMNS FROM `user`
+Error: Error 1146: Table 'gf-server.user' doesn't exist 
+Stack:
+1.  github.com/gogf/gf/os/gcache.(*memCache).GetOrSetFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/os/gcache/gcache_mem_cache.go:250
+2.  gf-server/app/model/user.(*arModel).FindOne
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/model/user/user_model.go:299
+3.  gf-server/app/model/user.RecordNotFound
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/model/user/user.go:29
+4.  gf-server/app/service.Register
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/service/sys_user.go:25
+5.  gf-server/app/api/v1.Register
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/api/v1/sys_user.go:26
+6.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+7.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+8.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+9.  github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+10. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+11. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-10 18:20:56.049 [ERRO] [  1 ms] SHOW FULL COLUMNS FROM `user`
+Error: Error 1146: Table 'gf-server.user' doesn't exist 
+Stack:
+1.  github.com/gogf/gf/os/gcache.(*memCache).GetOrSetFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/os/gcache/gcache_mem_cache.go:250
+2.  gf-server/app/model/user.(*arModel).FindOne
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/model/user/user_model.go:299
+3.  gf-server/app/model/user.RecordNotFound
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/model/user/user.go:29
+4.  gf-server/app/service.Register
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/service/sys_user.go:25
+5.  gf-server/app/api/v1.Register
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/api/v1/sys_user.go:26
+6.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+7.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+8.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+9.  github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+10. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+11. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-10 18:20:56.053 [ERRO] [  4 ms] SELECT * FROM `user` WHERE `username`=''
+Error: Error 1146: Table 'gf-server.user' doesn't exist 
+Stack:
+1.  gf-server/app/model/user.(*arModel).FindOne
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/model/user/user_model.go:299
+2.  gf-server/app/model/user.RecordNotFound
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/model/user/user.go:29
+3.  gf-server/app/service.Register
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/service/sys_user.go:25
+4.  gf-server/app/api/v1.Register
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/api/v1/sys_user.go:26
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+6.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+7.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+8.  github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+9.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+10. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-10 18:23:07.408 [ERRO] [  3 ms] SHOW FULL COLUMNS FROM `user`
+Error: Error 1146: Table 'gf-server.user' doesn't exist 
+Stack:
+1.  github.com/gogf/gf/os/gcache.(*memCache).GetOrSetFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/os/gcache/gcache_mem_cache.go:250
+2.  gf-server/app/model/user.(*arModel).FindOne
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/model/user/user_model.go:299
+3.  gf-server/app/model/user.RecordNotFound
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/model/user/user.go:29
+4.  gf-server/app/service.Register
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/service/sys_user.go:25
+5.  gf-server/app/api/v1.Register
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/api/v1/sys_user.go:27
+6.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+7.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+8.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+9.  github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+10. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+11. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-10 18:23:07.409 [ERRO] [  0 ms] SHOW FULL COLUMNS FROM `user`
+Error: Error 1146: Table 'gf-server.user' doesn't exist 
+Stack:
+1.  github.com/gogf/gf/os/gcache.(*memCache).GetOrSetFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/os/gcache/gcache_mem_cache.go:250
+2.  gf-server/app/model/user.(*arModel).FindOne
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/model/user/user_model.go:299
+3.  gf-server/app/model/user.RecordNotFound
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/model/user/user.go:29
+4.  gf-server/app/service.Register
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/service/sys_user.go:25
+5.  gf-server/app/api/v1.Register
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/api/v1/sys_user.go:27
+6.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+7.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+8.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+9.  github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+10. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+11. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-10 18:23:07.410 [ERRO] [  1 ms] SELECT * FROM `user` WHERE `username`='test'
+Error: Error 1146: Table 'gf-server.user' doesn't exist 
+Stack:
+1.  gf-server/app/model/user.(*arModel).FindOne
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/model/user/user_model.go:299
+2.  gf-server/app/model/user.RecordNotFound
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/model/user/user.go:29
+3.  gf-server/app/service.Register
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/service/sys_user.go:25
+4.  gf-server/app/api/v1.Register
+    /Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/api/v1/sys_user.go:27
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+6.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+7.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+8.  github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+9.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+10. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-10 19:12:55.601 [DEBU] [  3 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 19:12:55.604 [DEBU] [  2 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:13:58.858 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:14:07.830 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:14:22.414 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:15:18.604 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:25:06.055 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 19:25:06.055 [DEBU] [ 70 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 19:25:06.062 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:25:06.062 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:26:03.033 [DEBU] [  3 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 19:26:03.035 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:31:43.547 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 19:31:43.549 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:32:56.923 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 19:32:56.924 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:33:51.560 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 19:33:51.561 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:35:36.754 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 19:35:36.755 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:36:37.609 [DEBU] [  3 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 19:36:37.610 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:44:22.959 [DEBU] [  3 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 19:44:22.960 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:53:40.858 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 19:53:40.859 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:55:48.837 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 19:55:48.839 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:59:23.914 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 19:59:23.915 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 19:59:23.916 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 20:00:14.382 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 20:00:14.383 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 20:00:14.384 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 20:03:01.087 [DEBU] [  4 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 20:03:01.089 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 20:03:55.083 [DEBU] [  3 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 20:03:55.084 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 20:05:06.251 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 20:05:06.252 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 20:06:21.976 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 20:06:21.977 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 20:06:27.425 [DEBU] [  2 ms] INSERT INTO `admin`(`header_img`,`id`,`created_at`,`uuid`,`username`,`password`,`nickname`,`authority_id`,`updated_at`,`deleted_at`) VALUES('http://abfhgaf',0,null,'1591edd3-b427-48d3-ba36-127f86b91b9b','test','','test','1',null,null)
+2020-07-10 20:42:26.648 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 20:42:26.650 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 20:42:26.782 [DEBU] [  1 ms] INSERT INTO `admin`(`updated_at`,`uuid`,`nickname`,`id`,`created_at`,`deleted_at`,`username`,`password`,`header_img`,`authority_id`) VALUES(null,'f760d7ca-9aec-459b-a75a-468a95f3148f','test',0,null,null,'test','','http://abfhgaf','1')
+2020-07-10 20:48:21.876 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 20:48:21.877 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 20:48:37.042 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 20:48:37.163 [DEBU] [  2 ms] INSERT INTO `admin`(`username`,`nickname`,`authority_id`,`created_at`,`deleted_at`,`uuid`,`header_img`,`id`,`updated_at`,`password`) VALUES('test','test','1',null,null,'fb2649a9-7157-49d9-892c-077137744068','http://abfhgaf',0,null,'')
+2020-07-10 20:51:34.540 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 20:51:34.541 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 20:51:34.664 [DEBU] [  1 ms] INSERT INTO `admin`(`header_img`,`authority_id`,`uuid`,`username`,`password`,`nickname`) VALUES('http://abfhgaf','1','ed417c20-1f68-4d61-bb31-3e47a19d793f','test','$2a$10$cbBbFJk2rZXaAVjJUbZ.Q.H3UotR5rmYeKtI1YsUeTqy8XG8zx172','test')
+2020-07-10 20:56:17.160 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 20:56:17.161 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 20:56:30.161 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test'
+2020-07-10 20:56:30.359 [DEBU] [  2 ms] INSERT INTO `admin`(`username`,`password`,`nickname`,`header_img`,`authority_id`,`uuid`) VALUES('test','$2a$10$AtuUXrQRJcpH.fh8CEfkcuTYBUp1TFfABPSRGOE5szHhu1Cb2gZ.C','test','http://abfhgaf','1','55e62fee-5507-42c4-a12c-68b027670d4e')
+2020-07-10 21:00:29.481 [DEBU] [  5 ms] SHOW TABLES
+2020-07-10 21:00:29.485 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 21:00:29.490 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `jwt_blacklists`
+2020-07-10 21:06:13.927 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 21:06:13.929 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test' AND `delete_at` IS NULL
+2020-07-10 21:06:14.117 [DEBU] [  2 ms] INSERT INTO `admin`(`id`,`update_at`,`uuid`,`nickname`,`header_img`,`password`,`create_at`,`authority_id`,`username`) VALUES(0,'2020-07-10 21:06:14','cc5d832f-c19a-4ff9-8176-66d53bcbf084','test','http://abfhgaf','$2a$10$bXnXjlTdVMc7rsRvYjQYhe5RfKawJJPmC/d.AdWbXKeEFQnvTsZmG','2020-07-10 21:06:14','1','test')
+2020-07-10 21:08:21.256 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test1' AND `delete_at` IS NULL
+2020-07-10 21:08:21.416 [DEBU] [  1 ms] INSERT INTO `admin`(`update_at`,`uuid`,`nickname`,`header_img`,`authority_id`,`username`,`id`,`password`,`create_at`) VALUES('2020-07-10 21:08:21','b44aace7-4f4c-4c99-93e7-e706ea9ef54e','test','http://abfhgaf','1','test1',0,'$2a$10$e5zgxRKZeuEyAIey4YBb3OU83jgRPARhI6N.emkgRzyMxTqNmqdwC','2020-07-10 21:08:21')
+2020-07-10 21:10:14.374 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admin`
+2020-07-10 21:10:14.375 [DEBU] [  0 ms] SELECT * FROM `admin` WHERE `username`='test1' AND `delete_at` IS NULL
+2020-07-10 21:10:23.360 [DEBU] [  1 ms] SELECT * FROM `admin` WHERE `username`='test2' AND `delete_at` IS NULL
+2020-07-10 21:10:23.520 [DEBU] [  1 ms] INSERT INTO `admin`(`id`,`create_at`,`header_img`,`update_at`,`uuid`,`nickname`,`authority_id`,`username`,`password`) VALUES(0,'2020-07-10 21:10:23','http://abfhgaf','2020-07-10 21:10:23','6dbf5112-4dec-4f70-8432-d2ccce232adf','test','1','test2','$2a$10$4p1arUk9mHorm5mupEJbzu4vkJiVKJqofVXcf5/e5VVOxB7/u1T6W')
+2020-07-10 22:08:56.241 [DEBU] [  3 ms] SHOW TABLES
+2020-07-10 22:08:56.244 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `jwt_blacklists`
+2020-07-10 22:08:56.246 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `sys_users`
+2020-07-10 22:13:54.159 [DEBU] [  2 ms] SHOW TABLES
+2020-07-10 22:13:54.164 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-10 22:13:54.167 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `jwt_blacklists`

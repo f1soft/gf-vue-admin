@@ -2,12 +2,11 @@ package v1
 
 import (
 	"gf-server/app/api/request"
-	"gf-server/app/model/user"
+	"gf-server/app/model/admins"
 	"gf-server/app/service"
 	"gf-server/library/response"
-	"github.com/gogf/gf/frame/g"
+
 	"github.com/gogf/gf/net/ghttp"
-	"github.com/gogf/gf/util/gvalid"
 )
 
 // @Tags Base
@@ -18,16 +17,15 @@ import (
 // @Router /base/register [post]
 func Register(r *ghttp.Request) {
 	var (
-		err error
-		userReturn *user.Entity
-		R request.RegisterRequest
+		err        error
+		userReturn *admins.Entity
+		R          request.RegisterRequest
 	)
-	_ = r.Parse(&R)
-	if e := gvalid.CheckStruct(R, nil); e != nil {
-		g.Dump(e.Maps())
+	if err = r.Parse(&R); err != nil {
+		response.FailWithMessage(r, err.Error())
 	}
-	u := &user.Entity{Username: R.Username, Password: R.Password,Nickname: R.NickName, HeaderImg: R.HeaderImg, AuthorityId: R.AuthorityId}
-	if userReturn, err = service.Register(u); err != nil{
+	u := &admins.Entity{Username: R.Username, Password: R.Password, Nickname: R.Nickname, HeaderImg: R.HeaderImg, AuthorityId: R.AuthorityId}
+	if userReturn, err = service.Register(u); err != nil {
 		response.FailWithMessage(r, err.Error())
 		r.ExitAll()
 	}
@@ -55,10 +53,6 @@ func Login(r *ghttp.Request) {
 	//	//tokenNext(userReturn)
 	//	response.OkDetailed(r, userReturn, "登录成功!")
 	//}
-}
-
-func tokenNext(u *user.Entity)  {
-
 }
 
 // @Tags SysUser
