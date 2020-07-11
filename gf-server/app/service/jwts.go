@@ -42,7 +42,7 @@ func SetRedisJWT(userUUID string, jwt string) (err error) {
 func GetToken(userUUID string) string {
 	conn := global.GFVA_REDIS.Conn()
 	defer conn.Close()
-	r, _ := conn.Do("GET", userUUID)
+	r, _ := conn.Do("GET", gconv.String(g.Cfg().Get("redis.Login_Prefix"))+userUUID)
 	return gconv.String(r)
 }
 

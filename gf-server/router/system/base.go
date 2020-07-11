@@ -10,10 +10,8 @@ import (
 func InitBaseRouter() {
 	BaseRouter := global.GFVA_SERVER.Group("base")
 	{
-		BaseRouter.POST("register", v1.Register) // 注册
-		//BaseRouter.GET("register", v1.Register) // 注册
+		BaseRouter.POST("register", v1.Register)                       // 注册
 		BaseRouter.POST("login", service.GfJWTMiddleware.LoginHandler) // 登录
-		//BaseRouter.GET("login", auth.GfJWTMiddleware.LoginHandler) // 登录
-		BaseRouter.GET("captcha", v1.Captcha) // 验证码
+		BaseRouter.POST("captcha", v1.Captcha)                         // 验证码
 	}
 }
