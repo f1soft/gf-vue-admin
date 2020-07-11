@@ -4,8 +4,12 @@ import (
 	"gf-server/app/api/request"
 	"gf-server/app/api/response"
 	"gf-server/app/model/admins"
+	"gf-server/app/model/jwts"
+	"gf-server/app/service"
 	"gf-server/library/global"
 	"time"
+
+	"github.com/gomodule/redigo/redis"
 
 	jwt "github.com/gogf/gf-jwt"
 	"github.com/gogf/gf/frame/g"
@@ -57,7 +61,7 @@ func init() {
 
 // PayloadFunc是将在登录期间调用的回调函数。
 // 使用此功能可以向网络令牌添加其他有效载荷数据。
-// 然后在请求期间通过c.Get（“ JWT_PAYLOAD”）使数据可用。
+// 然后在请求期间通过c.Get("JWT_PAYLOAD")使数据可用。
 // 请注意，有效负载未加密。
 // jwt.io上提到的属性不能用作地图的键。
 // 可选，默认情况下不会设置其他数据。
@@ -82,7 +86,7 @@ func IdentityHandler(r *ghttp.Request) interface{} {
 // Unauthorized is used to define customized Unauthorized callback function.
 // Unauthorized 用于定义自定义的未经授权的回调函数。
 func Unauthorized(r *ghttp.Request, code int, message string) {
-	global.FailWithDetailed(r, global.ERROR, g.Map{"reload": true}, "未登录或非法访问")
+	global.FailWithDetailed(r, code, g.Map{"reload": true}, "未登录或非法访问"+message)
 	r.ExitAll()
 }
 
@@ -92,8 +96,31 @@ func LoginResponse(r *ghttp.Request, code int, token string, expire time.Time) {
 	userReturn := (*admins.Entity)(nil)
 	if err := gconv.Struct(r.GetParam("user_info"), &userReturn); err != nil {
 		global.FailWithMessage(r, "登录失败")
+		r.Exit()
 	}
-	global.OkDetailed(r, response.LoginResponse{User: userReturn, Token: token, ExpiresAt: expire.Unix()}, "登录成功!")
+	if !g.Cfg().GetBool("system.UseMultipoint") {
+		global.OkDetailed(r, response.LoginResponse{User: userReturn, Token: token, ExpiresAt: expire.Unix() * 1000}, "登录成功!")
+		r.Exit()
+	}
+	redisJwt, err := service.GetRedisJWT(userReturn.UUID)
+	if err == redis.ErrNil {
+		if err := service.SetRedisJWT(userReturn.UUID, token); err != nil {
+			global.Result(r, code, g.Map{}, "设置登录状态失败")
+			r.Exit()
+		}
+	} else if err != nil {
+		global.Result(r, code, g.Map{}, err.Error())
+	} else {
+		if err = service.JsonInBlacklist(&jwts.Entity{Jwt: redisJwt}); err != nil {
+			global.Result(r, code, g.Map{}, "jwt作废失败")
+			r.Exit()
+		}
+		if err := service.SetRedisJWT(userReturn.UUID, token); err != nil {
+			global.Result(r, code, g.Map{}, "设置登录状态失败")
+			r.Exit()
+		}
+	}
+	global.OkDetailed(r, response.LoginResponse{User: userReturn, Token: token, ExpiresAt: expire.Unix() * 1000}, "登录成功!")
 }
 
 // RefreshResponse is used to get a new token no matter current token is expired or not.
@@ -127,8 +154,7 @@ func Authenticator(r *ghttp.Request) (interface{}, error) {
 	userReturn := admins.GetOne(g.Map{"username": L.Username})
 	if userReturn.CompareHashAndPassword(L.Password) { // 检查密码是否正确
 		r.SetParam("user_info", userReturn) // 设置参数保存到请求中
-		r.SetParam("uuid", userReturn.UUID) // 设置参数保存到请求中
-		return userReturn, nil
+		return gconv.Map(&userReturn), nil
 	}
 	return nil, jwt.ErrFailedAuthentication
 

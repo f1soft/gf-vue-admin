@@ -1,4 +1,7 @@
--- admins Model
+-- ----------------------------
+-- Table structure for admins Model
+-- ----------------------------
+--
 create table admins
 (
     id           int unsigned auto_increment comment '自增ID'
@@ -18,3 +21,16 @@ create table admins
 create index idx_admins_deleted_at
     on admins (delete_at);
 
+-- ----------------------------
+-- Table structure for jwt_blacklists Model
+-- ----------------------------
+DROP TABLE IF EXISTS `jwts`;
+CREATE TABLE `jwts`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `create_at` timestamp(0) NULL DEFAULT NULL,
+  `update_at` timestamp(0) NULL DEFAULT NULL,
+  `delete_at` timestamp(0) NULL DEFAULT NULL,
+  `jwt` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `idx_jwts_deleted_at`(`deleted_at`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 57 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;

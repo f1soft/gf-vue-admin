@@ -1,0 +1,20 @@
+2020-07-11 13:02:01.812 500 "POST http 127.0.0.1:7777 /base/login HTTP/1.1" 0.232, 127.0.0.1, "", "ApiPOST Runtime +https://www.apipost.cn"
+Stack:
+1. interface conversion: interface {} is *admins.Entity, not map[string]interface {}
+   1).  gf-server/app/service.PayloadFunc
+    	/Users/sliverhorn/Go/src/github.com/SliverHorn/goframe-vue-admin/gf-server/app/service/auth.go:67
+   2).  github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler
+    	/Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf-jwt@v1.1.0/auth_jwt.go:429
+   3).  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    	/Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+   4).  github.com/gogf/gf/net/ghttp.niceCallFunc
+    	/Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+   5).  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    	/Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+   6).  github.com/gogf/gf/util/gutil.TryCatch
+    	/Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+   7).  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    	/Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+   8).  github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    	/Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
