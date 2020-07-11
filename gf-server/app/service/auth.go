@@ -36,8 +36,8 @@ func init() {
 		Timeout:         time.Hour * 24,     // 1 天
 		MaxRefresh:      time.Hour * 24 * 7, // 刷新的token设置为一星期
 		IdentityKey:     "id",
-		TokenLookup:     "header: Authorization, query: token, cookie: jwt",
-		TokenHeadName:   "Bearer",
+		TokenLookup:     "header: x-token, query: token, cookie: jwt",
+		TokenHeadName:   "",
 		TimeFunc:        time.Now,
 		Authenticator:   Authenticator,
 		LoginResponse:   LoginResponse,
