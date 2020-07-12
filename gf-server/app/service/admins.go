@@ -8,15 +8,6 @@ import (
 	uuid "github.com/satori/go.uuid"
 )
 
-// Login 用户登录
-func Login(u *admins.Entity) (userReturn *admins.Entity, err error) {
-	admin := admins.GetOne(g.Map{"username = ?": u.Username})
-	if admin.CompareHashAndPassword(u.Password) { // 检查密码是否正确
-		return userReturn, nil
-	}
-	return u, errors.New("未知用户")
-}
-
 // Register 注册
 func Register(u *admins.Entity) (err error) {
 	if !admins.RecordNotFound(g.Map{"username": u.Username}) {

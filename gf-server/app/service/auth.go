@@ -1,11 +1,11 @@
 package service
 
 import (
+	"errors"
 	"gf-server/app/api/request"
 	"gf-server/app/api/response"
 	"gf-server/app/model/admins"
 	"gf-server/app/model/jwts"
-	"gf-server/app/service"
 	"gf-server/library/global"
 	"time"
 
@@ -148,10 +148,14 @@ func Authenticator(r *ghttp.Request) (interface{}, error) {
 		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
-	//if !store.Verify(L.CaptchaId, L.Captcha, true) {  // 验证码校对
-	//	return nil, errors.New("验证码错误")
-	//}
-	userReturn := admins.GetOne(g.Map{"username": L.Username})
+	if !store.Verify(L.CaptchaId, L.Captcha, true) { // 验证码校对
+		return nil, errors.New("验证码错误")
+	}
+	userReturn, err := admins.FindOne(g.Map{"username": L.Username})
+	if err != nil {
+		global.GFVA_LOG.Error(err)
+		return nil, jwt.ErrFailedAuthentication
+	}
 	if userReturn.CompareHashAndPassword(L.Password) { // 检查密码是否正确
 		r.SetParam("user_info", userReturn) // 设置参数保存到请求中
 		return gconv.Map(&userReturn), nil
