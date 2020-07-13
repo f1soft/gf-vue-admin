@@ -122,5 +122,20 @@ func GetAllApis(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /api/getApiList [post]
 func GetApiList(r *ghttp.Request) {
-
+	var sp request.GetApiList // 此结构体仅本方法使用
+	if err := r.Parse(&sp); err != nil{
+		global.FailWithMessage(r, err.Error())
+		r.Exit()
+	}
+	list, total, err := service.GetApiInfoList(&sp)
+	if err != nil{
+		global.FailWithMessage(r, fmt.Sprintf("获取数据失败，%v", err))
+		r.Exit()
+	}
+	global.OkWithData(r, response.PageResult{
+		List:     list,
+		Total:    total,
+		Page:     sp.Page,
+		PageSize: sp.PageSize,
+	})
 }
