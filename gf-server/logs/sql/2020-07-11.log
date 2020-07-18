@@ -1,0 +1,12 @@
+2020-07-11 12:46:21.809 [DEBU] [  9 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-11 12:46:21.817 [DEBU] [  7 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-11 12:46:21.906 [DEBU] [  3 ms] INSERT INTO `admins`(`update_at`,`password`,`id`,`create_at`,`uuid`,`nickname`,`header_img`,`authority_id`,`username`) VALUES('2020-07-11 12:46:21','$2a$10$JFc5uKGYS8k22xrLc1ymXO.I9RlV2vLrx119/at1WIWZKcJyQTkzy',0,'2020-07-11 12:46:21','1e378822-47d1-4e08-aaf6-95a85f752b43','admin','http://abfhgaf','777','admin')
+2020-07-11 13:02:01.583 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-11 13:02:01.584 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-11 13:10:29.983 [DEBU] [  3 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-11 13:10:29.984 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-11 13:11:26.969 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-11 13:11:26.970 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-11 13:50:43.273 [DEBU] [  6 ms] SHOW TABLES
+2020-07-11 13:50:43.277 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-11 13:50:43.282 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `jwts`

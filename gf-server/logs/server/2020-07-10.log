@@ -1,0 +1,881 @@
+2020-07-10 17:00:40.188 3810: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |                      ROUTE                      |                          HANDLER                          |     MIDDLEWARE      
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/createApi                                  | gf-server/app/api/v1.CreateApi                            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/deleteApi                                  | gf-server/app/api/v1.DeleteApi                            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getAllApis                                 | gf-server/app/api/v1.GetAllApis                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getApiById                                 | gf-server/app/api/v1.GetApiById                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getApiList                                 | gf-server/app/api/v1.GetApiList                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/updateApi                                  | gf-server/app/api/v1.UpdateApi                            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/copyAuthority                        | gf-server/app/api/v1.CopyAuthority                        | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/createAuthority                      | gf-server/app/api/v1.CreateAuthority                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/deleteAuthority                      | gf-server/app/api/v1.DeleteAuthority                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /authority/deleteAuthority                      | gf-server/app/api/v1.DeleteAuthority                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/getAuthorityList                     | gf-server/app/api/v1.GetAuthorityList                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/setDataAuthority                     | gf-server/app/api/v1.SetDataAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /autoCode/createTemp                            | gf-server/app/api/v1.CreateTemp                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/captcha                                   | gf-server/app/api/v1.Captcha                              |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/login                                     | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/register                                  | gf-server/app/api/v1.Register                             |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /casbin/casbinTest/:pathParam                   | gf-server/app/api/v1.CasbinTest                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /casbin/getPolicyPathByAuthorityId              | gf-server/app/api/v1.GetPolicyPathByAuthorityId           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /casbin/updateCasbin                            | gf-server/app/api/v1.UpdateCasbin                         | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /customer/customer                              | gf-server/app/api/v1.DeleteExaCustomer                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /customer/customer                              | gf-server/app/api/v1.GetExaCustomer                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /customer/customer                              | gf-server/app/api/v1.CreateExaCustomer                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /customer/customer                              | gf-server/app/api/v1.UpdateExaCustomer                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /customer/customerList                          | gf-server/app/api/v1.GetExaCustomerList                   | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinue        | gf-server/app/api/v1.BreakpointContinue                   |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinueFinish  | gf-server/app/api/v1.BreakpointContinueFinish             |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/deleteFile                | gf-server/app/api/v1.DeleteFile                           |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /fileUploadAdDownload/findFile                  | gf-server/app/api/v1.FindFile                             |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/getFileList               | gf-server/app/api/v1.GetFileList                          |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/removeChunk               | gf-server/app/api/v1.RemoveChunk                          |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/upload                    | gf-server/app/api/v1.UploadFile                           |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /jwt/jsonInBlacklist                            | gf-server/app/api/v1.JsonInBlacklist                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/addBaseMenu                               | gf-server/app/api/v1.AddBaseMenu                          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/addMenuAuthority                          | gf-server/app/api/v1.AddMenuAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/deleteBaseMenu                            | gf-server/app/api/v1.DeleteBaseMenu                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuById                           | gf-server/app/api/v1.GetBaseMenuTree                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuTree                           | gf-server/app/api/v1.GetBaseMenuTree                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenu                                   | gf-server/app/api/v1.GetMenu                              | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenuAuthority                          | gf-server/app/api/v1.GetMenuAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenuList                               | gf-server/app/api/v1.GetMenuList                          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/updateBaseMenu                            | gf-server/app/api/v1.UpdateBaseMenu                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /sysDictionary/createSysDictionary              | gf-server/app/api/v1.CreateSysDictionary                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /sysDictionary/deleteSysDictionary              | gf-server/app/api/v1.DeleteSysDictionary                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionary/findSysDictionary                | gf-server/app/api/v1.FindSysDictionary                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionary/getSysDictionaryList             | gf-server/app/api/v1.GetSysDictionaryList                 | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /sysDictionary/updateSysDictionary              | gf-server/app/api/v1.UpdateSysDictionary                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /sysDictionaryDetail/createSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /sysDictionaryDetail/deleteSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/findSysDictionaryDetail    | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/getSysDictionaryDetailList | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /sysDictionaryDetail/updateSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /system/getSystemConfig                         | gf-server/app/api/v1.GetSystemConfig                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /system/setSystemConfig                         | gf-server/app/api/v1.SetSystemConfig                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/changePassword                            | gf-server/app/api/v1.ChangePassword                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /user/deleteUser                                | gf-server/app/api/v1.DeleteUser                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/getUserList                               | gf-server/app/api/v1.GetUserList                          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/setUserAuthority                          | gf-server/app/api/v1.SetUserAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/uploadHeaderImg                           | gf-server/app/api/v1.UploadHeaderImg                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /workflow/createWorkFlow                        | gf-server/app/api/v1.CreateWorkFlow                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+
+2020-07-10 17:02:16.926 4019: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |                      ROUTE                      |                          HANDLER                          |     MIDDLEWARE      
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/createApi                                  | gf-server/app/api/v1.CreateApi                            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/deleteApi                                  | gf-server/app/api/v1.DeleteApi                            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getAllApis                                 | gf-server/app/api/v1.GetAllApis                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getApiById                                 | gf-server/app/api/v1.GetApiById                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getApiList                                 | gf-server/app/api/v1.GetApiList                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/updateApi                                  | gf-server/app/api/v1.UpdateApi                            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/copyAuthority                        | gf-server/app/api/v1.CopyAuthority                        | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/createAuthority                      | gf-server/app/api/v1.CreateAuthority                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/deleteAuthority                      | gf-server/app/api/v1.DeleteAuthority                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /authority/deleteAuthority                      | gf-server/app/api/v1.DeleteAuthority                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/getAuthorityList                     | gf-server/app/api/v1.GetAuthorityList                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/setDataAuthority                     | gf-server/app/api/v1.SetDataAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /autoCode/createTemp                            | gf-server/app/api/v1.CreateTemp                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/captcha                                   | gf-server/app/api/v1.Captcha                              |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/login                                     | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/register                                  | gf-server/app/api/v1.Register                             |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /casbin/casbinTest/:pathParam                   | gf-server/app/api/v1.CasbinTest                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /casbin/getPolicyPathByAuthorityId              | gf-server/app/api/v1.GetPolicyPathByAuthorityId           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /casbin/updateCasbin                            | gf-server/app/api/v1.UpdateCasbin                         | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /customer/customer                              | gf-server/app/api/v1.DeleteExaCustomer                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /customer/customer                              | gf-server/app/api/v1.GetExaCustomer                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /customer/customer                              | gf-server/app/api/v1.CreateExaCustomer                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /customer/customer                              | gf-server/app/api/v1.UpdateExaCustomer                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /customer/customerList                          | gf-server/app/api/v1.GetExaCustomerList                   | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinue        | gf-server/app/api/v1.BreakpointContinue                   |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinueFinish  | gf-server/app/api/v1.BreakpointContinueFinish             |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/deleteFile                | gf-server/app/api/v1.DeleteFile                           |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /fileUploadAdDownload/findFile                  | gf-server/app/api/v1.FindFile                             |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/getFileList               | gf-server/app/api/v1.GetFileList                          |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/removeChunk               | gf-server/app/api/v1.RemoveChunk                          |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/upload                    | gf-server/app/api/v1.UploadFile                           |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /jwt/jsonInBlacklist                            | gf-server/app/api/v1.JsonInBlacklist                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/addBaseMenu                               | gf-server/app/api/v1.AddBaseMenu                          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/addMenuAuthority                          | gf-server/app/api/v1.AddMenuAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/deleteBaseMenu                            | gf-server/app/api/v1.DeleteBaseMenu                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuById                           | gf-server/app/api/v1.GetBaseMenuTree                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuTree                           | gf-server/app/api/v1.GetBaseMenuTree                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenu                                   | gf-server/app/api/v1.GetMenu                              | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenuAuthority                          | gf-server/app/api/v1.GetMenuAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenuList                               | gf-server/app/api/v1.GetMenuList                          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/updateBaseMenu                            | gf-server/app/api/v1.UpdateBaseMenu                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /sysDictionary/createSysDictionary              | gf-server/app/api/v1.CreateSysDictionary                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /sysDictionary/deleteSysDictionary              | gf-server/app/api/v1.DeleteSysDictionary                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionary/findSysDictionary                | gf-server/app/api/v1.FindSysDictionary                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionary/getSysDictionaryList             | gf-server/app/api/v1.GetSysDictionaryList                 | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /sysDictionary/updateSysDictionary              | gf-server/app/api/v1.UpdateSysDictionary                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /sysDictionaryDetail/createSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /sysDictionaryDetail/deleteSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/findSysDictionaryDetail    | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/getSysDictionaryDetailList | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /sysDictionaryDetail/updateSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /system/getSystemConfig                         | gf-server/app/api/v1.GetSystemConfig                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /system/setSystemConfig                         | gf-server/app/api/v1.SetSystemConfig                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/changePassword                            | gf-server/app/api/v1.ChangePassword                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /user/deleteUser                                | gf-server/app/api/v1.DeleteUser                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/getUserList                               | gf-server/app/api/v1.GetUserList                          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/setUserAuthority                          | gf-server/app/api/v1.SetUserAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/uploadHeaderImg                           | gf-server/app/api/v1.UploadHeaderImg                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /workflow/createWorkFlow                        | gf-server/app/api/v1.CreateWorkFlow                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+
+2020-07-10 17:06:03.275 4622: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |                      ROUTE                      |                          HANDLER                          |     MIDDLEWARE      
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/createApi                                  | gf-server/app/api/v1.CreateApi                            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/deleteApi                                  | gf-server/app/api/v1.DeleteApi                            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getAllApis                                 | gf-server/app/api/v1.GetAllApis                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getApiById                                 | gf-server/app/api/v1.GetApiById                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getApiList                                 | gf-server/app/api/v1.GetApiList                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/updateApi                                  | gf-server/app/api/v1.UpdateApi                            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/copyAuthority                        | gf-server/app/api/v1.CopyAuthority                        | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/createAuthority                      | gf-server/app/api/v1.CreateAuthority                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/deleteAuthority                      | gf-server/app/api/v1.DeleteAuthority                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /authority/deleteAuthority                      | gf-server/app/api/v1.DeleteAuthority                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/getAuthorityList                     | gf-server/app/api/v1.GetAuthorityList                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/setDataAuthority                     | gf-server/app/api/v1.SetDataAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /autoCode/createTemp                            | gf-server/app/api/v1.CreateTemp                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/captcha                                   | gf-server/app/api/v1.Captcha                              |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/login                                     | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/register                                  | gf-server/app/api/v1.Register                             |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /casbin/casbinTest/:pathParam                   | gf-server/app/api/v1.CasbinTest                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /casbin/getPolicyPathByAuthorityId              | gf-server/app/api/v1.GetPolicyPathByAuthorityId           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /casbin/updateCasbin                            | gf-server/app/api/v1.UpdateCasbin                         | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /customer/customer                              | gf-server/app/api/v1.DeleteExaCustomer                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /customer/customer                              | gf-server/app/api/v1.GetExaCustomer                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /customer/customer                              | gf-server/app/api/v1.CreateExaCustomer                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /customer/customer                              | gf-server/app/api/v1.UpdateExaCustomer                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /customer/customerList                          | gf-server/app/api/v1.GetExaCustomerList                   | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinue        | gf-server/app/api/v1.BreakpointContinue                   |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinueFinish  | gf-server/app/api/v1.BreakpointContinueFinish             |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/deleteFile                | gf-server/app/api/v1.DeleteFile                           |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /fileUploadAdDownload/findFile                  | gf-server/app/api/v1.FindFile                             |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/getFileList               | gf-server/app/api/v1.GetFileList                          |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/removeChunk               | gf-server/app/api/v1.RemoveChunk                          |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/upload                    | gf-server/app/api/v1.UploadFile                           |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /jwt/jsonInBlacklist                            | gf-server/app/api/v1.JsonInBlacklist                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/addBaseMenu                               | gf-server/app/api/v1.AddBaseMenu                          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/addMenuAuthority                          | gf-server/app/api/v1.AddMenuAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/deleteBaseMenu                            | gf-server/app/api/v1.DeleteBaseMenu                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuById                           | gf-server/app/api/v1.GetBaseMenuTree                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuTree                           | gf-server/app/api/v1.GetBaseMenuTree                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenu                                   | gf-server/app/api/v1.GetMenu                              | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenuAuthority                          | gf-server/app/api/v1.GetMenuAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenuList                               | gf-server/app/api/v1.GetMenuList                          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/updateBaseMenu                            | gf-server/app/api/v1.UpdateBaseMenu                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /sysDictionary/createSysDictionary              | gf-server/app/api/v1.CreateSysDictionary                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /sysDictionary/deleteSysDictionary              | gf-server/app/api/v1.DeleteSysDictionary                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionary/findSysDictionary                | gf-server/app/api/v1.FindSysDictionary                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionary/getSysDictionaryList             | gf-server/app/api/v1.GetSysDictionaryList                 | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /sysDictionary/updateSysDictionary              | gf-server/app/api/v1.UpdateSysDictionary                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /sysDictionaryDetail/createSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /sysDictionaryDetail/deleteSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/findSysDictionaryDetail    | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/getSysDictionaryDetailList | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /sysDictionaryDetail/updateSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /system/getSystemConfig                         | gf-server/app/api/v1.GetSystemConfig                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /system/setSystemConfig                         | gf-server/app/api/v1.SetSystemConfig                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/changePassword                            | gf-server/app/api/v1.ChangePassword                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /user/deleteUser                                | gf-server/app/api/v1.DeleteUser                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/getUserList                               | gf-server/app/api/v1.GetUserList                          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/setUserAuthority                          | gf-server/app/api/v1.SetUserAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/uploadHeaderImg                           | gf-server/app/api/v1.UploadHeaderImg                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /workflow/createWorkFlow                        | gf-server/app/api/v1.CreateWorkFlow                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+
+2020-07-10 17:06:19.403 4647: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |                      ROUTE                      |                          HANDLER                          |     MIDDLEWARE      
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/createApi                                  | gf-server/app/api/v1.CreateApi                            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/deleteApi                                  | gf-server/app/api/v1.DeleteApi                            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getAllApis                                 | gf-server/app/api/v1.GetAllApis                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getApiById                                 | gf-server/app/api/v1.GetApiById                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getApiList                                 | gf-server/app/api/v1.GetApiList                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/updateApi                                  | gf-server/app/api/v1.UpdateApi                            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/copyAuthority                        | gf-server/app/api/v1.CopyAuthority                        | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/createAuthority                      | gf-server/app/api/v1.CreateAuthority                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/deleteAuthority                      | gf-server/app/api/v1.DeleteAuthority                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /authority/deleteAuthority                      | gf-server/app/api/v1.DeleteAuthority                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/getAuthorityList                     | gf-server/app/api/v1.GetAuthorityList                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/setDataAuthority                     | gf-server/app/api/v1.SetDataAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /autoCode/createTemp                            | gf-server/app/api/v1.CreateTemp                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/captcha                                   | gf-server/app/api/v1.Captcha                              |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/login                                     | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/register                                  | gf-server/app/api/v1.Register                             |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /casbin/casbinTest/:pathParam                   | gf-server/app/api/v1.CasbinTest                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /casbin/getPolicyPathByAuthorityId              | gf-server/app/api/v1.GetPolicyPathByAuthorityId           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /casbin/updateCasbin                            | gf-server/app/api/v1.UpdateCasbin                         | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /customer/customer                              | gf-server/app/api/v1.DeleteExaCustomer                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /customer/customer                              | gf-server/app/api/v1.GetExaCustomer                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /customer/customer                              | gf-server/app/api/v1.CreateExaCustomer                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /customer/customer                              | gf-server/app/api/v1.UpdateExaCustomer                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /customer/customerList                          | gf-server/app/api/v1.GetExaCustomerList                   | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinue        | gf-server/app/api/v1.BreakpointContinue                   |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinueFinish  | gf-server/app/api/v1.BreakpointContinueFinish             |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/deleteFile                | gf-server/app/api/v1.DeleteFile                           |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /fileUploadAdDownload/findFile                  | gf-server/app/api/v1.FindFile                             |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/getFileList               | gf-server/app/api/v1.GetFileList                          |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/removeChunk               | gf-server/app/api/v1.RemoveChunk                          |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/upload                    | gf-server/app/api/v1.UploadFile                           |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /jwt/jsonInBlacklist                            | gf-server/app/api/v1.JsonInBlacklist                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/addBaseMenu                               | gf-server/app/api/v1.AddBaseMenu                          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/addMenuAuthority                          | gf-server/app/api/v1.AddMenuAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/deleteBaseMenu                            | gf-server/app/api/v1.DeleteBaseMenu                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuById                           | gf-server/app/api/v1.GetBaseMenuTree                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuTree                           | gf-server/app/api/v1.GetBaseMenuTree                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenu                                   | gf-server/app/api/v1.GetMenu                              | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenuAuthority                          | gf-server/app/api/v1.GetMenuAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenuList                               | gf-server/app/api/v1.GetMenuList                          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/updateBaseMenu                            | gf-server/app/api/v1.UpdateBaseMenu                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /sysDictionary/createSysDictionary              | gf-server/app/api/v1.CreateSysDictionary                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /sysDictionary/deleteSysDictionary              | gf-server/app/api/v1.DeleteSysDictionary                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionary/findSysDictionary                | gf-server/app/api/v1.FindSysDictionary                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionary/getSysDictionaryList             | gf-server/app/api/v1.GetSysDictionaryList                 | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /sysDictionary/updateSysDictionary              | gf-server/app/api/v1.UpdateSysDictionary                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /sysDictionaryDetail/createSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /sysDictionaryDetail/deleteSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/findSysDictionaryDetail    | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/getSysDictionaryDetailList | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /sysDictionaryDetail/updateSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail            |                     
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /system/getSystemConfig                         | gf-server/app/api/v1.GetSystemConfig                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /system/setSystemConfig                         | gf-server/app/api/v1.SetSystemConfig                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/changePassword                            | gf-server/app/api/v1.ChangePassword                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /user/deleteUser                                | gf-server/app/api/v1.DeleteUser                           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/getUserList                               | gf-server/app/api/v1.GetUserList                          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/setUserAuthority                          | gf-server/app/api/v1.SetUserAuthority                     | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/uploadHeaderImg                           | gf-server/app/api/v1.UploadHeaderImg                      | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /workflow/createWorkFlow                        | gf-server/app/api/v1.CreateWorkFlow                       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-----------------------------------------------------------|--------------------|
+
+2020-07-10 17:09:05.940 4743: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 17:54:05.150 5396: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 18:15:59.030 5683: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 18:20:41.623 5759: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 18:21:45.277 5812: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:12:52.402 6473: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:24:30.738 6678: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:25:54.893 6723: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:30:54.949 6806: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:31:36.116 6990: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:32:51.815 7033: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:33:49.544 7085: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:35:24.126 7140: http server started listening on [:7777]
+2020-07-10 19:35:27.445 7161: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:36:05.583 7197: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:40:04.906 7291: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:50:15.536 7478: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:50:59.594 7512: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:51:56.959 7690: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:53:22.298 7736: http server started listening on [:7777]
+2020-07-10 19:53:22.423 [ghttp] 7736: all servers shutdown
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:53:24.763 7786: http server started listening on [:7777]
+2020-07-10 19:54:15.694 7826: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 19:59:22.977 8033: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 20:00:12.164 8068: http server started listening on [:7777]
+2020-07-10 20:02:21.049 [ghttp] 8068: all servers shutdown
+2020-07-10 20:02:55.179 8149: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 20:03:45.512 8190: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 20:05:02.832 8249: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 20:06:19.018 8290: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 20:42:23.346 8709: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 20:48:17.704 8785: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 20:51:27.922 8851: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 20:56:13.074 8923: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 21:05:42.645 9293: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 21:10:10.309 9377: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+
+2020-07-10 21:11:28.331 9422: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |     ROUTE      |                          HANDLER                          | MIDDLEWARE  
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha  | gf-server/app/api/v1.Captcha                              |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login    | github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler-fm |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+  default | default | :7777   | POST   | /base/register | gf-server/app/api/v1.Register                             |             
+|---------|---------|---------|--------|----------------|-----------------------------------------------------------|------------|
+

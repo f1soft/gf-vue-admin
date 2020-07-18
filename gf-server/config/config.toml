@@ -1,0 +1,76 @@
+# HTTP Server
+[server]
+    Address          = ":7777"
+    ServerRoot       = ""
+    ServerAgent      = ""
+    IndexFiles       = []
+    AccessLogEnabled = true
+    ErrorLogEnabled  = true
+    PProfEnabled     = false
+    LogPath          = "./logs/server"
+    SessionIdName    = ""
+    SessionPath      = ""
+    SessionMaxAge    = ""
+    DumpRouterMap    = true
+
+# system configuration
+[system]
+    UseMultipoint = true
+    Env = "public" # Change to "develop" to skip authentication for development mode
+
+# 请自行七牛申请对应的 公钥 私钥 bucket 和 域名地址
+[qiniu]
+    AccessKey   = "25j8dYB****************guwxzZ"
+    SecretKey   = "pgdbqE****************VecFXPDeG5JY"
+    Bucket      = "*******"
+    ImgPath     = "*******"
+
+# captcha configuration
+[captcha]
+    KeyLong     = 6
+    ImgWidth    = 240
+    ImgHeight   = 80
+
+# casbin configuration
+[casbin]
+    ModelPath =  "./public/resource/rbac_model.conf"
+
+# jwt configuration
+[jwt]
+    SigningKey  = "SliverHorn"
+
+# Logger
+[logger]
+    Path        = "./logs/log"
+    Level       = "all"
+    Stdout      = true
+
+# MySQL 配置
+[database]
+    # 默认启动Mysql配置
+    [database.default]
+    Link  = "mysql:root:gdkid,,..@tcp(127.0.0.1:3306)/gf-vue-admin"
+    Debug = true
+
+    # 开发环境Mysql配置
+    [database.development]
+    Link  = "mysql:root:gdkid,,..@tcp(127.0.0.1:3306)/gf-vue-admin"
+    Debug = true
+
+    # 生产环境Mysql配置
+    [database.produce]
+    Link  = "mysql:root:gdkid,,..@tcp(127.0.0.1:3306)/gf-vue-admin"
+    Debug = true
+
+    # Database logger.
+    [database.logger]
+        Path   = "./logs/sql"
+        Level  = "all"
+        Stdout = true
+
+# Redis 配置
+[redis]
+    # host:port[,db,pass?maxIdle=x&maxActive=x&idleTimeout=x&maxConnLifetime=x]
+    default = "127.0.0.1:6379,1,?idleTimeout=600"
+    cache   = "127.0.0.1:6379,1,?idleTimeout=600"
+    Login_Prefix = "gf-server:login:uid_"

@@ -1,0 +1,1234 @@
+2020-07-06 11:52:49.678 8839: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |                      ROUTE                      |               HANDLER                | MIDDLEWARE  
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/createApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/deleteApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getAllApis                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiById                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiList                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/updateApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/copyAuthority                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/createAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/deleteAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/getAuthorityList                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/setDataAuthority                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /authority/updateAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /autoCode/createTemp                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha                                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login                                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/register                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /casbin/casbinTest/:pathParam                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/getPolicyPathByAuthorityId              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/updateCasbin                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customerList                          | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinue        | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinueFinish  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/deleteFile                | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /fileUploadAdDownload/findFile                  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/getFileList               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/removeChunk               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/upload                    | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /jwt/jsonInBlacklist                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addBaseMenu                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/deleteBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuById                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuTree                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenu                                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/updateBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionary/createSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionary/deleteSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/findSysDictionary                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/getSysDictionaryList             | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionary/updateSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionaryDetail/createSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionaryDetail/deleteSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/findSysDictionaryDetail    | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/getSysDictionaryDetailList | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionaryDetail/updateSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/getSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/setSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/changePassword                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /user/deleteUser                                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/getUserList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/setUserAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/uploadHeaderImg                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /workflow/createWorkFlow                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+
+2020-07-06 11:53:19.002 [ghttp] 8839: all servers shutdown
+2020-07-06 11:53:20.330 8881: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |                      ROUTE                      |               HANDLER                | MIDDLEWARE  
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/createApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/deleteApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getAllApis                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiById                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiList                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/updateApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/copyAuthority                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/createAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/deleteAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/getAuthorityList                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/setDataAuthority                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /authority/updateAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /autoCode/createTemp                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha                                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login                                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/register                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /casbin/casbinTest/:pathParam                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/getPolicyPathByAuthorityId              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/updateCasbin                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customerList                          | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinue        | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinueFinish  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/deleteFile                | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /fileUploadAdDownload/findFile                  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/getFileList               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/removeChunk               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/upload                    | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /jwt/jsonInBlacklist                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addBaseMenu                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/deleteBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuById                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuTree                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenu                                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/updateBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionary/createSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionary/deleteSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/findSysDictionary                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/getSysDictionaryList             | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionary/updateSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionaryDetail/createSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionaryDetail/deleteSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/findSysDictionaryDetail    | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/getSysDictionaryDetailList | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionaryDetail/updateSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/getSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/setSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/changePassword                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /user/deleteUser                                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/getUserList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/setUserAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/uploadHeaderImg                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /workflow/createWorkFlow                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+
+2020-07-06 11:54:14.530 [ghttp] 8881: all servers shutdown
+2020-07-06 11:54:15.909 8944: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |                      ROUTE                      |               HANDLER                | MIDDLEWARE  
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/createApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/deleteApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getAllApis                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiById                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiList                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/updateApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/copyAuthority                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/createAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/deleteAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/getAuthorityList                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/setDataAuthority                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /authority/updateAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /autoCode/createTemp                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha                                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login                                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/register                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /casbin/casbinTest/:pathParam                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/getPolicyPathByAuthorityId              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/updateCasbin                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customerList                          | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinue        | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinueFinish  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/deleteFile                | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /fileUploadAdDownload/findFile                  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/getFileList               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/removeChunk               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/upload                    | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /jwt/jsonInBlacklist                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addBaseMenu                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/deleteBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuById                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuTree                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenu                                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/updateBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionary/createSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionary/deleteSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/findSysDictionary                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/getSysDictionaryList             | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionary/updateSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionaryDetail/createSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionaryDetail/deleteSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/findSysDictionaryDetail    | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/getSysDictionaryDetailList | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionaryDetail/updateSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/getSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/setSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/changePassword                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /user/deleteUser                                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/getUserList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/setUserAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/uploadHeaderImg                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /workflow/createWorkFlow                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+
+2020-07-06 13:24:55.635 [ghttp] 8944: all servers shutdown
+2020-07-06 13:25:36.110 12634: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |                      ROUTE                      |               HANDLER                | MIDDLEWARE  
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/createApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/deleteApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getAllApis                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiById                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiList                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/updateApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/copyAuthority                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/createAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/deleteAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/getAuthorityList                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/setDataAuthority                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /authority/updateAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /autoCode/createTemp                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha                                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login                                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/register                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /casbin/casbinTest/:pathParam                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/getPolicyPathByAuthorityId              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/updateCasbin                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customerList                          | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinue        | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinueFinish  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/deleteFile                | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /fileUploadAdDownload/findFile                  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/getFileList               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/removeChunk               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/upload                    | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /jwt/jsonInBlacklist                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addBaseMenu                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/deleteBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuById                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuTree                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenu                                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/updateBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionary/createSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionary/deleteSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/findSysDictionary                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/getSysDictionaryList             | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionary/updateSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionaryDetail/createSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionaryDetail/deleteSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/findSysDictionaryDetail    | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/getSysDictionaryDetailList | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionaryDetail/updateSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/getSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/setSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/changePassword                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /user/deleteUser                                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/getUserList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/setUserAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/uploadHeaderImg                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /workflow/createWorkFlow                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+
+2020-07-06 13:25:42.322 [ghttp] 12634: all servers shutdown
+2020-07-06 13:25:55.475 12669: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |                      ROUTE                      |               HANDLER                | MIDDLEWARE  
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/createApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/deleteApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getAllApis                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiById                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiList                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/updateApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/copyAuthority                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/createAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/deleteAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/getAuthorityList                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/setDataAuthority                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /authority/updateAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /autoCode/createTemp                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha                                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login                                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/register                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /casbin/casbinTest/:pathParam                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/getPolicyPathByAuthorityId              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/updateCasbin                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customerList                          | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinue        | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinueFinish  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/deleteFile                | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /fileUploadAdDownload/findFile                  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/getFileList               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/removeChunk               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/upload                    | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /jwt/jsonInBlacklist                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addBaseMenu                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/deleteBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuById                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuTree                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenu                                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/updateBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionary/createSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionary/deleteSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/findSysDictionary                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/getSysDictionaryList             | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionary/updateSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionaryDetail/createSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionaryDetail/deleteSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/findSysDictionaryDetail    | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/getSysDictionaryDetailList | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionaryDetail/updateSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/getSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/setSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/changePassword                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /user/deleteUser                                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/getUserList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/setUserAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/uploadHeaderImg                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /workflow/createWorkFlow                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+
+2020-07-06 14:10:40.856 14837: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |                      ROUTE                      |               HANDLER                | MIDDLEWARE  
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/createApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/deleteApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getAllApis                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiById                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiList                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/updateApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/copyAuthority                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/createAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/deleteAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/getAuthorityList                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/setDataAuthority                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /authority/updateAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /autoCode/createTemp                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha                                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login                                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/register                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /casbin/casbinTest/:pathParam                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/getPolicyPathByAuthorityId              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/updateCasbin                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customerList                          | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinue        | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinueFinish  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/deleteFile                | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /fileUploadAdDownload/findFile                  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/getFileList               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/removeChunk               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/upload                    | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /jwt/jsonInBlacklist                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addBaseMenu                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/deleteBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuById                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuTree                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenu                                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/updateBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionary/createSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionary/deleteSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/findSysDictionary                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/getSysDictionaryList             | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionary/updateSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionaryDetail/createSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionaryDetail/deleteSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/findSysDictionaryDetail    | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/getSysDictionaryDetailList | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionaryDetail/updateSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/getSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/setSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/changePassword                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /user/deleteUser                                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/getUserList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/setUserAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/uploadHeaderImg                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /workflow/createWorkFlow                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+
+2020-07-06 15:31:33.384 18766: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |                      ROUTE                      |               HANDLER                | MIDDLEWARE  
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/createApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/deleteApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getAllApis                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiById                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiList                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/updateApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/copyAuthority                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/createAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/deleteAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/getAuthorityList                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/setDataAuthority                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /authority/updateAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /autoCode/createTemp                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha                                   | gf-server/app/api/system.Captcha     |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login                                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/register                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /casbin/casbinTest/:pathParam                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/getPolicyPathByAuthorityId              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/updateCasbin                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customerList                          | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinue        | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinueFinish  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/deleteFile                | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /fileUploadAdDownload/findFile                  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/getFileList               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/removeChunk               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/upload                    | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /jwt/jsonInBlacklist                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addBaseMenu                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/deleteBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuById                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuTree                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenu                                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/updateBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionary/createSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionary/deleteSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/findSysDictionary                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/getSysDictionaryList             | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionary/updateSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionaryDetail/createSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionaryDetail/deleteSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/findSysDictionaryDetail    | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/getSysDictionaryDetailList | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionaryDetail/updateSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/getSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/setSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/changePassword                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /user/deleteUser                                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/getUserList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/setUserAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/uploadHeaderImg                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /workflow/createWorkFlow                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+
+2020-07-06 15:44:28.565 19339: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |                      ROUTE                      |               HANDLER                | MIDDLEWARE  
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/createApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/deleteApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getAllApis                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiById                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/getApiList                                 | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /api/updateApi                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/copyAuthority                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/createAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/deleteAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/getAuthorityList                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /authority/setDataAuthority                     | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /authority/updateAuthority                      | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /autoCode/createTemp                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/captcha                                   | gf-server/app/api/system.Captcha     |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/login                                     | gf-server/app/api/system.UserLogin   |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /base/register                                  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /casbin/casbinTest/:pathParam                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/getPolicyPathByAuthorityId              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /casbin/updateCasbin                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /customer/customer                              | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /customer/customerList                          | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinue        | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinueFinish  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/deleteFile                | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /fileUploadAdDownload/findFile                  | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/getFileList               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/removeChunk               | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/upload                    | gf-server/router/extend.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /jwt/jsonInBlacklist                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addBaseMenu                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/addMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/deleteBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuById                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuTree                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenu                                   | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/getMenuList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /menu/updateBaseMenu                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionary/createSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionary/deleteSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/findSysDictionary                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionary/getSysDictionaryList             | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionary/updateSysDictionary              | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /sysDictionaryDetail/createSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /sysDictionaryDetail/deleteSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/findSysDictionaryDetail    | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/getSysDictionaryDetailList | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | PUT    | /sysDictionaryDetail/updateSysDictionaryDetail  | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/getSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /system/setSystemConfig                         | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/changePassword                            | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | DELETE | /user/deleteUser                                | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/getUserList                               | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/setUserAuthority                          | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /user/uploadHeaderImg                           | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+  default | default | :7777   | POST   | /workflow/createWorkFlow                        | gf-server/router/system.EmptyRequest |             
+|---------|---------|---------|--------|-------------------------------------------------|--------------------------------------|------------|
+
+2020-07-06 16:47:05.596 22273: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |                      ROUTE                      |                     HANDLER                     |        MIDDLEWARE          
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /api/createApi                                  | gf-server/app/api/v1.CreateApi                  | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /api/deleteApi                                  | gf-server/app/api/v1.DeleteApi                  | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /api/getAllApis                                 | gf-server/app/api/v1.GetAllApis                 | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /api/getApiById                                 | gf-server/app/api/v1.GetApiById                 | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /api/getApiList                                 | gf-server/app/api/v1.GetApiList                 | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /api/updateApi                                  | gf-server/app/api/v1.UpdateApi                  | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /authority/copyAuthority                        | gf-server/app/api/v1.CopyAuthority              | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /authority/createAuthority                      | gf-server/app/api/v1.CreateAuthority            | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /authority/deleteAuthority                      | gf-server/app/api/v1.DeleteAuthority            | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | PUT    | /authority/deleteAuthority                      | gf-server/app/api/v1.DeleteAuthority            | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /authority/getAuthorityList                     | gf-server/app/api/v1.GetAuthorityList           | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /authority/setDataAuthority                     | gf-server/app/api/v1.SetDataAuthority           | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /autoCode/createTemp                            | gf-server/app/api/v1.CreateTemp                 | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | GET    | /base/captcha                                   | gf-server/app/api/v1.Captcha                    |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | GET    | /base/login                                     | gf-server/app/api/v1.Login                      |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | GET    | /base/register                                  | gf-server/app/api/v1.Register                   |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | GET    | /casbin/casbinTest/:pathParam                   | gf-server/app/api/v1.CasbinTest                 | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /casbin/getPolicyPathByAuthorityId              | gf-server/app/api/v1.GetPolicyPathByAuthorityId | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /casbin/updateCasbin                            | gf-server/app/api/v1.UpdateCasbin               | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | DELETE | /customer/customer                              | gf-server/app/api/v1.DeleteExaCustomer          |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | GET    | /customer/customer                              | gf-server/app/api/v1.GetExaCustomer             |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /customer/customer                              | gf-server/app/api/v1.CreateExaCustomer          |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | PUT    | /customer/customer                              | gf-server/app/api/v1.UpdateExaCustomer          |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | GET    | /customer/customerList                          | gf-server/app/api/v1.GetExaCustomerList         |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinue        | gf-server/app/api/v1.BreakpointContinue         |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinueFinish  | gf-server/app/api/v1.BreakpointContinueFinish   |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/deleteFile                | gf-server/app/api/v1.DeleteFile                 |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | GET    | /fileUploadAdDownload/findFile                  | gf-server/app/api/v1.FindFile                   |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/getFileList               | gf-server/app/api/v1.GetFileList                |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/removeChunk               | gf-server/app/api/v1.RemoveChunk                |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/upload                    | gf-server/app/api/v1.UploadFile                 |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /jwt/jsonInBlacklist                            | gf-server/app/api/v1.JsonInBlacklist            | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /menu/addBaseMenu                               | gf-server/app/api/v1.AddBaseMenu                | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /menu/addMenuAuthority                          | gf-server/app/api/v1.AddMenuAuthority           | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /menu/deleteBaseMenu                            | gf-server/app/api/v1.DeleteBaseMenu             | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuById                           | gf-server/app/api/v1.GetBaseMenuTree            | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuTree                           | gf-server/app/api/v1.GetBaseMenuTree            | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /menu/getMenu                                   | gf-server/app/api/v1.GetMenu                    | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /menu/getMenuAuthority                          | gf-server/app/api/v1.GetMenuAuthority           | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /menu/getMenuList                               | gf-server/app/api/v1.GetMenuList                | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /menu/updateBaseMenu                            | gf-server/app/api/v1.UpdateBaseMenu             | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /sysDictionary/createSysDictionary              | gf-server/app/api/v1.CreateSysDictionary        | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | DELETE | /sysDictionary/deleteSysDictionary              | gf-server/app/api/v1.DeleteSysDictionary        | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | GET    | /sysDictionary/findSysDictionary                | gf-server/app/api/v1.FindSysDictionary          | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | GET    | /sysDictionary/getSysDictionaryList             | gf-server/app/api/v1.GetSysDictionaryList       | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | PUT    | /sysDictionary/updateSysDictionary              | gf-server/app/api/v1.UpdateSysDictionary        | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /sysDictionaryDetail/createSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail  |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | DELETE | /sysDictionaryDetail/deleteSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail  |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/findSysDictionaryDetail    | gf-server/app/api/v1.CreateSysDictionaryDetail  |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/getSysDictionaryDetailList | gf-server/app/api/v1.CreateSysDictionaryDetail  |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | PUT    | /sysDictionaryDetail/updateSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail  |                            
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /system/getSystemConfig                         | gf-server/app/api/v1.GetSystemConfig            | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /system/setSystemConfig                         | gf-server/app/api/v1.SetSystemConfig            | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /user/changePassword                            | gf-server/app/api/v1.ChangePassword             | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | DELETE | /user/deleteUser                                | gf-server/app/api/v1.DeleteUser                 | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /user/getUserList                               | gf-server/app/api/v1.GetUserList                | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /user/setUserAuthority                          | gf-server/app/api/v1.SetUserAuthority           | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /user/uploadHeaderImg                           | gf-server/app/api/v1.UploadHeaderImg            | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+  default | default | :7777   | POST   | /workflow/createWorkFlow                        | gf-server/app/api/v1.CreateWorkFlow             | middleware.MiddlewareAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|---------------------------|
+
+2020-07-06 20:32:29.034 3007: http server started listening on [:7777]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |                      ROUTE                      |                     HANDLER                     |     MIDDLEWARE      
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/createApi                                  | gf-server/app/api/v1.CreateApi                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/deleteApi                                  | gf-server/app/api/v1.DeleteApi                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getAllApis                                 | gf-server/app/api/v1.GetAllApis                 | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getApiById                                 | gf-server/app/api/v1.GetApiById                 | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/getApiList                                 | gf-server/app/api/v1.GetApiList                 | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /api/updateApi                                  | gf-server/app/api/v1.UpdateApi                  | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/copyAuthority                        | gf-server/app/api/v1.CopyAuthority              | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/createAuthority                      | gf-server/app/api/v1.CreateAuthority            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/deleteAuthority                      | gf-server/app/api/v1.DeleteAuthority            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /authority/deleteAuthority                      | gf-server/app/api/v1.DeleteAuthority            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/getAuthorityList                     | gf-server/app/api/v1.GetAuthorityList           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /authority/setDataAuthority                     | gf-server/app/api/v1.SetDataAuthority           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /autoCode/createTemp                            | gf-server/app/api/v1.CreateTemp                 | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/captcha                                   | gf-server/app/api/v1.Captcha                    |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/login                                     | gf-server/app/api/v1.Login                      |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /base/register                                  | gf-server/app/api/v1.Register                   |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /casbin/casbinTest/:pathParam                   | gf-server/app/api/v1.CasbinTest                 | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /casbin/getPolicyPathByAuthorityId              | gf-server/app/api/v1.GetPolicyPathByAuthorityId | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /casbin/updateCasbin                            | gf-server/app/api/v1.UpdateCasbin               | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /customer/customer                              | gf-server/app/api/v1.DeleteExaCustomer          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /customer/customer                              | gf-server/app/api/v1.GetExaCustomer             | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /customer/customer                              | gf-server/app/api/v1.CreateExaCustomer          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /customer/customer                              | gf-server/app/api/v1.UpdateExaCustomer          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /customer/customerList                          | gf-server/app/api/v1.GetExaCustomerList         | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinue        | gf-server/app/api/v1.BreakpointContinue         |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/breakpointContinueFinish  | gf-server/app/api/v1.BreakpointContinueFinish   |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/deleteFile                | gf-server/app/api/v1.DeleteFile                 |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /fileUploadAdDownload/findFile                  | gf-server/app/api/v1.FindFile                   |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/getFileList               | gf-server/app/api/v1.GetFileList                |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/removeChunk               | gf-server/app/api/v1.RemoveChunk                |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /fileUploadAdDownload/upload                    | gf-server/app/api/v1.UploadFile                 |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /jwt/jsonInBlacklist                            | gf-server/app/api/v1.JsonInBlacklist            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/addBaseMenu                               | gf-server/app/api/v1.AddBaseMenu                | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/addMenuAuthority                          | gf-server/app/api/v1.AddMenuAuthority           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/deleteBaseMenu                            | gf-server/app/api/v1.DeleteBaseMenu             | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuById                           | gf-server/app/api/v1.GetBaseMenuTree            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getBaseMenuTree                           | gf-server/app/api/v1.GetBaseMenuTree            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenu                                   | gf-server/app/api/v1.GetMenu                    | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenuAuthority                          | gf-server/app/api/v1.GetMenuAuthority           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/getMenuList                               | gf-server/app/api/v1.GetMenuList                | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /menu/updateBaseMenu                            | gf-server/app/api/v1.UpdateBaseMenu             | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /sysDictionary/createSysDictionary              | gf-server/app/api/v1.CreateSysDictionary        | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /sysDictionary/deleteSysDictionary              | gf-server/app/api/v1.DeleteSysDictionary        | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionary/findSysDictionary                | gf-server/app/api/v1.FindSysDictionary          | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionary/getSysDictionaryList             | gf-server/app/api/v1.GetSysDictionaryList       | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /sysDictionary/updateSysDictionary              | gf-server/app/api/v1.UpdateSysDictionary        | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /sysDictionaryDetail/createSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail  |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /sysDictionaryDetail/deleteSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail  |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/findSysDictionaryDetail    | gf-server/app/api/v1.CreateSysDictionaryDetail  |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | GET    | /sysDictionaryDetail/getSysDictionaryDetailList | gf-server/app/api/v1.CreateSysDictionaryDetail  |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | PUT    | /sysDictionaryDetail/updateSysDictionaryDetail  | gf-server/app/api/v1.CreateSysDictionaryDetail  |                     
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /system/getSystemConfig                         | gf-server/app/api/v1.GetSystemConfig            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /system/setSystemConfig                         | gf-server/app/api/v1.SetSystemConfig            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/changePassword                            | gf-server/app/api/v1.ChangePassword             | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | DELETE | /user/deleteUser                                | gf-server/app/api/v1.DeleteUser                 | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/getUserList                               | gf-server/app/api/v1.GetUserList                | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/setUserAuthority                          | gf-server/app/api/v1.SetUserAuthority           | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /user/uploadHeaderImg                           | gf-server/app/api/v1.UploadHeaderImg            | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+  default | default | :7777   | POST   | /workflow/createWorkFlow                        | gf-server/app/api/v1.CreateWorkFlow             | middleware.JwtAuth  
+|---------|---------|---------|--------|-------------------------------------------------|-------------------------------------------------|--------------------|
+

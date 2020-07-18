@@ -1,0 +1,5 @@
+2020-07-06 11:54:28.145 200 "GET http 127.0.0.1:7777 /customer/customerList HTTP/1.1" 0.001, 127.0.0.1, "", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+2020-07-06 13:38:14.560 200 "GET http 127.0.0.1:7777 /customer/customerList HTTP/1.1" 0.001, 127.0.0.1, "", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+2020-07-06 15:31:55.370 200 "GET http 127.0.0.1:7777 /base/captcha HTTP/1.1" 0.007, 127.0.0.1, "", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+2020-07-06 20:33:08.944 200 "GET http 127.0.0.1:7777 /base/captcha HTTP/1.1" 0.003, 127.0.0.1, "", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+2020-07-06 20:33:09.167 404 "GET http 127.0.0.1:7777 /favicon.ico HTTP/1.1" 0.000, 127.0.0.1, "http://127.0.0.1:7777/base/captcha", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"

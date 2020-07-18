@@ -1,0 +1,20 @@
+package system
+
+import (
+	v1 "gf-server/app/api/v1"
+	"gf-server/app/middleware"
+	"gf-server/library/global"
+)
+
+// InitDictionaryDetailRouter 注册字典详情管理
+func InitDictionaryRouter() {
+	// TODO 缺少CasbinHandler中间件
+	DictionaryRouter := global.GFVA_SERVER.Group("Dictionary").Middleware(middleware.JwtAuth)
+	{
+		DictionaryRouter.POST("createDictionary", v1.CreateDictionary)   // 新建Dictionary
+		DictionaryRouter.DELETE("deleteDictionary", v1.DeleteDictionary) // 删除Dictionary
+		DictionaryRouter.PUT("updateDictionary", v1.UpdateDictionary)    // 更新Dictionary
+		DictionaryRouter.GET("findDictionary", v1.FindDictionary)        // 根据ID获取Dictionary
+		DictionaryRouter.GET("getDictionaryList", v1.GetDictionaryList)  // 获取Dictionary列表
+	}
+}
