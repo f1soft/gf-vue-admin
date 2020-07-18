@@ -1,6 +1,13 @@
 package v1
 
-import "github.com/gogf/gf/net/ghttp"
+import (
+	"fmt"
+	"gf-server/app/api/request"
+	"gf-server/app/service"
+	"gf-server/library/global"
+
+	"github.com/gogf/gf/net/ghttp"
+)
 
 // @Tags DictionaryDetail
 // @Summary 创建DictionaryDetail
@@ -11,6 +18,15 @@ import "github.com/gogf/gf/net/ghttp"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /DictionaryDetail/createDictionaryDetail [post]
 func CreateDictionaryDetail(r *ghttp.Request) {
+	var createInfo request.CreateDictionaryDetail
+	if err := r.Parse(&createInfo); err != nil {
+		global.FailWithMessage(r, err.Error())
+	}
+	if err := service.CreateDictionaryDetail(&createInfo); err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("创建失败，err:%v", err))
+		r.Exit()
+	}
+	global.OkWithMessage(r, "创建成功")
 }
 
 // @Tags DictionaryDetail
@@ -22,6 +38,7 @@ func CreateDictionaryDetail(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"删除成功"}"
 // @Router /DictionaryDetail/deleteDictionaryDetail [delete]
 func DeleteDictionaryDetail(r *ghttp.Request) {
+
 }
 
 // @Tags DictionaryDetail
