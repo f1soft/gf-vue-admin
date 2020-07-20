@@ -4,8 +4,7 @@ import (
 	"github.com/gogf/gf/net/ghttp"
 )
 
-
-// @Tags SysUser
+// @Tags Admins
 // @Summary 用户修改密码
 // @Security ApiKeyAuth
 // @Produce  application/json
@@ -13,9 +12,10 @@ import (
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"修改成功"}"
 // @Router /user/changePassword [put]
 func ChangePassword(r *ghttp.Request) {
+
 }
 
-// @Tags SysUser
+// @Tags Admins
 // @Summary 用户上传头像
 // @Security ApiKeyAuth
 // @accept multipart/form-data
@@ -27,7 +27,7 @@ func ChangePassword(r *ghttp.Request) {
 func UploadHeaderImg(r *ghttp.Request) {
 }
 
-// @Tags SysUser
+// @Tags Admins
 // @Summary 分页获取用户列表
 // @Security ApiKeyAuth
 // @accept application/json
@@ -38,7 +38,7 @@ func UploadHeaderImg(r *ghttp.Request) {
 func GetUserList(r *ghttp.Request) {
 }
 
-// @Tags SysUser
+// @Tags Admins
 // @Summary 设置用户权限
 // @Security ApiKeyAuth
 // @accept application/json
@@ -49,7 +49,7 @@ func GetUserList(r *ghttp.Request) {
 func SetUserAuthority(r *ghttp.Request) {
 }
 
-// @Tags SysUser
+// @Tags Admins
 // @Summary 删除用户
 // @Security ApiKeyAuth
 // @accept application/json
