@@ -9,3 +9,7 @@ type LoginResponse struct {
 	Token     string         `json:"token"`
 	ExpiresAt int64          `json:"expiresAt"`
 }
+
+type AdminResponse struct {
+	User *admins.Entity `json:"user"`
+}

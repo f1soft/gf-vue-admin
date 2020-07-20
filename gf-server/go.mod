@@ -9,6 +9,7 @@ require (
 	github.com/mojocn/base64Captcha v1.3.1
 	github.com/satori/go.uuid v1.2.0
 	golang.org/x/crypto v0.0.0-20190605123033-f99c8df09eb5
+	github.com/qiniu/api.v7/v7 v7.4.1
 )
 
 go 1.11
