@@ -24,3 +24,9 @@ gf-vue-admin
 
 ## 注意问题
 - Mysql的tinyint(1) 使用gf gen model 生成model文件夹里面的Entity.go文件中的字段类型是int而不是bool
+
+
+## 需要讲解的问题
+- request包与response包为什么不用model_entity的Entity进行嵌套
+    - 不想破坏model_entity的完整性,model包是gf gen model进行生成
+    - 需要加p与v的Tag
