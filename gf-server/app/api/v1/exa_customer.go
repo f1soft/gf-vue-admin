@@ -4,51 +4,52 @@ import (
 	"github.com/gogf/gf/net/ghttp"
 )
 
-// @Tags SysApi
+// @Tags Customer
 // @Summary 创建客户
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body model.ExaCustomer true "创建客户"
+// @Param data body model.Customer true "创建客户"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /customer/customer [post]
-func CreateExaCustomer(r *ghttp.Request) {
+func CreateCustomer(r *ghttp.Request) {
+
 }
 
-// @Tags SysApi
+// @Tags Customer
 // @Summary 删除客户
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body model.ExaCustomer true "删除客户"
+// @Param data body model.Customer true "删除客户"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /customer/customer [delete]
-func DeleteExaCustomer(r *ghttp.Request) {
+func DeleteCustomer(r *ghttp.Request) {
 }
 
-// @Tags SysApi
+// @Tags Customer
 // @Summary 更新客户信息
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body model.ExaCustomer true "创建客户"
+// @Param data body model.Customer true "创建客户"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /customer/customer [put]
-func UpdateExaCustomer(r *ghttp.Request) {
+func UpdateCustomer(r *ghttp.Request) {
 }
 
-// @Tags SysApi
+// @Tags Customer
 // @Summary 获取单一客户信息
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body model.ExaCustomer true "获取单一客户信息"
+// @Param data body model.Customer true "获取单一客户信息"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /customer/customer [get]
-func GetExaCustomer(r *ghttp.Request) {
+func FindCustomer(r *ghttp.Request) {
 }
 
-// @Tags SysApi
+// @Tags Customer
 // @Summary 获取权限客户列表
 // @Security ApiKeyAuth
 // @accept application/json
@@ -56,5 +57,5 @@ func GetExaCustomer(r *ghttp.Request) {
 // @Param data body request.PageInfo true "获取权限客户列表"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /customer/customerList [get]
-func GetExaCustomerList(r *ghttp.Request) {
+func GetCustomerList(r *ghttp.Request) {
 }

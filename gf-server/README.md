@@ -19,6 +19,8 @@ gf-vue-admin
 - [ ] system模块
 - [ ] 客户模块
 - [ ] 自动化代码模块
-- [ ] 字典详情管理模块
+- [x] 字典详情管理模块
 - [x] 字典管理模块
 
+## 注意问题
+- Mysql的tinyint(1) 使用gf gen model 生成model文件夹里面的Entity.go文件中的字段类型是int而不是bool
