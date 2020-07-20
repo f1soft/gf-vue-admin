@@ -3,8 +3,10 @@ package v1
 import (
 	"fmt"
 	"gf-server/app/api/request"
+	"gf-server/app/api/response"
 	"gf-server/app/service"
 	"gf-server/library/global"
+	"github.com/gogf/gf/frame/g"
 
 	"github.com/gogf/gf/net/ghttp"
 )
@@ -38,7 +40,15 @@ func CreateDictionaryDetail(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"删除成功"}"
 // @Router /DictionaryDetail/deleteDictionaryDetail [delete]
 func DeleteDictionaryDetail(r *ghttp.Request) {
-
+	var deleteRequest request.DeleteDictionaryDetail
+	if err := r.Parse(&deleteRequest); err != nil {
+		global.FailWithMessage(r, err.Error())
+	}
+	if err := service.DeleteDictionaryDetail(&deleteRequest); err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("删除失败，err:%v", err))
+		r.Exit()
+	}
+	global.OkWithMessage(r, "删除成功")
 }
 
 // @Tags DictionaryDetail
@@ -50,6 +60,15 @@ func DeleteDictionaryDetail(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"更新成功"}"
 // @Router /DictionaryDetail/updateDictionaryDetail [put]
 func UpdateDictionaryDetail(r *ghttp.Request) {
+	var updateRequest request.UpdateDictionaryDetail
+	if err := r.Parse(&updateRequest); err != nil {
+		global.FailWithMessage(r, err.Error())
+	}
+	if err := service.UpdateDictionaryDetail(&updateRequest); err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("更新失败，err:%v", err))
+		r.Exit()
+	}
+	global.OkWithMessage(r, "更新成功")
 }
 
 // @Tags DictionaryDetail
@@ -61,6 +80,16 @@ func UpdateDictionaryDetail(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"查询成功"}"
 // @Router /DictionaryDetail/findDictionaryDetail [get]
 func FindDictionaryDetail(r *ghttp.Request) {
+	var findRequest request.FindDictionaryDetail
+	if err := r.Parse(&findRequest); err != nil {
+		global.FailWithMessage(r, err.Error())
+	}
+	dataReturn ,err := service.FindDictionaryDetail(&findRequest)
+	if err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("查询失败，err:%v", err))
+		r.Exit()
+	}
+	global.OkDetailed(r, g.Map{"DictionaryDetail": dataReturn}, "查询成功")
 }
 
 // @Tags DictionaryDetail
@@ -72,4 +101,14 @@ func FindDictionaryDetail(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /DictionaryDetail/getDictionaryDetailList [get]
 func GetDictionaryDetailList(r *ghttp.Request) {
+	var pageInfoList request.GetDictionaryDetailList
+	if err := r.Parse(&pageInfoList); err != nil {
+		global.FailWithMessage(r, err.Error())
+	}
+	list, total, err := service.GetDictionaryDetailList(&pageInfoList)
+	if err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("获取数据失败，err:%v", err))
+		r.Exit()
+	}
+	global.OkWithData(r, response.PageResult{List: list, Total: total, Page: pageInfoList.Page, PageSize: pageInfoList.PageSize})
 }

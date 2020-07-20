@@ -1,6 +1,7 @@
 package boot
 
 import (
+	"gf-server/app/middleware"
 	"gf-server/library/global"
 	"gf-server/router"
 	"time"
@@ -20,9 +21,10 @@ import (
 
 func InitializeRunServer() {
 	global.GFVA_SERVER = g.Server()
-	router.InitializeRouters()
+	global.GFVA_SERVER.Use(middleware.Error)
 	global.GFVA_SERVER.SetReadTimeout(10 * time.Second)
 	global.GFVA_SERVER.SetWriteTimeout(10 * time.Second)
 	global.GFVA_SERVER.SetMaxHeaderBytes(1 << 20)
+	router.InitializeRouters()
 	global.GFVA_SERVER.Run()
 }

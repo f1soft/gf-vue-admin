@@ -85,7 +85,7 @@ func FindDictionary(r *ghttp.Request) {
 	if err := r.Parse(&findInfo); err != nil {
 		global.FailWithMessage(r, err.Error())
 	}
-	dictionary, err := service.GetDictionary(&findInfo)
+	dictionary, err := service.FindDictionary(&findInfo)
 	if err != nil {
 		global.FailWithMessage(r, fmt.Sprintf("查询失败，err:%v", err))
 		r.Exit()

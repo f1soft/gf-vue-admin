@@ -4,7 +4,7 @@ package request
 type CreateDictionary struct {
 	Name   string `p:"name" v:"name@required|length:1,1000#请输入字典中文名|字典中文名长度为:min到:max位"`
 	Type   string `p:"type" v:"type@required|length:1,1000#请输入字典英文名|字典英文名长度为:min到:max位"`
-	Status int    `p:"status" v:"status@required|length:1,1000#请输入状态|状态长度为:min到:max位"`
+	Status bool   `p:"status" v:"status@required|length:1,1000#请输入状态|状态长度为:min到:max位"`
 	Desc   string `p:"desc" v:"desc@required|length:1,1000#请输入描述|描述长度为:min到:max位"`
 }
 
