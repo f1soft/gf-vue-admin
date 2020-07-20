@@ -1,10 +1,12 @@
 package v1
 
 import (
+	"fmt"
 	"gf-server/app/api/request"
 	"gf-server/app/model/admins"
 	"gf-server/app/service"
 	"gf-server/library/global"
+
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 )
@@ -44,8 +46,7 @@ func Register(r *ghttp.Request) {
 func Captcha(r *ghttp.Request) {
 	id, b64s, err := service.Captcha()
 	if err != nil {
-		global.GFVA_LOG.Errorf("获取数据失败，err:%v", err)
-		global.FailWithMessage(r, "获取数据失败")
+		global.FailWithMessage(r, fmt.Sprintf("获取数据失败，err:%v", err))
 	}
 	global.OkDetailed(r, g.Map{"captchaId": id, "picPath": b64s}, "验证码获取成功")
 }

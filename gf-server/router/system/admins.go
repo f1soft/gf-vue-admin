@@ -6,8 +6,8 @@ import (
 	"gf-server/library/global"
 )
 
-// InitUserRouter 注册用户路由
-func InitUserRouter() {
+// InitAdminsRouter 注册管理员路由
+func InitAdminsRouter() {
 	// TODO 缺少CasbinHandler中间件
 	UserRouter := global.GFVA_SERVER.Group("user").Middleware(middleware.JwtAuth)
 	{

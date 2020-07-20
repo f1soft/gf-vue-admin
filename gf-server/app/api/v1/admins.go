@@ -1,6 +1,9 @@
 package v1
 
 import (
+	"gf-server/app/api/request"
+	"gf-server/app/service"
+	"gf-server/library/global"
 	"github.com/gogf/gf/net/ghttp"
 )
 
@@ -12,7 +15,16 @@ import (
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"修改成功"}"
 // @Router /user/changePassword [put]
 func ChangePassword(r *ghttp.Request) {
-
+	var change request.ChangePasswordRequest
+	if err := r.Parse(&change); err != nil {
+		global.FailWithMessage(r, err.Error())
+		r.Exit()
+	}
+	if err := service.ChangePassword(&change); err != nil {
+		global.OkWithMessage(r, "修改失败，请检查用户名密码")
+		r.Exit()
+	}
+	global.OkWithMessage(r, "修改成功")
 }
 
 // @Tags Admins

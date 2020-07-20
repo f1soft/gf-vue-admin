@@ -7,8 +7,8 @@ import (
 
 // InitializeRouters 初始化总路由
 func InitializeRouters() {
-	system.InitUserRouter() // 初始化用户路由
-	system.InitBaseRouter() // 初始化基础功能路由 不做鉴权
+	system.InitBaseRouter()   // 初始化基础功能路由 不做鉴权
+	system.InitAdminsRouter() // 初始化用户路由
 	//system.InitMenuRouter()             // 初始化menu路由
 	system.InitAuthorityRouter() // 初始化角色路由
 	system.InitApiRouter()       // 初始化功能api路由
