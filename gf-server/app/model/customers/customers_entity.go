@@ -12,14 +12,14 @@ import (
 
 // Entity is the golang structure for table customers.
 type Entity struct {
-    Id                 uint        `orm:"id,primary"            json:"id"`                    // 自增ID        
-    CreatedAt          *gtime.Time `orm:"created_at"            json:"created_at"`            // 创建时间      
-    UpdatedAt          *gtime.Time `orm:"updated_at"            json:"updated_at"`            // 更新时间      
-    DeletedAt          *gtime.Time `orm:"deleted_at"            json:"deleted_at"`            // 删除时间      
-    CustomerName       string      `orm:"customer_name"         json:"customer_name"`         // 客户名        
-    CustomerPhoneData  string      `orm:"customer_phone_data"   json:"customer_phone_data"`   // 客户电话      
-    SysUserId          uint        `orm:"sys_user_id"           json:"sys_user_id"`           // 负责员工id    
-    SysUserAuthorityId string      `orm:"sys_user_authority_id" json:"sys_user_authority_id"` // 负责员工角色  
+    Id          uint        `orm:"id,primary"   json:"id"`           // 自增ID        
+    CreatedAt   *gtime.Time `orm:"created_at"   json:"created_at"`   // 创建时间      
+    UpdatedAt   *gtime.Time `orm:"updated_at"   json:"updated_at"`   // 更新时间      
+    DeletedAt   *gtime.Time `orm:"deleted_at"   json:"deleted_at"`   // 删除时间      
+    Name        string      `orm:"name"         json:"name"`         // 客户名        
+    Phone       string      `orm:"phone"        json:"phone"`        // 客户电话      
+    UserId      uint        `orm:"user_id"      json:"user_id"`      // 负责员工id    
+    AuthorityId string      `orm:"authority_id" json:"authority_id"` // 负责员工角色  
 }
 
 // OmitEmpty sets OPTION_OMITEMPTY option for the model, which automatically filers

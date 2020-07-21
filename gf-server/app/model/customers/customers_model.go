@@ -24,23 +24,23 @@ var (
 	Model = &arModel{g.DB("default").Table(Table).Safe()}
 	// Columns defines and stores column names for table customers.
 	Columns = struct {
-		Id                  string // 自增ID        
-        CreatedAt           string // 创建时间      
-        UpdatedAt           string // 更新时间      
-        DeletedAt           string // 删除时间      
-        CustomerName        string // 客户名        
-        CustomerPhoneData   string // 客户电话      
-        SysUserId           string // 负责员工id    
-        SysUserAuthorityId  string // 负责员工角色
+		Id           string // 自增ID        
+        CreatedAt    string // 创建时间      
+        UpdatedAt    string // 更新时间      
+        DeletedAt    string // 删除时间      
+        Name         string // 客户名        
+        Phone        string // 客户电话      
+        UserId       string // 负责员工id    
+        AuthorityId  string // 负责员工角色
 	}{
-		Id:                 "id",                     
-        CreatedAt:          "created_at",             
-        UpdatedAt:          "updated_at",             
-        DeletedAt:          "deleted_at",             
-        CustomerName:       "customer_name",          
-        CustomerPhoneData:  "customer_phone_data",    
-        SysUserId:          "sys_user_id",            
-        SysUserAuthorityId: "sys_user_authority_id",
+		Id:          "id",            
+        CreatedAt:   "created_at",    
+        UpdatedAt:   "updated_at",    
+        DeletedAt:   "deleted_at",    
+        Name:        "name",          
+        Phone:       "phone",         
+        UserId:      "user_id",       
+        AuthorityId: "authority_id",
 	}
 )
 
