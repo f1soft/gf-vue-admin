@@ -217,3 +217,32 @@ CREATE TABLE `customers`
   CHARACTER SET = utf8mb4
   COLLATE = utf8mb4_bin
   ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Table structure for operations Model
+-- ----------------------------
+DROP TABLE IF EXISTS `operations`;
+CREATE TABLE `operations`
+(
+    `id`            int(10) UNSIGNED                                       NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+    `created_at`    datetime(0)                                            NULL DEFAULT NULL COMMENT '创建时间',
+    `updated_at`    datetime(0)                                            NULL DEFAULT NULL COMMENT '更新时间',
+    `deleted_at`    datetime(0)                                            NULL DEFAULT NULL COMMENT '删除时间',
+    `ip`            varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '请求ip',
+    `method`        varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '请求方法',
+    `path`          varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '请求路由',
+    `status`        int(11)                                                NULL DEFAULT NULL COMMENT '状态',
+    `latency`       bigint(20)                                             NULL DEFAULT NULL COMMENT '延迟',
+    `agent`         varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '代理',
+    `error_message` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '报错信息',
+    `request`          text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin         NULL COMMENT '请求Body',
+    `user_id`       int(11)                                                NULL DEFAULT NULL COMMENT '用户id',
+    `response`          text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin         NULL COMMENT '响应Body',
+    PRIMARY KEY (`id`) USING BTREE,
+    INDEX `idx_operations_deleted_at` (`deleted_at`) USING BTREE
+) ENGINE = InnoDB
+  AUTO_INCREMENT = 342
+  CHARACTER SET = utf8mb4
+  COLLATE = utf8mb4_bin
+  ROW_FORMAT = Compact;
+
