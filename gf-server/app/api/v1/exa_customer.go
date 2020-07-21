@@ -13,7 +13,6 @@ import (
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /customer/customer [post]
 func CreateCustomer(r *ghttp.Request) {
-
 }
 
 // @Tags Customer

@@ -62,6 +62,11 @@
     Link  = "mysql:root:gdkid,,..@tcp(127.0.0.1:3306)/gf-vue-admin"
     Debug = true
 
+    # 测试环境Mysql配置
+    [database.test]
+    Link  = "mysql:root:gdkid,,..@tcp(127.0.0.1:3306)/gf-vue-admin-test"
+    Debug = true
+
     # Database logger.
     [database.logger]
         Path   = "./logs/sql"

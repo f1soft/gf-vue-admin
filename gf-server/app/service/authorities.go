@@ -4,14 +4,11 @@ import (
 	"errors"
 	"gf-server/app/api/request"
 	"gf-server/app/api/response"
-	"gf-server/app/model"
 	"gf-server/app/model/authorities"
-	"gf-server/app/model/menus"
 	"gf-server/library/global"
-	"github.com/gogf/gf/database/gdb"
+
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/util/gconv"
-	"strconv"
 )
 
 // CreateAuthority Create a role
@@ -34,30 +31,31 @@ func CreateAuthority(auth request.CreateAuthority) (authority *authorities.Entit
 // CopyAuthority Copy a character
 // CopyAuthority 复制一个角色
 func CopyAuthority(copyInfo response.AuthorityCopyResponse) (authority *authorities.Authorities, err error) {
-	var menusReturn []model.AuthorityMenus
-	authority = &authorities.Authorities{
-		AuthorityId:   copyInfo.Authority.AuthorityId,
-		AuthorityName: copyInfo.Authority.AuthorityName,
-		ParentId:      copyInfo.Authority.ParentId,
-		Children:      []authorities.Authorities{},
-	}
-	if !authorities.RecordNotFound(g.Map{"authority_id": copyInfo.Authority.AuthorityId}) {
-		return authority, errors.New("存在相同角色id")
-	}
-	menusReturn, err = GetMenuAuthority(copyInfo.OldAuthorityId)
-	var baseMenu []menus.Entity
-	for _, v := range menusReturn {
-		intNum, _ := strconv.Atoi(v.MenuId)
-		v.Entity.Id = uint(intNum)
-		baseMenu = append(baseMenu, v.Entity)
-	}
-	copyInfo.Authority.Menus = baseMenu
-	_, err = menus.Insert(&copyInfo.Authority)
-	paths := GetPolicyPathByAuthorityId(copyInfo.OldAuthorityId)
-	if err = UpdateCasbin(copyInfo.Authority.AuthorityId, paths); err != nil {
-		_ = DeleteAuthority(&copyInfo.Authority)
-	}
-	return &copyInfo.Authority, err
+	//var menusReturn []model.AuthorityMenus
+	//authority = &authorities.Authorities{
+	//	AuthorityId:   copyInfo.Authority.AuthorityId,
+	//	AuthorityName: copyInfo.Authority.AuthorityName,
+	//	ParentId:      copyInfo.Authority.ParentId,
+	//	Children:      []authorities.Authorities{},
+	//}
+	//if !authorities.RecordNotFound(g.Map{"authority_id": copyInfo.Authority.AuthorityId}) {
+	//	return authority, errors.New("存在相同角色id")
+	//}
+	//menusReturn, err = GetMenuAuthority(copyInfo.OldAuthorityId)
+	//var baseMenu []menus.Entity
+	//for _, v := range menusReturn {
+	//	intNum, _ := strconv.Atoi(v.MenuId)
+	//	v.Entity.Id = uint(intNum)
+	//	baseMenu = append(baseMenu, v.Entity)
+	//}
+	//copyInfo.Authority.Menus = baseMenu
+	//_, err = menus.Insert(&copyInfo.Authority)
+	//paths := GetPolicyPathByAuthorityId(copyInfo.OldAuthorityId)
+	//if err = UpdateCasbin(copyInfo.Authority.AuthorityId, paths); err != nil {
+	//	_ = DeleteAuthority(&copyInfo.Authority)
+	//}
+	//return &copyInfo.Authority, err
+	return
 }
 
 // @title    UpdateAuthority
@@ -98,11 +96,11 @@ func GetAuthorityInfoList(info request.PageInfo) (list interface{}, total int, e
 	db := global.GFVA_DB.Table("authorities").Safe()
 	limit := info.PageSize
 	offset := info.PageSize * (info.Page - 1)
-	if err = db.Where(g.Map{"parent_id": "0"}).Limit(limit).Offset(offset).Scan(&authorityList);err != nil {
+	if err = db.Where(g.Map{"parent_id": "0"}).Limit(limit).Offset(offset).Scan(&authorityList); err != nil {
 		return authorityList, total, errors.New("查询失败! ")
 	}
 	// TODO 自关联
-	if dataEntity, err = authorities.FindAll(); err != nil{
+	if dataEntity, err = authorities.FindAll(); err != nil {
 		return authorityList, total, errors.New("查询失败! ")
 	}
 	if len(authorityList) > 0 {
