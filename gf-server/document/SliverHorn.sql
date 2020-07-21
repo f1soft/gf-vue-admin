@@ -194,3 +194,26 @@ CREATE TABLE `files`  (
   INDEX `idx_file_upload_and_downloads_deleted_at`(`deleted_at`) USING BTREE,
   INDEX `idx_exa_file_upload_and_downloads_deleted_at`(`deleted_at`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+
+-- ----------------------------
+-- Table structure for customers Model
+-- ----------------------------
+DROP TABLE IF EXISTS `customers`;
+CREATE TABLE `customers`
+(
+    `id`                    int(10) UNSIGNED                                        NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+    `created_at`            timestamp(0)                                            NULL DEFAULT NULL COMMENT '创建时间',
+    `updated_at`            timestamp(0)                                            NULL DEFAULT NULL COMMENT '更新时间',
+    `deleted_at`            timestamp(0)                                            NULL DEFAULT NULL COMMENT '删除时间',
+    `customer_name`         varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin  NULL DEFAULT NULL COMMENT '客户名',
+    `customer_phone_data`   varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '客户电话',
+    `sys_user_id`           int(10) UNSIGNED                                        NULL DEFAULT NULL COMMENT '负责员工id',
+    `sys_user_authority_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '负责员工角色',
+    PRIMARY KEY (`id`) USING BTREE,
+    INDEX `idx_exa_customers_deleted_at` (`deleted_at`) USING BTREE
+) ENGINE = InnoDB
+  AUTO_INCREMENT = 2
+  CHARACTER SET = utf8mb4
+  COLLATE = utf8mb4_bin
+  ROW_FORMAT = Compact;
