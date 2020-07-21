@@ -6,30 +6,31 @@ package operations
 
 import (
 	"database/sql"
+
 	"github.com/gogf/gf/database/gdb"
 	"github.com/gogf/gf/os/gtime"
 )
 
 // Entity is the golang structure for table operations.
 type Entity struct {
-    Id           uint        `orm:"id,primary"    json:"id"`            // 自增ID    
-    CreatedAt    *gtime.Time `orm:"created_at"    json:"created_at"`    // 创建时间  
-    UpdatedAt    *gtime.Time `orm:"updated_at"    json:"updated_at"`    // 更新时间  
-    DeletedAt    *gtime.Time `orm:"deleted_at"    json:"deleted_at"`    // 删除时间  
-    Ip           string      `orm:"ip"            json:"ip"`            // 请求ip    
-    Method       string      `orm:"method"        json:"method"`        // 请求方法  
-    Path         string      `orm:"path"          json:"path"`          // 请求路由  
-    Status       int         `orm:"status"        json:"status"`        // 状态      
-    Latency      int64       `orm:"latency"       json:"latency"`       // 延迟      
-    Agent        string      `orm:"agent"         json:"agent"`         // 代理      
-    ErrorMessage string      `orm:"error_message" json:"error_message"` // 报错信息  
-    Request      string      `orm:"request"       json:"request"`       // 请求Body  
-    UserId       int         `orm:"user_id"       json:"user_id"`       // 用户id    
-    Response     string      `orm:"response"      json:"response"`      // 响应Body  
+	Id           uint        `orm:"id,primary"    json:"id"`            // 自增ID
+	CreatedAt    *gtime.Time `orm:"created_at"    json:"created_at"`    // 创建时间
+	UpdatedAt    *gtime.Time `orm:"updated_at"    json:"updated_at"`    // 更新时间
+	DeletedAt    *gtime.Time `orm:"deleted_at"    json:"deleted_at"`    // 删除时间
+	Ip           string      `orm:"ip"            json:"ip"`            // 请求ip
+	Method       string      `orm:"method"        json:"method"`        // 请求方法
+	Path         string      `orm:"path"          json:"path"`          // 请求路由
+	Status       int         `orm:"status"        json:"status"`        // 状态
+	Latency      int64       `orm:"latency"       json:"latency"`       // 延迟
+	Agent        string      `orm:"agent"         json:"agent"`         // 代理
+	ErrorMessage string      `orm:"error_message" json:"error_message"` // 报错信息
+	Request      string      `orm:"request"       json:"request"`       // 请求Body
+	UserId       int         `orm:"user_id"       json:"user_id"`       // 用户id
+	Response     string      `orm:"response"      json:"response"`      // 响应Body
 }
 
 // OmitEmpty sets OPTION_OMITEMPTY option for the model, which automatically filers
-// the data and where attributes for empty values.
+// the data and where attributes f or empty values.
 func (r *Entity) OmitEmpty() *arModel {
 	return Model.Data(r).OmitEmpty()
 }
