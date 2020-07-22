@@ -8,8 +8,7 @@ import (
 
 // InitCustomerRouter 注册功能api路由
 func InitCustomerRouter() {
-	// TODO 缺少CasbinHandler中间件
-	CustomerRouter := global.GFVA_SERVER.Group("customer").Middleware(middleware.JwtAuth)
+	CustomerRouter := global.GFVA_SERVER.Group("customer").Middleware(middleware.JwtAuth).Middleware(middleware.CasbinMiddleware)
 	{
 		CustomerRouter.POST("customer", v1.CreateCustomer)     // 创建客户
 		CustomerRouter.PUT("customer", v1.UpdateCustomer)      // 更新客户

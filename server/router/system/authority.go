@@ -8,8 +8,7 @@ import (
 
 // InitAuthorityRouter 注册角色路由组
 func InitAuthorityRouter() {
-	// TODO 缺少CasbinHandler中间件
-	AuthorityRouter := global.GFVA_SERVER.Group("authority").Middleware(middleware.JwtAuth)
+	AuthorityRouter := global.GFVA_SERVER.Group("authority").Middleware(middleware.JwtAuth).Middleware(middleware.CasbinMiddleware)
 	{
 		AuthorityRouter.POST("createAuthority", v1.CreateAuthority)   // 创建角色
 		AuthorityRouter.POST("deleteAuthority", v1.DeleteAuthority)   // 删除角色

@@ -8,8 +8,7 @@ import (
 
 // InitDictionaryDetailRouter 注册字典详情管理
 func InitDictionaryRouter() {
-	// TODO 缺少CasbinHandler中间件
-	DictionaryRouter := global.GFVA_SERVER.Group("Dictionary").Middleware(middleware.JwtAuth)
+	DictionaryRouter := global.GFVA_SERVER.Group("Dictionary").Middleware(middleware.JwtAuth).Middleware(middleware.CasbinMiddleware)
 	{
 		DictionaryRouter.POST("createDictionary", v1.CreateDictionary)   // 新建Dictionary
 		DictionaryRouter.DELETE("deleteDictionary", v1.DeleteDictionary) // 删除Dictionary

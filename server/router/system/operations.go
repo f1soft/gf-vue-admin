@@ -8,8 +8,7 @@ import (
 
 // InitOperationRouter 注册操作记录路由
 func InitOperationRouter() {
-	// TODO 缺少CasbinHandler中间件
-	OperationRouter := global.GFVA_SERVER.Group("operation").Middleware(middleware.JwtAuth)
+	OperationRouter := global.GFVA_SERVER.Group("operation").Middleware(middleware.JwtAuth).Middleware(middleware.CasbinMiddleware)
 	{
 		OperationRouter.POST("CreateOperation", v1.CreateOperation)     // 新建Operation
 		OperationRouter.DELETE("deleteOperation", v1.DeleteOperation)   // 删除Operation

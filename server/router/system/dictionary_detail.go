@@ -2,13 +2,13 @@ package system
 
 import (
 	v1 "server/app/api/v1"
+	"server/app/middleware"
 	"server/library/global"
 )
 
 // InitDictionaryDetailRouter 注册字典详情管理路由
 func InitDictionaryDetailRouter() {
-	// TODO 缺少CasbinHandler中间件
-	DictionaryDetailRouter := global.GFVA_SERVER.Group("DictionaryDetail")
+	DictionaryDetailRouter := global.GFVA_SERVER.Group("DictionaryDetail").Middleware(middleware.CasbinMiddleware)
 	{
 		DictionaryDetailRouter.POST("createDictionaryDetail", v1.CreateDictionaryDetail)   // 新建DictionaryDetail
 		DictionaryDetailRouter.DELETE("deleteDictionaryDetail", v1.DeleteDictionaryDetail) // 删除DictionaryDetail
