@@ -2,11 +2,11 @@ package v1
 
 import (
 	"errors"
-	"gf-server/app/api/request"
-	"gf-server/app/api/response"
-	"gf-server/app/model/jwts"
-	"gf-server/app/service"
-	"gf-server/library/global"
+	"server/app/api/request"
+	"server/app/api/response"
+	"server/app/model/jwts"
+	"server/app/service"
+	"server/library/global"
 	"time"
 
 	"github.com/gomodule/redigo/redis"

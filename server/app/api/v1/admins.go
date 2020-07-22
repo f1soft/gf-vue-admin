@@ -2,13 +2,13 @@ package v1
 
 import (
 	"fmt"
-	"gf-server/app/api/request"
-	"gf-server/app/api/response"
-	"gf-server/app/model/admins"
-	"gf-server/app/service"
-	"gf-server/library/global"
-	"gf-server/library/utils"
 	"mime/multipart"
+	"server/app/api/request"
+	"server/app/api/response"
+	"server/app/model/admins"
+	"server/app/service"
+	"server/library/global"
+	"server/library/utils"
 
 	"github.com/gogf/gf/util/gconv"
 

@@ -1,7 +1,7 @@
 package service
 
 import (
-	"gf-server/app/model"
+	"server/app/model"
 )
 
 func GetMenuAuthority(authorityId string) (menusReturn []model.AuthorityMenus, err error) {

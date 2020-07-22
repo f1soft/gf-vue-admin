@@ -1,8 +1,8 @@
 package response
 
 import (
-	"gf-server/app/model/admins"
-	"gf-server/app/model/authorities"
+	"server/app/model/admins"
+	"server/app/model/authorities"
 )
 
 // Admin response Structure

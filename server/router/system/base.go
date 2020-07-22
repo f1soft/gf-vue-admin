@@ -1,8 +1,8 @@
 package system
 
 import (
-	v1 "gf-server/app/api/v1"
-	"gf-server/library/global"
+	v1 "server/app/api/v1"
+	"server/library/global"
 )
 
 // InitBaseRouter 注册基础功能路由

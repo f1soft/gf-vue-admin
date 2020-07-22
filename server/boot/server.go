@@ -1,9 +1,9 @@
 package boot
 
 import (
-	"gf-server/app/middleware"
-	"gf-server/library/global"
-	"gf-server/router"
+	"server/app/middleware"
+	"server/library/global"
+	"server/router"
 	"time"
 
 	"github.com/gogf/gf/frame/g"

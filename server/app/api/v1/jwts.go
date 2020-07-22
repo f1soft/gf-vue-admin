@@ -2,9 +2,9 @@ package v1
 
 import (
 	"fmt"
-	"gf-server/app/model/jwts"
-	"gf-server/app/service"
-	"gf-server/library/global"
+	"server/app/model/jwts"
+	"server/app/service"
+	"server/library/global"
 
 	"github.com/gogf/gf/net/ghttp"
 )

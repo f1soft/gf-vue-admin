@@ -2,10 +2,11 @@ package v1
 
 import (
 	"fmt"
-	"gf-server/app/api/request"
-	"gf-server/app/api/response"
-	"gf-server/app/service"
-	"gf-server/library/global"
+	"server/app/api/request"
+	"server/app/api/response"
+	"server/app/service"
+	"server/library/global"
+
 	"github.com/gogf/gf/frame/g"
 
 	"github.com/gogf/gf/net/ghttp"
@@ -84,7 +85,7 @@ func FindDictionaryDetail(r *ghttp.Request) {
 	if err := r.Parse(&findRequest); err != nil {
 		global.FailWithMessage(r, err.Error())
 	}
-	dataReturn ,err := service.FindDictionaryDetail(&findRequest)
+	dataReturn, err := service.FindDictionaryDetail(&findRequest)
 	if err != nil {
 		global.FailWithMessage(r, fmt.Sprintf("查询失败，err:%v", err))
 		r.Exit()

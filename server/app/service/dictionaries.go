@@ -2,9 +2,9 @@ package service
 
 import (
 	"errors"
-	"gf-server/app/api/request"
-	"gf-server/app/model/dictionaries"
-	"gf-server/library/utils"
+	"server/app/api/request"
+	"server/app/model/dictionaries"
+	"server/library/utils"
 
 	"github.com/gogf/gf/frame/g"
 )
@@ -12,12 +12,12 @@ import (
 // CreateDictionary create a Dictionary
 // CreateDictionary 创建Dictionary
 func CreateDictionary(create *request.CreateDictionary) (err error) {
-	if _, err = dictionaries.FindOne(g.Map{"type": create.Type}); err != nil{
+	if _, err = dictionaries.FindOne(g.Map{"type": create.Type}); err != nil {
 		insert := &dictionaries.Entity{
-			Name:      create.Name,
-			Type:      create.Name,
-			Status:    utils.BoolToInt(create.Status),
-			Desc:      create.Name,
+			Name:   create.Name,
+			Type:   create.Name,
+			Status: utils.BoolToInt(create.Status),
+			Desc:   create.Name,
 		}
 		if _, err = dictionaries.Insert(insert); err != nil {
 			return errors.New("创建Dictionary失败")

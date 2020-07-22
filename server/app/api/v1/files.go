@@ -2,12 +2,12 @@ package v1
 
 import (
 	"fmt"
-	"gf-server/app/api/request"
-	"gf-server/app/api/response"
-	"gf-server/app/model/files"
-	"gf-server/app/service"
-	"gf-server/library/global"
-	"gf-server/library/utils"
+	"server/app/api/request"
+	"server/app/api/response"
+	"server/app/model/files"
+	"server/app/service"
+	"server/library/global"
+	"server/library/utils"
 	"strings"
 
 	"github.com/gogf/gf/net/ghttp"

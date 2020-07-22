@@ -2,10 +2,10 @@ package v1
 
 import (
 	"fmt"
-	"gf-server/app/api/request"
-	"gf-server/app/api/response"
-	"gf-server/app/service"
-	"gf-server/library/global"
+	"server/app/api/request"
+	"server/app/api/response"
+	"server/app/service"
+	"server/library/global"
 
 	"github.com/gogf/gf/net/ghttp"
 )
@@ -123,12 +123,12 @@ func GetAllApis(r *ghttp.Request) {
 // @Router /api/getApiList [post]
 func GetApiList(r *ghttp.Request) {
 	var sp request.GetApiList // 此结构体仅本方法使用
-	if err := r.Parse(&sp); err != nil{
+	if err := r.Parse(&sp); err != nil {
 		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
 	list, total, err := service.GetApiInfoList(&sp)
-	if err != nil{
+	if err != nil {
 		global.FailWithMessage(r, fmt.Sprintf("获取数据失败，%v", err))
 		r.Exit()
 	}

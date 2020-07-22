@@ -2,10 +2,10 @@ package v1
 
 import (
 	"fmt"
-	"gf-server/app/api/request"
-	"gf-server/app/api/response"
-	"gf-server/app/service"
-	"gf-server/library/global"
+	"server/app/api/request"
+	"server/app/api/response"
+	"server/app/service"
+	"server/library/global"
 
 	"github.com/gogf/gf/frame/g"
 

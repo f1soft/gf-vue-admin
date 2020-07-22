@@ -1,8 +1,8 @@
 package router
 
 import (
-	"gf-server/router/extend"
-	"gf-server/router/system"
+	"server/router/extend"
+	"server/router/system"
 )
 
 // InitializeRouters 初始化总路由

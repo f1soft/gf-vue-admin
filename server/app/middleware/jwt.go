@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"gf-server/app/service"
-	"gf-server/library/global"
+	"server/app/service"
+	"server/library/global"
 
 	jwt "github.com/gogf/gf-jwt"
 

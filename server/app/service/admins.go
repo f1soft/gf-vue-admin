@@ -2,9 +2,9 @@ package service
 
 import (
 	"errors"
-	"gf-server/app/api/request"
-	"gf-server/app/model/admins"
-	"gf-server/library/utils"
+	"server/app/api/request"
+	"server/app/model/admins"
+	"server/library/utils"
 
 	"github.com/gogf/gf/frame/g"
 )

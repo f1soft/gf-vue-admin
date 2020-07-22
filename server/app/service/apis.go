@@ -2,8 +2,9 @@ package service
 
 import (
 	"errors"
-	"gf-server/app/api/request"
-	"gf-server/app/model/apis"
+	"server/app/api/request"
+	"server/app/model/apis"
+
 	"github.com/gogf/gf/util/gconv"
 
 	"github.com/gogf/gf/frame/g"
@@ -38,7 +39,7 @@ func UpdateApi(api *request.UpdateApi) error {
 	if err != nil {
 		return err
 	}
-	if err = UpdateCasbinApi(oldA.Path, api.Path, oldA.Method, api.Method); err != nil{
+	if err = UpdateCasbinApi(oldA.Path, api.Path, oldA.Method, api.Method); err != nil {
 		return err
 	}
 	_, err = apis.Save(api)

@@ -2,14 +2,15 @@ package service
 
 import (
 	"errors"
-	"gf-server/app/api/request"
-	"gf-server/app/model"
-	"gf-server/library/global"
+	"server/app/api/request"
+	"server/app/model"
+	"server/library/global"
+	"strings"
+
 	"github.com/casbin/casbin"
 	"github.com/casbin/casbin/util"
 	gdbadapter "github.com/flipped-aurora/gdb-adapter"
 	"github.com/gogf/gf/frame/g"
-	"strings"
 )
 
 // UpdateCasbin update casbin authority

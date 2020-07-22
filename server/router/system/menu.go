@@ -1,9 +1,9 @@
 package system
 
 import (
-	v1 "gf-server/app/api/v1"
-	"gf-server/app/middleware"
-	"gf-server/library/global"
+	v1 "server/app/api/v1"
+	"server/app/middleware"
+	"server/library/global"
 )
 
 // InitMenuRouter 注册menu路由

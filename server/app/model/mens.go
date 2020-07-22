@@ -1,6 +1,6 @@
 package model
 
-import "gf-server/app/model/menus"
+import "server/app/model/menus"
 
 type AuthorityMenus struct {
 	menus.Entity

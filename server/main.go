@@ -1,6 +1,6 @@
 package main
 
-import "gf-server/boot"
+import "server/boot"
 
 func main() {
 	boot.InitializeLogger()    // 初始化日志管理

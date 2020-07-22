@@ -5,7 +5,8 @@
 package authorities
 
 import (
-	"gf-server/app/model/menus"
+	"server/app/model/menus"
+
 	"github.com/gogf/gf/os/gtime"
 )
 

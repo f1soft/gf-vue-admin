@@ -1,6 +1,6 @@
 package response
 
-import "gf-server/app/model/apis"
+import "server/app/model/apis"
 
 type ApiListResponse struct {
 	Apis []*apis.Entity `json:"apis"`

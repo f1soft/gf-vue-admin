@@ -2,10 +2,10 @@ package service
 
 import (
 	"errors"
-	"gf-server/app/api/request"
-	"gf-server/app/api/response"
-	"gf-server/app/model/admins"
-	"gf-server/library/utils"
+	"server/app/api/request"
+	"server/app/api/response"
+	"server/app/model/admins"
+	"server/library/utils"
 
 	"github.com/gogf/gf/frame/g"
 	"github.com/mojocn/base64Captcha"

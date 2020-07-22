@@ -78,4 +78,4 @@
     # host:port[,db,pass?maxIdle=x&maxActive=x&idleTimeout=x&maxConnLifetime=x]
     default = "127.0.0.1:6379,1,?idleTimeout=600"
     cache   = "127.0.0.1:6379,1,?idleTimeout=600"
-    Login_Prefix = "gf-server:login:uid_"
+    Login_Prefix = "server:login:uid_"

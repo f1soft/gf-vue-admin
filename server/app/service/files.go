@@ -2,8 +2,8 @@ package service
 
 import (
 	"errors"
-	"gf-server/app/api/request"
-	"gf-server/app/model/files"
+	"server/app/api/request"
+	"server/app/model/files"
 
 	"github.com/gogf/gf/frame/g"
 )

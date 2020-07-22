@@ -1,8 +1,8 @@
 package service
 
 import (
-	"gf-server/app/model/jwts"
-	"gf-server/library/global"
+	"server/app/model/jwts"
+	"server/library/global"
 	"time"
 
 	"github.com/gogf/gf/frame/g"

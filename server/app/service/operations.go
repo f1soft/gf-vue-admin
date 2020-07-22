@@ -1,8 +1,8 @@
 package service
 
 import (
-	"gf-server/app/api/request"
-	"gf-server/app/model/operations"
+	"server/app/api/request"
+	"server/app/model/operations"
 
 	"github.com/gogf/gf/frame/g"
 )

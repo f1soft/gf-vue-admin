@@ -1,7 +1,7 @@
 package boot
 
 import (
-	"gf-server/library/global"
+	"server/library/global"
 
 	"github.com/gogf/gf/frame/g"
 )

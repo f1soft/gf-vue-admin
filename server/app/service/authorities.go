@@ -2,10 +2,10 @@ package service
 
 import (
 	"errors"
-	"gf-server/app/api/request"
-	"gf-server/app/api/response"
-	"gf-server/app/model/authorities"
-	"gf-server/library/global"
+	"server/app/api/request"
+	"server/app/api/response"
+	"server/app/model/authorities"
+	"server/library/global"
 
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/util/gconv"
