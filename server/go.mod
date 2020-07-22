@@ -1,4 +1,4 @@
-module gf-server
+module server
 
 require (
 	github.com/casbin/casbin v1.9.1
