@@ -32,3 +32,9 @@ gf-vue-admin
 - request包与response包为什么不用model_entity的Entity进行嵌套
     - 不想破坏model_entity的完整性,model包是gf gen model进行生成
     - 需要加p与v的Tag
+    
+- Jwt验证方式
+    - 格式"header:[Authorization], query:[token], cookie:[jwt]"
+    - 注意冒号后面没有空格
+    - header参数设置了就必须带有TokenHeadName,不然无法识别
+    - 

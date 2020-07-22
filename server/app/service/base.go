@@ -19,7 +19,7 @@ var Store = base64Captcha.DefaultMemStore
 func AdminLogin(l *request.AdminLogin) (data *response.Admin, err error) {
 	admin := (*response.Admin)(nil) // 用法解释 https://goframe.org/database/gdb/chaining/select#tip4
 	adminDb := g.DB("default").Table("admins").Safe()
-	authorityDb := g.DB("default").Table("admins").Safe()
+	authorityDb := g.DB("default").Table("authorities").Safe()
 	if err = adminDb.Where(g.Map{"username": l.Username}).Scan(&admin); err != nil {
 		return admin, errors.New("用户不存在")
 	}
@@ -27,7 +27,7 @@ func AdminLogin(l *request.AdminLogin) (data *response.Admin, err error) {
 		err = authorityDb.Where(g.Map{"authority_id": admin.AuthorityId}).Scan(&admin.Authority)
 		return admin, err
 	}
-	return
+	return admin, errors.New("密码错误")
 }
 
 // AdminRegister Administrator registration

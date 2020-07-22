@@ -8,6 +8,11 @@
 .env.local
 .env.*.local
 
+# Log folder
+server/logs/log/
+server/logs/server/
+server/logs/sql/
+
 # Log files
 npm-debug.log*
 yarn-debug.log*

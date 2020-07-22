@@ -21,15 +21,16 @@ import (
 // @Produce  application/json
 // @Param data body request.ChangePasswordStruct true "用户修改密码"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"修改成功"}"
-// @Router /user/changePassword [put]
+// @Router /user/changePassword [post]
 func ChangePassword(r *ghttp.Request) {
-	var change request.ChangePassword
-	if err := r.Parse(&change); err != nil {
+	var c request.ChangePassword
+	if err := r.Parse(&c); err != nil {
 		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
-	if err := service.ChangePassword(&change); err != nil {
-		global.OkWithMessage(r, "修改失败，请检查用户名密码")
+	c.Uuid = gconv.String(r.GetParam("uuid"))
+	if err := service.ChangePassword(&c); err == nil {
+		global.OkWithMessage(r, "修改失败")
 		r.Exit()
 	}
 	global.OkWithMessage(r, "修改成功")
@@ -74,19 +75,19 @@ func UploadHeaderImg(r *ghttp.Request) {
 // @Produce application/json
 // @Param data body request.PageInfo true "分页获取用户列表"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
-// @Router /admin/getAdminList [post]
+// @Router /user/getUserList [post]
 func GetAdminList(r *ghttp.Request) {
-	var pageInfo request.PageInfo
-	if err := r.Parse(&pageInfo); err != nil {
+	var get request.PageInfo
+	if err := r.Parse(&get); err != nil {
 		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
-	list, total, err := service.GetAdminInfoList(&pageInfo)
+	list, total, err := service.GetAdminList(&get)
 	if err != nil {
-		global.FailWithMessage(r, fmt.Sprintf("获取数据失败，%v", err))
+		global.FailWithMessage(r, fmt.Sprintf("获取数据失败，err:%v", err))
 		r.Exit()
 	}
-	global.OkDetailed(r, response.PageResult{List: list, Total: total, Page: pageInfo.Page, PageSize: pageInfo.PageSize}, "获取成功")
+	global.OkDetailed(r, response.PageResult{List: list, Total: total, Page: get.Page, PageSize: get.PageSize}, "获取成功")
 }
 
 // @Tags Admins
@@ -96,7 +97,7 @@ func GetAdminList(r *ghttp.Request) {
 // @Produce application/json
 // @Param data body request.SetUserAuth true "设置用户权限"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"修改成功"}"
-// @Router /admin/setUserAuthority [post]
+// @Router /user/setUserAuthority [post]
 func SetUserAuthority(r *ghttp.Request) {
 	var set request.SetAdminAuthority
 	if err := r.Parse(&set); err != nil {
@@ -119,12 +120,12 @@ func SetUserAuthority(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"删除成功"}"
 // @Router /user/deleteUser [delete]
 func DeleteAdmin(r *ghttp.Request) {
-	var D request.DeleteAdmin
-	if err := r.Parse(&D); err != nil {
+	var d request.DeleteAdmin
+	if err := r.Parse(&d); err != nil {
 		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
-	if err := service.DeleteAdmin(&D); err != nil {
+	if err := service.DeleteAdmin(&d); err != nil {
 		global.FailWithMessage(r, fmt.Sprintf("删除成功, err:%v", err))
 	}
 	global.OkWithMessage(r, "删除成功")
