@@ -38,6 +38,8 @@
 # jwt configuration
 [jwt]
     SigningKey  = "SliverHorn"
+    ExpiresAt = 1 # 3600000000000秒 == 1天 默认设置为1天
+    RefreshAt = 168 # 3600000000000秒 == 1天 , 24 * 7 = 168 刷新的token设置为一星期
 
 # Logger
 [logger]
@@ -78,4 +80,3 @@
     # host:port[,db,pass?maxIdle=x&maxActive=x&idleTimeout=x&maxConnLifetime=x]
     default = "127.0.0.1:6379,1,?idleTimeout=600"
     cache   = "127.0.0.1:6379,1,?idleTimeout=600"
-    Login_Prefix = "server:login:uid_"

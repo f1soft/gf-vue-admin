@@ -24,19 +24,21 @@ var (
 	Model = &arModel{g.DB("default").Table(Table).Safe()}
 	// Columns defines and stores column names for table authorities.
 	Columns = struct {
-		AuthorityId    string // 角色ID    
-        AuthorityName  string // 角色名    
-        ParentId       string // 父角色ID  
-        CreateAt       string // 创建时间  
-        UpdateAt       string // 更新时间  
-        DeleteAt       string // 删除时间
+		AuthorityId    string // 角色ID      
+        AuthorityName  string // 角色名      
+        ParentId       string // 父角色ID    
+        CreateAt       string // 创建时间    
+        UpdateAt       string // 更新时间    
+        DeleteAt       string // 删除时间    
+        ResourcesId    string // 资源权限ID
 	}{
 		AuthorityId:   "authority_id",    
         AuthorityName: "authority_name",  
         ParentId:      "parent_id",       
         CreateAt:      "create_at",       
         UpdateAt:      "update_at",       
-        DeleteAt:      "delete_at",
+        DeleteAt:      "delete_at",       
+        ResourcesId:   "resources_id",
 	}
 )
 

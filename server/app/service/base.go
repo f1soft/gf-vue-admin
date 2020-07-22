@@ -8,12 +8,14 @@ import (
 	"server/library/utils"
 
 	"github.com/gogf/gf/frame/g"
+	uuid "github.com/gogf/guuid"
 	"github.com/mojocn/base64Captcha"
-	uuid "github.com/satori/go.uuid"
 )
 
 var Store = base64Captcha.DefaultMemStore
 
+// AdminLogin Administrator login
+// AdminLogin 管理员登录
 func AdminLogin(l *request.AdminLogin) (data *response.Admin, err error) {
 	admin := (*response.Admin)(nil) // 用法解释 https://goframe.org/database/gdb/chaining/select#tip4
 	adminDb := g.DB("default").Table("admins").Safe()
@@ -28,19 +30,27 @@ func AdminLogin(l *request.AdminLogin) (data *response.Admin, err error) {
 	return
 }
 
-// Register 注册
-func Register(u *admins.Entity) (err error) {
-	if !admins.RecordNotFound(g.Map{"username": u.Username}) {
+// AdminRegister Administrator registration
+// AdminRegister 管理员注册
+func AdminRegister(r *request.AdminRegister) (err error) {
+	if !admins.RecordNotFound(g.Map{"username": r.Username}) {
 		return errors.New("用户已存在,注册失败")
 	}
-	u.Uuid = uuid.NewV4().String()
+	u := &admins.Entity{
+		Uuid:        uuid.New().String(),
+		Username:    r.Username,
+		Password:    r.Password,
+		Nickname:    r.Nickname,
+		HeaderImg:   r.HeaderImg,
+		AuthorityId: r.AuthorityId,
+	}
 	if err = u.EncryptedPassword(); err != nil { // 哈希加密
 		return errors.New("注册失败")
 	}
 	if _, err = admins.Insert(u); err != nil {
 		return errors.New("注册失败")
 	}
-	return nil
+	return
 }
 
 // Captcha Verification code generation

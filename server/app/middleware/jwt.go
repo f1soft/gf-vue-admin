@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	v1 "server/app/api/v1"
 	"server/app/service"
 	"server/library/global"
 
@@ -20,7 +21,7 @@ import (
 // JwtAuth 验证token有效性
 func JwtAuth(r *ghttp.Request) {
 	v1.GfJWTMiddleware.MiddlewareFunc()(r)
-	parseToken, err := v1.GfJWTMiddleware.ParseToken(r) // 解析token
+	Token, err := v1.GfJWTMiddleware.ParseToken(r) // 解析token
 	if err != nil {
 		if err == jwt.ErrExpiredToken {
 			global.Result(r, global.ERROR, g.Map{"reload": true}, "授权已过期")
@@ -29,12 +30,12 @@ func JwtAuth(r *ghttp.Request) {
 		global.Result(r, global.ERROR, g.Map{"reload": true}, err.Error())
 		r.ExitAll()
 	}
-	var token = parseToken.Raw
+	token := Token.Raw
 	if service.IsBlacklist(token) {
 		global.Result(r, global.ERROR, g.Map{"reload": true}, "您的帐户异地登陆或令牌失效")
-		r.Exit()
+		r.ExitAll()
 	}
-	var claims = gconv.Map(parseToken.Claims)
+	var claims = gconv.Map(Token.Claims)
 	r.SetParam("uuid", claims["uuid"])
 	if !service.ValidatorRedisToken(gconv.String(claims["uuid"]), token) {
 		global.FailWithMessage(r, "Token鉴权失败")

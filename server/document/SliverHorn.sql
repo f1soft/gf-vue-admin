@@ -92,6 +92,7 @@ CREATE TABLE `authorities`
     `create_at`      datetime(0)                                             NULL DEFAULT NULL COMMENT '创建时间',
     `update_at`      datetime(0)                                             NULL DEFAULT NULL COMMENT '更新时间',
     `delete_at`      datetime(0)                                             NULL DEFAULT NULL COMMENT '删除时间',
+    `resources_id`   varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '资源权限ID',
     PRIMARY KEY (`authority_id`) USING BTREE,
     UNIQUE INDEX `authority_id` (`authority_id`) USING BTREE,
     INDEX `idx_sys_authorities_deleted_at` (`delete_at`) USING BTREE
@@ -167,7 +168,7 @@ CREATE TABLE `dictionary_details`
     `value`             int(11)                                                 NULL DEFAULT NULL COMMENT '字典值',
     `status`            tinyint(1)                                              NULL DEFAULT NULL COMMENT '启用状态',
     `sort`              int(11)                                                 NULL DEFAULT NULL COMMENT '排序标记',
-    `sys_dictionary_id` int(11)                                                 NULL DEFAULT NULL COMMENT '关联标记',
+    `dictionary_id` int(11)                                                 NULL DEFAULT NULL COMMENT '关联标记',
     PRIMARY KEY (`id`) USING BTREE,
     INDEX `idx_sys_dictionary_details_deleted_at` (`deleted_at`) USING BTREE
 ) ENGINE = InnoDB

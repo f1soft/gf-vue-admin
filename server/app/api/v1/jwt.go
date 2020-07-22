@@ -1,15 +1,12 @@
 package v1
 
 import (
-	"errors"
 	"server/app/api/request"
 	"server/app/api/response"
 	"server/app/model/jwts"
 	"server/app/service"
 	"server/library/global"
 	"time"
-
-	"github.com/gomodule/redigo/redis"
 
 	jwt "github.com/gogf/gf-jwt"
 	"github.com/gogf/gf/frame/g"
@@ -30,11 +27,13 @@ var (
 // 重写此函数以自定义您自己的JWT设置。
 func init() {
 	signingKey := g.Cfg().GetString("jwt.SigningKey")
+	Timeout := g.Cfg().GetDuration("jwt.ExpiresAt") * time.Hour
+	MaxRefresh := g.Cfg().GetDuration("jwt.RefreshAt") * time.Hour
 	authMiddleware, err := jwt.New(&jwt.GfJWTMiddleware{
 		Realm:           signingKey,
 		Key:             []byte(signingKey),
-		Timeout:         time.Hour * 24,     // 1 天
-		MaxRefresh:      time.Hour * 24 * 7, // 刷新的token设置为一星期
+		Timeout:         Timeout,
+		MaxRefresh:      MaxRefresh,
 		IdentityKey:     "id",
 		TokenLookup:     "header: x-token, query: token, cookie: jwt",
 		TokenHeadName:   "",
@@ -80,13 +79,13 @@ func PayloadFunc(data interface{}) jwt.MapClaims {
 // IdentityHandler 设置JWT的身份。
 func IdentityHandler(r *ghttp.Request) interface{} {
 	claims := jwt.ExtractClaims(r)
-	return claims["id"]
+	return claims["uuid"]
 }
 
 // Unauthorized is used to define customized Unauthorized callback function.
 // Unauthorized 用于定义自定义的未经授权的回调函数。
 func Unauthorized(r *ghttp.Request, code int, message string) {
-	global.FailWithDetailed(r, code, g.Map{"reload": true}, "未登录或非法访问"+message)
+	global.FailWithDetailed(r, code, g.Map{"reload": true}, "未登录或非法访问或"+message)
 	r.ExitAll()
 }
 
@@ -99,18 +98,46 @@ func LoginResponse(r *ghttp.Request, code int, token string, expire time.Time) {
 		r.Exit()
 	}
 	if !g.Cfg().GetBool("system.UseMultipoint") {
-		global.OkDetailed(r, response.Login{User: admin, Token: token, ExpiresAt: expire.Unix() * 1000}, "登录成功!")
+		global.OkDetailed(r, response.AdminLogin{User: admin, Token: token, ExpiresAt: expire.Unix() * 1000}, "登录成功!")
 		r.Exit()
 	}
 	redisJwt, err := service.GetRedisJWT(admin.Uuid)
-	if err == redis.ErrNil {
+	if redisJwt == "" {
 		if err := service.SetRedisJWT(admin.Uuid, token); err != nil {
 			global.Result(r, code, g.Map{}, "设置登录状态失败")
 			r.Exit()
 		}
-	} else if err != nil {
-		global.Result(r, code, g.Map{}, err.Error())
-	} else {
+		global.OkDetailed(r, response.AdminLogin{User: admin, Token: token, ExpiresAt: expire.Unix() * 1000}, "登录成功!")
+		r.Exit()
+	}
+	if err = service.JsonInBlacklist(&jwts.Entity{Jwt: redisJwt}); err != nil {
+		global.Result(r, code, g.Map{}, "jwt作废失败")
+		r.Exit()
+	}
+	if err := service.SetRedisJWT(admin.Uuid, token); err != nil {
+		global.Result(r, code, g.Map{}, "设置登录状态失败")
+		r.Exit()
+	}
+	global.OkDetailed(r, response.AdminLogin{User: admin, Token: token, ExpiresAt: expire.Unix() * 1000}, "登录成功!")
+}
+
+// RefreshResponse is used to get a new token no matter current token is expired or not.
+// RefreshResponse 用于获取新令牌，无论当前令牌是否过期。
+func RefreshResponse(r *ghttp.Request, code int, token string, expire time.Time) {
+	admin := (*response.Admin)(nil)
+	if err := gconv.Struct(r.GetParam("admin"), &admin); err != nil {
+		global.FailWithMessage(r, "更新失败")
+		r.Exit()
+	}
+	if !g.Cfg().GetBool("system.UseMultipoint") {
+		global.OkDetailed(r, response.AdminLogin{User: admin, Token: token, ExpiresAt: expire.Unix() * 1000}, "登录成功!")
+		r.Exit()
+	}
+	redisJwt, err := service.GetRedisJWT(admin.Uuid)
+	if err != nil {
+		global.FailWithMessage(r, "刷新Token失败")
+	}
+	if err == nil && redisJwt != "" {
 		if err = service.JsonInBlacklist(&jwts.Entity{Jwt: redisJwt}); err != nil {
 			global.Result(r, code, g.Map{}, "jwt作废失败")
 			r.Exit()
@@ -120,20 +147,7 @@ func LoginResponse(r *ghttp.Request, code int, token string, expire time.Time) {
 			r.Exit()
 		}
 	}
-	global.OkDetailed(r, response.Login{User: admin, Token: token, ExpiresAt: expire.Unix() * 1000}, "登录成功!")
-}
-
-// RefreshResponse is used to get a new token no matter current token is expired or not.
-// RefreshResponse 用于获取新令牌，无论当前令牌是否过期。
-func RefreshResponse(r *ghttp.Request, code int, token string, expire time.Time) {
-
-	// TODO Redis判断jwt是否有效
-	//_ = r.Response.WriteJson(g.Map{
-	//	"code":   http.StatusOK,
-	//	"token":  token,
-	//	"expire": expire.Format(time.RFC3339),
-	//})
-	r.ExitAll()
+	global.OkDetailed(r, response.AdminLogin{User: admin, Token: token, ExpiresAt: expire.Unix() * 1000}, "登录成功!")
 }
 
 // Authenticator is used to validate login parameters.
@@ -148,14 +162,14 @@ func Authenticator(r *ghttp.Request) (interface{}, error) {
 		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
-	if !service.Store.Verify(L.CaptchaId, L.Captcha, true) { // 验证码校对
-		return nil, errors.New("验证码错误")
-	}
+	//if !service.Store.Verify(L.CaptchaId, L.Captcha, true) { // 验证码校对
+	//	return nil, errors.New("验证码错误")
+	//}
 	admin, err := service.AdminLogin(&L)
 	if err != nil {
 		return nil, jwt.ErrFailedAuthentication
 	}
 	r.SetParam("admin", admin) // 设置参数保存到请求中
-	return gconv.Map(&admin), nil
+	return g.Map{"uuid": admin.Uuid, "id": admin.Id, "nickname": admin.Nickname}, nil
 
 }

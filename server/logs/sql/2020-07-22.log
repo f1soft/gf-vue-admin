@@ -1,0 +1,387 @@
+2020-07-22 13:31:25.294 [DEBU] [ 20 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 13:31:25.308 [DEBU] [ 14 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 13:31:25.396 [DEBU] [ 10 ms] INSERT INTO `admins`(`password`,`id`,`create_at`,`update_at`,`nickname`,`header_img`,`uuid`,`authority_id`,`username`) VALUES('$2a$10$hF2gTnOYHOYdyQ7XmdMQ4uqHDrNyGpzuU36aYFBafKEaCc3sUAV8u',0,'2020-07-22 13:31:25','2020-07-22 13:31:25','admin','http://qmplusimg.henrongyi.top','59ee9de7-cb9c-4ce4-a9c0-94f1450ae9e9','888','admin')
+2020-07-22 13:31:58.767 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 13:31:58.844 [DEBU] [  1 ms] INSERT INTO `admins`(`authority_id`,`uuid`,`update_at`,`nickname`,`header_img`,`username`,`password`,`id`,`create_at`) VALUES('888','0516f7a4-dfa6-4ca4-aeb7-45bd8ef78ed6','2020-07-22 13:31:58','admin','http://qmplusimg.henrongyi.top','admin','$2a$10$LigmbM8FKNkM3uYTkaXnWe8gzPl3rSxtT7401gX4kvS63sXGuEQlW',0,'2020-07-22 13:31:58')
+2020-07-22 13:33:26.966 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 13:34:27.770 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 13:34:27.771 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 13:38:09.444 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 13:38:20.682 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 13:38:20.683 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 13:38:20.757 [DEBU] [  1 ms] INSERT INTO `admins`(`id`,`username`,`uuid`,`nickname`,`header_img`,`authority_id`,`password`,`create_at`,`update_at`) VALUES(0,'admin','91ee799b-ace4-46c7-b3f4-79c83184cae1','admin','http://qmplusimg.henrongyi.top','888','$2a$10$e59zzdrn5Jmblqme/zZ9VeQGNwat8roltB0zg9HCsQ0qh/eM3GV/u','2020-07-22 13:38:20','2020-07-22 13:38:20')
+2020-07-22 13:50:20.009 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 13:50:20.010 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 13:50:20.084 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 13:50:20.086 [ERRO] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+Error: Error 1146: Table 'gf-vue-admin.jwts' doesn't exist 
+Stack:
+1.  github.com/gogf/gf/os/gcache.(*memCache).GetOrSetFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/os/gcache/gcache_mem_cache.go:250
+2.  server/app/model/jwts.Insert
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/model/jwts/jwts_model.go:73
+3.  server/app/service.JsonInBlacklist
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/service/jwts.go:14
+4.  server/app/api/v1.LoginResponse
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/api/v1/auth.go:114
+5.  github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf-jwt@v1.1.0/auth_jwt.go:450
+6.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+7.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+8.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+9.  github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+10. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+11. server/app/middleware.Error
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/middleware/error.go:9
+12. github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.9
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:117
+13. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+14. github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:116
+15. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+16. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+17. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-22 13:50:20.087 [ERRO] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+Error: Error 1146: Table 'gf-vue-admin.jwts' doesn't exist 
+Stack:
+1.  github.com/gogf/gf/os/gcache.(*memCache).GetOrSetFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/os/gcache/gcache_mem_cache.go:250
+2.  server/app/model/jwts.Insert
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/model/jwts/jwts_model.go:73
+3.  server/app/service.JsonInBlacklist
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/service/jwts.go:14
+4.  server/app/api/v1.LoginResponse
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/api/v1/auth.go:114
+5.  github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf-jwt@v1.1.0/auth_jwt.go:450
+6.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+7.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+8.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+9.  github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+10. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+11. server/app/middleware.Error
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/middleware/error.go:9
+12. github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.9
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:117
+13. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+14. github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:116
+15. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+16. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+17. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-22 13:50:20.088 [ERRO] [  0 ms] SHOW FULL COLUMNS FROM `jwts`
+Error: Error 1146: Table 'gf-vue-admin.jwts' doesn't exist 
+Stack:
+1.  github.com/gogf/gf/os/gcache.(*memCache).GetOrSetFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/os/gcache/gcache_mem_cache.go:250
+2.  server/app/model/jwts.Insert
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/model/jwts/jwts_model.go:73
+3.  server/app/service.JsonInBlacklist
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/service/jwts.go:14
+4.  server/app/api/v1.LoginResponse
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/api/v1/auth.go:114
+5.  github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf-jwt@v1.1.0/auth_jwt.go:450
+6.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+7.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+8.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+9.  github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+10. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+11. server/app/middleware.Error
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/middleware/error.go:9
+12. github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.9
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:117
+13. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+14. github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:116
+15. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+16. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+17. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-22 13:53:19.574 [DEBU] [  3 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 13:53:19.575 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 13:53:19.648 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 13:53:19.650 [ERRO] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+Error: Error 1146: Table 'gf-vue-admin.jwts' doesn't exist 
+Stack:
+1.  github.com/gogf/gf/os/gcache.(*memCache).GetOrSetFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/os/gcache/gcache_mem_cache.go:250
+2.  server/app/model/jwts.Insert
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/model/jwts/jwts_model.go:73
+3.  server/app/service.JsonInBlacklist
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/service/jwts.go:14
+4.  server/app/api/v1.LoginResponse
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/api/v1/auth.go:114
+5.  github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf-jwt@v1.1.0/auth_jwt.go:450
+6.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+7.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+8.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+9.  github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+10. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+11. server/app/middleware.Error
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/middleware/error.go:9
+12. github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.9
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:117
+13. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+14. github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:116
+15. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+16. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+17. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-22 13:53:19.652 [ERRO] [  0 ms] SHOW FULL COLUMNS FROM `jwts`
+Error: Error 1146: Table 'gf-vue-admin.jwts' doesn't exist 
+Stack:
+1.  github.com/gogf/gf/os/gcache.(*memCache).GetOrSetFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/os/gcache/gcache_mem_cache.go:250
+2.  server/app/model/jwts.Insert
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/model/jwts/jwts_model.go:73
+3.  server/app/service.JsonInBlacklist
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/service/jwts.go:14
+4.  server/app/api/v1.LoginResponse
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/api/v1/auth.go:114
+5.  github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf-jwt@v1.1.0/auth_jwt.go:450
+6.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+7.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+8.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+9.  github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+10. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+11. server/app/middleware.Error
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/middleware/error.go:9
+12. github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.9
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:117
+13. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+14. github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:116
+15. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+16. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+17. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-22 13:53:19.653 [ERRO] [  0 ms] SHOW FULL COLUMNS FROM `jwts`
+Error: Error 1146: Table 'gf-vue-admin.jwts' doesn't exist 
+Stack:
+1.  github.com/gogf/gf/os/gcache.(*memCache).GetOrSetFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/os/gcache/gcache_mem_cache.go:250
+2.  server/app/model/jwts.Insert
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/model/jwts/jwts_model.go:73
+3.  server/app/service.JsonInBlacklist
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/service/jwts.go:14
+4.  server/app/api/v1.LoginResponse
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/api/v1/auth.go:114
+5.  github.com/gogf/gf-jwt.(*GfJWTMiddleware).LoginHandler
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf-jwt@v1.1.0/auth_jwt.go:450
+6.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+7.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+8.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+9.  github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+10. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+11. server/app/middleware.Error
+    /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/middleware/error.go:9
+12. github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.9
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:117
+13. github.com/gogf/gf/net/ghttp.niceCallFunc
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+14. github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:116
+15. github.com/gogf/gf/util/gutil.TryCatch
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+16. github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+17. github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /Users/sliverhorn/Go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-22 13:54:08.415 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 13:54:08.416 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 13:54:08.491 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 13:54:08.492 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 13:54:42.684 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 13:54:42.685 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 13:54:42.761 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 13:55:04.340 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 13:59:34.501 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 13:59:34.577 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:00:49.549 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:00:49.550 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:00:49.627 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:01:06.483 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:01:06.484 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:01:06.563 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:01:39.204 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:01:39.205 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:01:39.281 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:02:33.040 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:02:33.041 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:02:33.113 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:02:33.117 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:02:53.829 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:02:53.830 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:02:53.907 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:05:29.513 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:05:29.514 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:05:29.589 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:05:58.797 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:05:58.798 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:05:58.874 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:09:11.453 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:09:11.454 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:09:11.530 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:11:16.805 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:11:16.806 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:11:16.880 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:11:21.997 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 14:12:06.321 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:12:06.322 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:12:06.398 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:30:34.694 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:30:34.695 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:30:34.771 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:30:34.772 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 14:30:47.941 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:30:48.018 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:31:33.304 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:31:33.305 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:31:33.379 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:32:26.209 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:32:26.283 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:32:38.844 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:32:38.917 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:32:38.919 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 14:32:45.918 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:32:45.994 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:35:10.174 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:35:10.175 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:35:10.254 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:35:30.048 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:35:30.123 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:36:05.750 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:36:05.751 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:36:05.825 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:37:19.387 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:37:19.462 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:37:22.547 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 14:38:40.373 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:38:40.374 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:38:40.448 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:38:42.949 [DEBU] [  0 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 14:38:42.950 [DEBU] [  0 ms] INSERT INTO `jwts`(`create_at`,`update_at`,`jwt`) VALUES('2020-07-22 14:38:42','2020-07-22 14:38:42','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTU0MDMzNjIsIm9yaWdfaWF0IjoxNTk1Mzk5NzYyfQ.cMVsCkwIz8nR3eiDnU7NLr_Tv6LnhWLEShtvmMGxBoY')
+2020-07-22 14:41:11.047 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:41:11.048 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:41:11.123 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:45:40.420 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:45:40.421 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 14:45:40.501 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 14:45:40.503 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 14:45:40.504 [DEBU] [  1 ms] INSERT INTO `jwts`(`jwt`,`create_at`,`update_at`) VALUES('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTU0MDM1MTgsIm9yaWdfaWF0IjoxNTk1Mzk5OTE4fQ.jQq6hTnt_y4hmtF9SqwzCn8cpLAHD4biNVxjvPzQ2xU','2020-07-22 14:45:40','2020-07-22 14:45:40')
+2020-07-22 14:55:51.263 [DEBU] [  3 ms] SHOW TABLES
+2020-07-22 14:55:51.265 [DEBU] [  0 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 14:55:51.267 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `apis`
+2020-07-22 14:55:51.269 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `authorities`
+2020-07-22 14:55:51.272 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `customers`
+2020-07-22 14:55:51.274 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `dictionaries`
+2020-07-22 14:55:51.276 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `dictionary_details`
+2020-07-22 14:55:51.278 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `files`
+2020-07-22 14:55:51.279 [DEBU] [  0 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 14:55:51.281 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `menus`
+2020-07-22 14:55:51.283 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `operations`
+2020-07-22 15:35:24.034 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 15:35:24.035 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 15:35:24.112 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 15:35:24.113 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 15:35:24.114 [DEBU] [  1 ms] INSERT INTO `jwts`(`jwt`,`create_at`,`update_at`) VALUES('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTU0MDM5MzgsIm9yaWdfaWF0IjoxNTk1NDAwMzM4fQ.jdZ8X2qx9e4tUWvvyjaEj9Pin4xyFyQnXq7YhtR3CeE','2020-07-22 15:35:24','2020-07-22 15:35:24')
+2020-07-22 15:36:24.665 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 15:36:24.666 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 15:36:24.740 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 15:36:24.741 [DEBU] [  0 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 15:36:24.742 [DEBU] [  1 ms] INSERT INTO `jwts`(`jwt`,`create_at`,`update_at`) VALUES('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTU0MDY5MjQsIm9yaWdfaWF0IjoxNTk1NDAzMzI0fQ.jV3kg72s3Z2Km4xv6I__-Fvx0P30pn9-RBdmfs_DL7A','2020-07-22 15:36:24','2020-07-22 15:36:24')
+2020-07-22 15:39:02.147 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 15:39:02.148 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 15:39:02.222 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 15:39:02.225 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 15:39:02.226 [DEBU] [  1 ms] INSERT INTO `jwts`(`jwt`,`create_at`,`update_at`) VALUES('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTU0MDY5ODQsIm9yaWdfaWF0IjoxNTk1NDAzMzg0fQ.PWKltdrUORvCoJiCg4rrU6PndHhoJ2iBxYsh9rnSAa8','2020-07-22 15:39:02','2020-07-22 15:39:02')
+2020-07-22 15:41:14.328 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 15:41:14.329 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 15:41:14.403 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 15:41:14.404 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 15:41:14.405 [DEBU] [  1 ms] INSERT INTO `jwts`(`jwt`,`create_at`,`update_at`) VALUES('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTU0MDcxNDIsIm9yaWdfaWF0IjoxNTk1NDAzNTQyfQ.9vwtQcIwSILiPDKWgrpzNLsMkMVRNCp_mDafGZBS_Yg','2020-07-22 15:41:14','2020-07-22 15:41:14')
+2020-07-22 15:41:36.878 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 15:41:36.957 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 15:41:36.959 [DEBU] [  1 ms] INSERT INTO `jwts`(`jwt`,`create_at`,`update_at`) VALUES('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTU0MDcyNzQsIm9yaWdfaWF0IjoxNTk1NDAzNjc0fQ.mFAvqRlkac0Nknuu32w9Z_i19NWh_7eE1rYVFvJTF6M','2020-07-22 15:41:36','2020-07-22 15:41:36')
+2020-07-22 15:42:10.404 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 15:42:10.405 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 15:42:10.482 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 15:42:10.484 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 15:42:10.484 [DEBU] [  0 ms] INSERT INTO `jwts`(`jwt`,`create_at`,`update_at`) VALUES('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTU0MDcyOTYsIm9yaWdfaWF0IjoxNTk1NDAzNjk2fQ.l59cc3PpQ8FuhrZPwin8vUSBTd1OjPTXof6Wa2CfD_M','2020-07-22 15:42:10','2020-07-22 15:42:10')
+2020-07-22 15:43:19.280 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 15:43:19.281 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 15:43:19.358 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 15:43:19.359 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 15:43:19.360 [DEBU] [  1 ms] INSERT INTO `jwts`(`jwt`,`create_at`,`update_at`) VALUES('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTU0MDczMzAsIm9yaWdfaWF0IjoxNTk1NDAzNzMwfQ.pwAi7to_FG0mDkQjZgbEAejAJmMd3Qd-_oblOU_gak0','2020-07-22 15:43:19','2020-07-22 15:43:19')
+2020-07-22 15:43:52.033 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 15:43:52.034 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 15:43:52.110 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 15:43:52.112 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 15:43:52.113 [DEBU] [  1 ms] INSERT INTO `jwts`(`jwt`,`create_at`,`update_at`) VALUES('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTU0MDczOTksIm9yaWdfaWF0IjoxNTk1NDAzNzk5fQ.7wTaQts7eG7e_PtAzlma0kp_8_ZlVpvJvdo_hsf28EU','2020-07-22 15:43:52','2020-07-22 15:43:52')
+2020-07-22 15:44:56.498 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 15:44:56.499 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 15:44:56.576 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 15:44:56.577 [DEBU] [  0 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 15:44:56.578 [DEBU] [  0 ms] INSERT INTO `jwts`(`update_at`,`jwt`,`create_at`) VALUES('2020-07-22 15:44:56','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTU0MDc0MzIsIm9yaWdfaWF0IjoxNTk1NDAzODMyfQ.nH32gRMKMZag69h5q2y6RZuBEpYdUcQPG57Or4QNAA4','2020-07-22 15:44:56')
+2020-07-22 15:54:38.794 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `admins`
+2020-07-22 15:54:38.795 [DEBU] [  0 ms] SELECT * FROM `admins` WHERE `username`='admin' AND `delete_at` IS NULL
+2020-07-22 15:54:38.872 [DEBU] [  1 ms] SELECT * FROM `admins` WHERE `authority_id`='888' AND `delete_at` IS NULL
+2020-07-22 15:54:38.873 [DEBU] [  0 ms] SHOW FULL COLUMNS FROM `jwts`
+2020-07-22 15:54:38.874 [DEBU] [  0 ms] INSERT INTO `jwts`(`jwt`,`create_at`,`update_at`) VALUES('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTU0MDc0OTYsIm9yaWdfaWF0IjoxNTk1NDAzODk2fQ.1DMfIlii6E8paVB3mcHvQYLu9Hp_Fd6wdXhi9e5-mZc','2020-07-22 15:54:38','2020-07-22 15:54:38')

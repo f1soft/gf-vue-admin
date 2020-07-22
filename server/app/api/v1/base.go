@@ -3,7 +3,6 @@ package v1
 import (
 	"fmt"
 	"server/app/api/request"
-	"server/app/model/admins"
 	"server/app/service"
 	"server/library/global"
 
@@ -12,24 +11,17 @@ import (
 )
 
 // @Tags Base
-// @Summary 用户注册账号
+// @Summary 管理员注册账号
 // @Produce  application/json
-// @Param data body model.SysUser true "用户注册接口"
+// @Param data body model.SysUser true "管理员注册接口"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"注册成功"}"
 // @Router /base/register [post]
-func Register(r *ghttp.Request) {
+func AdminRegister(r *ghttp.Request) {
 	var R request.AdminRegister
 	if err := r.Parse(&R); err != nil {
 		global.FailWithMessage(r, err.Error())
 	}
-	u := &admins.Entity{
-		Username:    R.Username,
-		Password:    R.Password,
-		Nickname:    R.Nickname,
-		HeaderImg:   R.HeaderImg,
-		AuthorityId: R.AuthorityId,
-	}
-	if err := service.Register(u); err != nil {
+	if err := service.AdminRegister(&R); err != nil {
 		global.FailWithMessage(r, err.Error())
 		r.ExitAll()
 	}
@@ -47,6 +39,7 @@ func Captcha(r *ghttp.Request) {
 	id, b64s, err := service.Captcha()
 	if err != nil {
 		global.FailWithMessage(r, fmt.Sprintf("获取数据失败，err:%v", err))
+		r.Exit()
 	}
 	global.OkDetailed(r, g.Map{"captchaId": id, "picPath": b64s}, "验证码获取成功")
 }

@@ -3,15 +3,16 @@ package service
 import (
 	"server/app/model/jwts"
 	"server/library/global"
-	"time"
 
 	"github.com/gogf/gf/frame/g"
 
 	"github.com/gogf/gf/util/gconv"
 )
 
+// JsonInBlacklist Shielding JWT
+// JsonInBlacklist 拉黑jwt
 func JsonInBlacklist(jwtList *jwts.Entity) (err error) {
-	_, err = jwts.Insert(&jwtList)
+	_, err = jwts.Insert(g.Map{"jwt": jwtList.Jwt})
 	return err
 }
 
@@ -26,14 +27,14 @@ func IsBlacklist(jwt string) bool {
 func GetRedisJWT(userUUID string) (string, error) {
 	conn := global.GFVA_REDIS.Conn()
 	defer conn.Close()
-	r, err := conn.Do("GET", gconv.String(g.Cfg().Get("redis.Login_Prefix"))+userUUID)
+	r, err := conn.Do("GET", userUUID)
 	return gconv.String(r), err
 }
 
 // SetRedisJWT set jwt into the Redis
 // SetRedisJWT 保存jwt到Redis
 func SetRedisJWT(userUUID string, jwt string) (err error) {
-	_, err = global.GFVA_REDIS.Do("SETEX", gconv.String(g.Cfg().Get("redis.Login_Prefix"))+userUUID, time.Hour*24, jwt)
+	_, err = global.GFVA_REDIS.Do("SETEX", userUUID, g.Cfg().GetUint("jwt.ExpiresAt")*3600000000000, jwt)
 	return err
 }
 
@@ -42,7 +43,7 @@ func SetRedisJWT(userUUID string, jwt string) (err error) {
 func GetToken(userUUID string) string {
 	conn := global.GFVA_REDIS.Conn()
 	defer conn.Close()
-	r, _ := conn.Do("GET", gconv.String(g.Cfg().Get("redis.Login_Prefix"))+userUUID)
+	r, _ := conn.Do("GET", userUUID)
 	return gconv.String(r)
 }
 
