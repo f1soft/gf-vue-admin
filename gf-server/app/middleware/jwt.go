@@ -19,8 +19,8 @@ import (
 
 // JwtAuth 验证token有效性
 func JwtAuth(r *ghttp.Request) {
-	service.GfJWTMiddleware.MiddlewareFunc()(r)
-	parseToken, err := service.GfJWTMiddleware.ParseToken(r) // 解析token
+	v1.GfJWTMiddleware.MiddlewareFunc()(r)
+	parseToken, err := v1.GfJWTMiddleware.ParseToken(r) // 解析token
 	if err != nil {
 		if err == jwt.ErrExpiredToken {
 			global.Result(r, global.ERROR, g.Map{"reload": true}, "授权已过期")

@@ -18,7 +18,7 @@ import (
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"注册成功"}"
 // @Router /base/register [post]
 func Register(r *ghttp.Request) {
-	var R request.RegisterRequest
+	var R request.AdminRegister
 	if err := r.Parse(&R); err != nil {
 		global.FailWithMessage(r, err.Error())
 	}

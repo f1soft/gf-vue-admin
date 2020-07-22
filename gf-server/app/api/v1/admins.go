@@ -63,7 +63,7 @@ func UploadHeaderImg(r *ghttp.Request) {
 	if err != nil {
 		global.FailWithMessage(r, fmt.Sprintf("修改数据库链接失败，%v", err))
 	} else {
-		global.OkDetailed(r, response.AdminResponse{User: admin}, "上传成功")
+		global.OkDetailed(r, response.AdminResponse{Admin: admin}, "上传成功")
 	}
 }
 
@@ -74,8 +74,8 @@ func UploadHeaderImg(r *ghttp.Request) {
 // @Produce application/json
 // @Param data body request.PageInfo true "分页获取用户列表"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
-// @Router /user/getUserList [post]
-func GetUserList(r *ghttp.Request) {
+// @Router /admin/getAdminList [post]
+func GetAdminList(r *ghttp.Request) {
 	var pageInfo request.PageInfo
 	if err := r.Parse(&pageInfo); err != nil {
 		global.FailWithMessage(r, err.Error())
@@ -96,7 +96,7 @@ func GetUserList(r *ghttp.Request) {
 // @Produce application/json
 // @Param data body request.SetUserAuth true "设置用户权限"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"修改成功"}"
-// @Router /user/setUserAuthority [post]
+// @Router /admin/setUserAuthority [post]
 func SetUserAuthority(r *ghttp.Request) {
 	var set request.SetAdminAuthority
 	if err := r.Parse(&set); err != nil {
@@ -108,7 +108,6 @@ func SetUserAuthority(r *ghttp.Request) {
 		r.Exit()
 	}
 	global.OkWithMessage(r, "修改成功")
-
 }
 
 // @Tags Admins
