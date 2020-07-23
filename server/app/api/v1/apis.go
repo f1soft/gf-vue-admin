@@ -10,7 +10,7 @@ import (
 	"github.com/gogf/gf/net/ghttp"
 )
 
-// @Tags SysApi
+// @Tags Apis
 // @Summary 创建基础api
 // @Security ApiKeyAuth
 // @accept application/json
@@ -19,61 +19,61 @@ import (
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /api/createApi [post]
 func CreateApi(r *ghttp.Request) {
-	var C request.CreateApi
-	if err := r.Parse(&C); err != nil {
+	var c request.CreateApi
+	if err := r.Parse(&c); err != nil {
 		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
-	if err := service.CreateApi(&C); err != nil {
+	if err := service.CreateApi(&c); err != nil {
 		global.FailWithMessage(r, fmt.Sprintf("创建失败，err:%v", err))
 		r.Exit()
 	}
 	global.OkWithMessage(r, "创建成功")
 }
 
-// @Tags SysApi
-// @Summary 创建基础api
+// @Tags Apis
+// @Summary 更新基础api
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body model.SysApi true "创建api"
-// @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
+// @Param data body model.SysApi true "更新api"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"更新成功"}"
 // @Router /api/updateApi [post]
 func UpdateApi(r *ghttp.Request) {
-	var U request.UpdateApi
-	if err := r.Parse(&U); err != nil {
-		global.FailWithMessage(r, fmt.Sprintf("删除失败，err:%v", err))
+	var u request.UpdateApi
+	if err := r.Parse(&u); err != nil {
+		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
-	if err := service.UpdateApi(&U); err != nil {
-		global.FailWithMessage(r, fmt.Sprintf("修改数据失败，%v", err))
+	if err := service.UpdateApi(&u); err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("更新失败，%v", err))
 		r.Exit()
 	}
-	global.OkWithMessage(r, "修改数据成功")
+	global.OkWithMessage(r, "更新成功")
 }
 
-// @Tags SysApi
+// @Tags Apis
 // @Summary 删除指定api
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
 // @Param data body model.SysApi true "删除api"
-// @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"删除成功"}"
 // @Router /api/deleteApi [post]
 func DeleteApi(r *ghttp.Request) {
-	var D request.DeleteApi
-	if err := r.Parse(&D); err != nil {
+	var d request.DeleteApi
+	if err := r.Parse(&d); err != nil {
 		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
-	if err := service.DeleteApi(&D); err != nil {
+	if err := service.DeleteApi(&d); err != nil {
 		global.FailWithMessage(r, fmt.Sprintf("删除失败，err:%v", err))
 		r.Exit()
 	}
 	global.OkWithMessage(r, "删除成功")
 }
 
-// @Tags SysApi
+// @Tags Apis
 // @Summary 根据id获取api
 // @Security ApiKeyAuth
 // @accept application/json
@@ -95,7 +95,7 @@ func GetApiById(r *ghttp.Request) {
 	global.OkDetailed(r, response.ApiResponse{Api: apiReturn}, "获取成功")
 }
 
-// @Tags SysApi
+// @Tags Apis
 // @Summary 获取所有的Api 不分页
 // @Security ApiKeyAuth
 // @accept application/json
@@ -113,7 +113,7 @@ func GetAllApis(r *ghttp.Request) {
 
 // 条件搜索后端看此api
 
-// @Tags SysApi
+// @Tags Apis
 // @Summary 分页获取API列表
 // @Security ApiKeyAuth
 // @accept application/json
@@ -122,20 +122,20 @@ func GetAllApis(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /api/getApiList [post]
 func GetApiList(r *ghttp.Request) {
-	var sp request.GetApiList // 此结构体仅本方法使用
-	if err := r.Parse(&sp); err != nil {
+	var get request.GetApiList // 此结构体仅本方法使用
+	if err := r.Parse(&get); err != nil {
 		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
-	list, total, err := service.GetApiInfoList(&sp)
+	list, total, err := service.GetApiInfoList(&get)
 	if err != nil {
 		global.FailWithMessage(r, fmt.Sprintf("获取数据失败，%v", err))
 		r.Exit()
 	}
-	global.OkWithData(r, response.PageResult{
+	global.OkDetailed(r, response.PageResult{
 		List:     list,
 		Total:    total,
-		Page:     sp.Page,
-		PageSize: sp.PageSize,
-	})
+		Page:     get.Page,
+		PageSize: get.PageSize,
+	}, "获取成功")
 }
