@@ -6,9 +6,9 @@ import (
 
 type AuthorityMenu struct {
 	BaseMenu
-	MenuId      string     `orm:"menu_id" json:"menuId"` //菜单ID
-	AuthorityId string     `orm:"authority_id" json:"-"` // 角色ID
-	Children    []BaseMenu `orm:"children" json:"children"`
+	MenuId      string           `orm:"menu_id" json:"menuId"` //菜单ID
+	AuthorityId string           `orm:"authority_id" json:"-"` // 角色ID
+	Children    []*AuthorityMenu `orm:"children" json:"children"`
 }
 
 type BaseMenu struct {

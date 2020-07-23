@@ -1,7 +1,13 @@
 package v1
 
 import (
+	"fmt"
+	"server/app/api/response"
+	"server/app/service"
+	"server/library/global"
+
 	"github.com/gogf/gf/net/ghttp"
+	"github.com/gogf/gf/util/gconv"
 )
 
 // @Tags authorityAndMenu
@@ -12,7 +18,13 @@ import (
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"返回成功"}"
 // @Router /menu/getMenu [post]
 func GetMenu(r *ghttp.Request) {
-
+	authorityId := gconv.String(r.GetParam("authority_id"))
+	menus, err := service.GetMenuTree(authorityId)
+	if err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("获取失败，%v", err))
+		r.Exit()
+	}
+	global.OkWithData(r, response.AuthorityMenu{Menus: menus})
 }
 
 // @Tags menu

@@ -18,6 +18,24 @@ func getMenuTreeMap(authorityId string) (treeMap map[string][]*model.AuthorityMe
 	return treeMap, err
 }
 
-func GetMenuAuthority(authorityId string) (menusReturn []model.AuthorityMenu, err error) {
-	return menusReturn, nil
+// getChildrenList Get submenu
+// getChildrenList 获取子菜单
+func getChildrenList(menu *model.AuthorityMenu, treeMap map[string][]*model.AuthorityMenu) (err error) {
+	menu.Children = treeMap[menu.MenuId]
+	for i := 0; i < len(menu.Children); i++ {
+		err = getChildrenList(menu.Children[i], treeMap)
+	}
+	return err
+}
+
+// GetMenuTree Gets the dynamic menu tree
+// GetMenuTree 获取动态菜单树
+func GetMenuTree(authorityId string) (menus []*model.AuthorityMenu, err error) {
+	var menuTree map[string][]*model.AuthorityMenu
+	menuTree, err = getMenuTreeMap(authorityId)
+	menus = menuTree["0"]
+	for i := 0; i < len(menus); i++ {
+		err = getChildrenList(menus[i], menuTree)
+	}
+	return menus, err
 }
