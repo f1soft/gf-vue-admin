@@ -2,6 +2,7 @@ package v1
 
 import (
 	"fmt"
+	"server/app/api/request"
 	"server/app/api/response"
 	"server/app/service"
 	"server/library/global"
@@ -27,7 +28,7 @@ func GetMenu(r *ghttp.Request) {
 	global.OkWithData(r, response.AuthorityMenu{Menus: menus})
 }
 
-// @Tags menu
+// @Tags menus
 // @Summary 分页获取基础menu列表
 // @Security ApiKeyAuth
 // @accept application/json
@@ -36,9 +37,25 @@ func GetMenu(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /menu/getMenuList [post]
 func GetMenuList(r *ghttp.Request) {
+	var pageInfo request.PageInfo
+	if err := r.Parse(&pageInfo); err != nil {
+		global.FailWithMessage(r, err.Error())
+		r.Exit()
+	}
+	list, total, err := service.GetMenuList()
+	if err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("获取数据失败，err:%v", err))
+		r.Exit()
+	}
+	global.OkWithData(r, response.PageResult{
+		List:     list,
+		Total:    total,
+		Page:     pageInfo.Page,
+		PageSize: pageInfo.PageSize,
+	})
 }
 
-// @Tags menu
+// @Tags menus
 // @Summary 新增菜单
 // @Security ApiKeyAuth
 // @accept application/json
@@ -90,9 +107,19 @@ func GetMenuAuthority(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /menu/deleteBaseMenu [post]
 func DeleteBaseMenu(r *ghttp.Request) {
+	var deleteInfo request.GetById
+	if err := r.Parse(&deleteInfo); err != nil {
+		global.FailWithMessage(r, err.Error())
+		r.Exit()
+	}
+	if err := service.DeleteBaseMenu(&deleteInfo); err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("删除菜单失败，err:%v", err))
+		r.Exit()
+	}
+	global.OkWithMessage(r, "删除成功")
 }
 
-// @Tags menu
+// @Tags menus
 // @Summary 更新菜单
 // @Security ApiKeyAuth
 // @accept application/json
@@ -103,7 +130,7 @@ func DeleteBaseMenu(r *ghttp.Request) {
 func UpdateBaseMenu(r *ghttp.Request) {
 }
 
-// @Tags menu
+// @Tags menus
 // @Summary 根据id获取菜单
 // @Security ApiKeyAuth
 // @accept application/json
@@ -112,4 +139,15 @@ func UpdateBaseMenu(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /menu/getBaseMenuById [post]
 func GetBaseMenuById(r *ghttp.Request) {
+	var idInfo request.GetById
+	if err := r.Parse(&idInfo); err != nil {
+		global.FailWithMessage(r, err.Error())
+		r.Exit()
+	}
+	menu, err := service.GetBaseMenuById(&idInfo)
+	if err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("查询失败，err:%v", err))
+		r.Exit()
+	}
+	global.OkWithData(r, response.BaseMenu{Menu: menu})
 }

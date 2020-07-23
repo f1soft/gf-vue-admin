@@ -18,6 +18,6 @@ func InitMenuRouter() {
 		MenuRouter.POST("getMenuAuthority", v1.GetMenuAuthority) // 获取指定角色menu
 		MenuRouter.POST("deleteBaseMenu", v1.DeleteBaseMenu)     // 删除菜单
 		MenuRouter.POST("updateBaseMenu", v1.UpdateBaseMenu)     // 更新菜单
-		MenuRouter.POST("getBaseMenuById", v1.GetBaseMenuTree)   // 根据id获取菜单
+		MenuRouter.POST("getBaseMenuById", v1.GetBaseMenuById)   // 根据id获取菜单
 	}
 }

@@ -11,5 +11,5 @@ type BaseMenus struct {
 }
 
 type BaseMenu struct {
-	Menu model.BaseMenu `json:"menu"`
+	Menu *model.BaseMenu `json:"menu"`
 }

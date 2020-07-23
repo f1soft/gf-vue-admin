@@ -24,6 +24,7 @@ type BaseMenu struct {
 	Component string        `orm:"component"    json:"component"` // 前端文件路径
 	Sort      int           `orm:"sort"         json:"sort"`      // 排序标记
 	Meta      `json:"meta"` // 附加属性
+	Children  []*BaseMenu   `orm:"children" json:"children"`
 }
 
 type Meta struct {

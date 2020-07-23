@@ -36,7 +36,7 @@ service.interceptors.request.use(
         config.data = JSON.stringify(config.data);
         config.headers = {
             'Content-Type': 'application/json',
-            'x-token': token,
+            'Authorization': "Bearer " + token,
             'x-user-id':user.ID
         }
         return config;
