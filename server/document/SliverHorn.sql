@@ -124,7 +124,7 @@ CREATE TABLE `menus`
     `keep_alive`   tinyint(1)                                              NULL DEFAULT NULL COMMENT '是否缓存',
     `default_menu` tinyint(1)                                              NULL DEFAULT NULL COMMENT '是否是基础路由(开发中)',
     PRIMARY KEY (`id`) USING BTREE,
-    INDEX `idx_menus_deleted_at` (`deleted_at`) USING BTREE
+    INDEX `idx_menus_deleted_at` (`delete_at`) USING BTREE
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 52
   CHARACTER SET = utf8

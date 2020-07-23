@@ -33,3 +33,9 @@ Stack:
 1.  server/app/service.TestMenu
     /Users/sliverhorn/Go/src/github.com/flipped-aurora/gf-vue-admin/server/app/service/join_test.go:24
 
+2020-07-23 14:33:12.521 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `menus`
+2020-07-23 14:33:12.522 [DEBU] [  0 ms] SHOW FULL COLUMNS FROM `authority_menu`
+2020-07-23 14:33:12.524 [DEBU] [  1 ms] SELECT * FROM `menus` a RIGHT JOIN `authority_menu` b ON (a.id=b.menu_id) WHERE `authority_id`='888' AND `a`.`delete_at` IS NULL
+2020-07-23 14:33:19.817 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `menus`
+2020-07-23 14:33:19.818 [DEBU] [  1 ms] SHOW FULL COLUMNS FROM `authority_menu`
+2020-07-23 14:33:19.819 [DEBU] [  1 ms] SELECT * FROM `menus` a RIGHT JOIN `authority_menu` b ON (a.id=b.menu_id) WHERE `authority_id`='888' AND `a`.`delete_at` IS NULL
