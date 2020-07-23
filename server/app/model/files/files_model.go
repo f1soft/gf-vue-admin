@@ -24,23 +24,23 @@ var (
 	Model = &arModel{g.DB("default").Table(Table).Safe()}
 	// Columns defines and stores column names for table files.
 	Columns = struct {
-		Id         string // 自增ID    
-        CreatedAt  string // 创建时间  
-        UpdatedAt  string // 更新时间  
-        DeletedAt  string // 删除时间  
-        Name       string // 文件名    
-        Url        string // 文件地址  
-        Tag        string // 文件标签  
-        Key        string // 编号
+		Id        string // 自增ID    
+        CreateAt  string // 创建时间  
+        UpdateAt  string // 更新时间  
+        DeleteAt  string // 删除时间  
+        Name      string // 文件名    
+        Url       string // 文件地址  
+        Tag       string // 文件标签  
+        Key       string // 编号
 	}{
-		Id:        "id",          
-        CreatedAt: "created_at",  
-        UpdatedAt: "updated_at",  
-        DeletedAt: "deleted_at",  
-        Name:      "name",        
-        Url:       "url",         
-        Tag:       "tag",         
-        Key:       "key",
+		Id:       "id",         
+        CreateAt: "create_at",  
+        UpdateAt: "update_at",  
+        DeleteAt: "delete_at",  
+        Name:     "name",       
+        Url:      "url",        
+        Tag:      "tag",        
+        Key:      "key",
 	}
 )
 

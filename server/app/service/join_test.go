@@ -1,7 +1,7 @@
 package service
 
 import (
-	"fmt"
+	"server/app/model"
 	"testing"
 
 	"github.com/gogf/gf/frame/g"
@@ -18,13 +18,14 @@ type UserInfo struct {
 	Email string `orm:"email" json:"email"`
 }
 
-func TestUser(t *testing.T) {
+func TestMenu(t *testing.T) {
+	authorityMenus := ([]*model.AuthorityMenu)(nil)
 	g.DB().SetDebug(true)
-	r, err := g.DB("test").Table("user u").RightJoin("user_info ui", "u.id=ui.uid").Fields("u.id, u.username, ui.email").One()
+	err := g.DB("default").Table("menus a").RightJoin("authority_menu b", "a.id=b.menu_id").Where(g.Map{"authority_id": "888"}).Structs(&authorityMenus)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(r)
+	//fmt.Println(r)
 }
 
 func TestUserAndUserInfo(t *testing.T) {

@@ -25,9 +25,9 @@ var (
 	// Columns defines and stores column names for table dictionary_details.
 	Columns = struct {
 		Id            string // 自增ID    
-        CreatedAt     string // 创建时间  
-        UpdatedAt     string // 更新时间  
-        DeletedAt     string // 删除时间  
+        CreateAt      string // 创建时间  
+        UpdateAt      string // 更新时间  
+        DeleteAt      string // 删除时间  
         Label         string // 展示值    
         Value         string // 字典值    
         Status        string // 启用状态  
@@ -35,9 +35,9 @@ var (
         DictionaryId  string // 关联标记
 	}{
 		Id:           "id",             
-        CreatedAt:    "created_at",     
-        UpdatedAt:    "updated_at",     
-        DeletedAt:    "deleted_at",     
+        CreateAt:     "create_at",      
+        UpdateAt:     "update_at",      
+        DeleteAt:     "delete_at",      
         Label:        "label",          
         Value:        "value",          
         Status:       "status",         

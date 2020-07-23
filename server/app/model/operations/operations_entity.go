@@ -13,9 +13,9 @@ import (
 // Entity is the golang structure for table operations.
 type Entity struct {
     Id           uint        `orm:"id,primary"    json:"id"`            // 自增ID    
-    CreatedAt    *gtime.Time `orm:"created_at"    json:"created_at"`    // 创建时间  
-    UpdatedAt    *gtime.Time `orm:"updated_at"    json:"updated_at"`    // 更新时间  
-    DeletedAt    *gtime.Time `orm:"deleted_at"    json:"deleted_at"`    // 删除时间  
+    CreateAt     *gtime.Time `orm:"create_at"     json:"create_at"`     // 创建时间  
+    UpdateAt     *gtime.Time `orm:"update_at"     json:"update_at"`     // 更新时间  
+    DeleteAt     *gtime.Time `orm:"delete_at"     json:"delete_at"`     // 删除时间  
     Ip           string      `orm:"ip"            json:"ip"`            // 请求ip    
     Method       string      `orm:"method"        json:"method"`        // 请求方法  
     Path         string      `orm:"path"          json:"path"`          // 请求路由  

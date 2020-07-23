@@ -12,6 +12,7 @@ import (
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"返回成功"}"
 // @Router /menu/getMenu [post]
 func GetMenu(r *ghttp.Request) {
+
 }
 
 // @Tags menu

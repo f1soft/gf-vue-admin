@@ -24,23 +24,23 @@ var (
 	Model = &arModel{g.DB("default").Table(Table).Safe()}
 	// Columns defines and stores column names for table dictionaries.
 	Columns = struct {
-		Id         string // 自增ID        
-        CreatedAt  string // 创建时间      
-        UpdatedAt  string // 更新时间      
-        DeletedAt  string // 删除时间      
-        Name       string // 字典名（中）  
-        Type       string // 字典名（英）  
-        Status     string // 状态          
-        Desc       string // 描述
+		Id        string // 自增ID        
+        CreateAt  string // 创建时间      
+        UpdateAt  string // 更新时间      
+        DeleteAt  string // 删除时间      
+        Name      string // 字典名（中）  
+        Type      string // 字典名（英）  
+        Status    string // 状态          
+        Desc      string // 描述
 	}{
-		Id:        "id",          
-        CreatedAt: "created_at",  
-        UpdatedAt: "updated_at",  
-        DeletedAt: "deleted_at",  
-        Name:      "name",        
-        Type:      "type",        
-        Status:    "status",      
-        Desc:      "desc",
+		Id:       "id",         
+        CreateAt: "create_at",  
+        UpdateAt: "update_at",  
+        DeleteAt: "delete_at",  
+        Name:     "name",       
+        Type:     "type",       
+        Status:   "status",     
+        Desc:     "desc",
 	}
 )
 

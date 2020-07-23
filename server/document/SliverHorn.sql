@@ -109,11 +109,11 @@ DROP TABLE IF EXISTS `menus`;
 CREATE TABLE `menus`
 (
     `id`           int(10) UNSIGNED                                        NOT NULL AUTO_INCREMENT COMMENT '自增ID',
-    `created_at`   timestamp(0)                                            NULL DEFAULT NULL COMMENT '创建时间',
-    `updated_at`   timestamp(0)                                            NULL DEFAULT NULL COMMENT '更新时间',
-    `deleted_at`   timestamp(0)                                            NULL DEFAULT NULL COMMENT '删除时间',
+    `create_at`   timestamp(0)                                            NULL DEFAULT NULL COMMENT '创建时间',
+    `update_at`   timestamp(0)                                            NULL DEFAULT NULL COMMENT '更新时间',
+    `delete_at`   timestamp(0)                                            NULL DEFAULT NULL COMMENT '删除时间',
     `menu_level`   int(10) UNSIGNED                                        NULL DEFAULT NULL COMMENT '菜单等级(预留字段)',
-    `parent_id`    int(10) UNSIGNED                                        NULL DEFAULT NULL COMMENT '父菜单ID',
+    `parent_id`    varchar(255)                                        NULL DEFAULT NULL COMMENT '父菜单ID',
     `path`         varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '路由path',
     `name`         varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '路由name',
     `hidden`       tinyint(1)                                              NULL DEFAULT NULL COMMENT '是否在列表隐藏',
@@ -131,23 +131,22 @@ CREATE TABLE `menus`
   COLLATE = utf8_general_ci
   ROW_FORMAT = Compact;
 
-
 -- ----------------------------
 -- Table structure for dictionaries Model
 -- ----------------------------
 DROP TABLE IF EXISTS `dictionaries`;
-CREATE TABLE `sys_dictionaries`
+CREATE TABLE `dictionaries`
 (
     `id`         int(10) UNSIGNED                                        NOT NULL AUTO_INCREMENT COMMENT '自增ID',
-    `created_at` datetime(0)                                             NULL DEFAULT NULL COMMENT '创建时间',
-    `updated_at` datetime(0)                                             NULL DEFAULT NULL COMMENT '更新时间',
-    `deleted_at` datetime(0)                                             NULL DEFAULT NULL COMMENT '删除时间',
+    `create_at` datetime(0)                                             NULL DEFAULT NULL COMMENT '创建时间',
+    `update_at` datetime(0)                                             NULL DEFAULT NULL COMMENT '更新时间',
+    `delete_at` datetime(0)                                             NULL DEFAULT NULL COMMENT '删除时间',
     `name`       varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '字典名（中）',
     `type`       varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '字典名（英）',
     `status`     tinyint(1)                                              NULL DEFAULT NULL COMMENT '状态',
     `desc`       varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '描述',
     PRIMARY KEY (`id`) USING BTREE,
-    INDEX `idx_sys_dictionaries_deleted_at` (`deleted_at`) USING BTREE
+    INDEX `idx_sys_dictionaries_deleted_at` (`delete_at`) USING BTREE
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 8
   CHARACTER SET = utf8
@@ -161,16 +160,16 @@ DROP TABLE IF EXISTS `dictionary_details`;
 CREATE TABLE `dictionary_details`
 (
     `id`                int(10) UNSIGNED                                        NOT NULL AUTO_INCREMENT COMMENT '自增ID',
-    `created_at`        datetime(0)                                             NULL DEFAULT NULL COMMENT '创建时间',
-    `updated_at`        datetime(0)                                             NULL DEFAULT NULL COMMENT '更新时间',
-    `deleted_at`        datetime(0)                                             NULL DEFAULT NULL COMMENT '删除时间',
+    `create_at`        datetime(0)                                             NULL DEFAULT NULL COMMENT '创建时间',
+    `update_at`        datetime(0)                                             NULL DEFAULT NULL COMMENT '更新时间',
+    `delete_at`        datetime(0)                                             NULL DEFAULT NULL COMMENT '删除时间',
     `label`             varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '展示值',
     `value`             int(11)                                                 NULL DEFAULT NULL COMMENT '字典值',
     `status`            tinyint(1)                                              NULL DEFAULT NULL COMMENT '启用状态',
     `sort`              int(11)                                                 NULL DEFAULT NULL COMMENT '排序标记',
     `dictionary_id` int(11)                                                 NULL DEFAULT NULL COMMENT '关联标记',
     PRIMARY KEY (`id`) USING BTREE,
-    INDEX `idx_sys_dictionary_details_deleted_at` (`deleted_at`) USING BTREE
+    INDEX `idx_sys_dictionary_details_deleted_at` (`delete_at`) USING BTREE
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 38
   CHARACTER SET = utf8
@@ -184,16 +183,15 @@ CREATE TABLE `dictionary_details`
 DROP TABLE IF EXISTS `files`;
 CREATE TABLE `files`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '自增ID',
-  `created_at` timestamp(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `updated_at` timestamp(0) NULL DEFAULT NULL COMMENT '更新时间',
-  `deleted_at` timestamp(0) NULL DEFAULT NULL COMMENT '删除时间',
+  `create_at` timestamp(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `update_at` timestamp(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `delete_at` timestamp(0) NULL DEFAULT NULL COMMENT '删除时间',
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '文件名',
   `url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '文件地址',
   `tag` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '文件标签',
   `key` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '编号',
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `idx_file_upload_and_downloads_deleted_at`(`deleted_at`) USING BTREE,
-  INDEX `idx_exa_file_upload_and_downloads_deleted_at`(`deleted_at`) USING BTREE
+  INDEX `idx_files_deleted_at`(`delete_at`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 
@@ -204,15 +202,15 @@ DROP TABLE IF EXISTS `customers`;
 CREATE TABLE `customers`
 (
     `id`                    int(10) UNSIGNED                                        NOT NULL AUTO_INCREMENT COMMENT '自增ID',
-    `created_at`            timestamp(0)                                            NULL DEFAULT NULL COMMENT '创建时间',
-    `updated_at`            timestamp(0)                                            NULL DEFAULT NULL COMMENT '更新时间',
-    `deleted_at`            timestamp(0)                                            NULL DEFAULT NULL COMMENT '删除时间',
+    `create_at`            timestamp(0)                                            NULL DEFAULT NULL COMMENT '创建时间',
+    `update_at`            timestamp(0)                                            NULL DEFAULT NULL COMMENT '更新时间',
+    `delete_at`            timestamp(0)                                            NULL DEFAULT NULL COMMENT '删除时间',
     `customer_name`         varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin  NULL DEFAULT NULL COMMENT '客户名',
     `customer_phone_data`   varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '客户电话',
     `sys_user_id`           int(10) UNSIGNED                                        NULL DEFAULT NULL COMMENT '负责员工id',
     `sys_user_authority_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '负责员工角色',
     PRIMARY KEY (`id`) USING BTREE,
-    INDEX `idx_exa_customers_deleted_at` (`deleted_at`) USING BTREE
+    INDEX `idx_exa_customers_deleted_at` (`delete_at`) USING BTREE
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 2
   CHARACTER SET = utf8mb4
@@ -226,9 +224,9 @@ DROP TABLE IF EXISTS `operations`;
 CREATE TABLE `operations`
 (
     `id`            int(10) UNSIGNED                                       NOT NULL AUTO_INCREMENT COMMENT '自增ID',
-    `created_at`    datetime(0)                                            NULL DEFAULT NULL COMMENT '创建时间',
-    `updated_at`    datetime(0)                                            NULL DEFAULT NULL COMMENT '更新时间',
-    `deleted_at`    datetime(0)                                            NULL DEFAULT NULL COMMENT '删除时间',
+    `create_at`    datetime(0)                                            NULL DEFAULT NULL COMMENT '创建时间',
+    `update_at`    datetime(0)                                            NULL DEFAULT NULL COMMENT '更新时间',
+    `delete_at`    datetime(0)                                            NULL DEFAULT NULL COMMENT '删除时间',
     `ip`            varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '请求ip',
     `method`        varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '请求方法',
     `path`          varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '请求路由',
@@ -240,13 +238,12 @@ CREATE TABLE `operations`
     `user_id`       int(11)                                                NULL DEFAULT NULL COMMENT '用户id',
     `response`          text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin         NULL COMMENT '响应Body',
     PRIMARY KEY (`id`) USING BTREE,
-    INDEX `idx_operations_deleted_at` (`deleted_at`) USING BTREE
+    INDEX `idx_operations_deleted_at` (`delete_at`) USING BTREE
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 342
   CHARACTER SET = utf8mb4
   COLLATE = utf8mb4_bin
   ROW_FORMAT = Compact;
-
 -- ----------------------------
 -- Table structure for authority_resources Model
 -- ----------------------------

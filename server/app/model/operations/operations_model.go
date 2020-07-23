@@ -25,9 +25,9 @@ var (
 	// Columns defines and stores column names for table operations.
 	Columns = struct {
 		Id            string // 自增ID    
-        CreatedAt     string // 创建时间  
-        UpdatedAt     string // 更新时间  
-        DeletedAt     string // 删除时间  
+        CreateAt      string // 创建时间  
+        UpdateAt      string // 更新时间  
+        DeleteAt      string // 删除时间  
         Ip            string // 请求ip    
         Method        string // 请求方法  
         Path          string // 请求路由  
@@ -40,9 +40,9 @@ var (
         Response      string // 响应Body
 	}{
 		Id:           "id",             
-        CreatedAt:    "created_at",     
-        UpdatedAt:    "updated_at",     
-        DeletedAt:    "deleted_at",     
+        CreateAt:     "create_at",      
+        UpdateAt:     "update_at",      
+        DeleteAt:     "delete_at",      
         Ip:           "ip",             
         Method:       "method",         
         Path:         "path",           

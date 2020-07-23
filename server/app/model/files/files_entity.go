@@ -12,14 +12,14 @@ import (
 
 // Entity is the golang structure for table files.
 type Entity struct {
-    Id        uint        `orm:"id,primary" json:"id"`         // 自增ID    
-    CreatedAt *gtime.Time `orm:"created_at" json:"created_at"` // 创建时间  
-    UpdatedAt *gtime.Time `orm:"updated_at" json:"updated_at"` // 更新时间  
-    DeletedAt *gtime.Time `orm:"deleted_at" json:"deleted_at"` // 删除时间  
-    Name      string      `orm:"name"       json:"name"`       // 文件名    
-    Url       string      `orm:"url"        json:"url"`        // 文件地址  
-    Tag       string      `orm:"tag"        json:"tag"`        // 文件标签  
-    Key       string      `orm:"key"        json:"key"`        // 编号      
+    Id       uint        `orm:"id,primary" json:"id"`        // 自增ID    
+    CreateAt *gtime.Time `orm:"create_at"  json:"create_at"` // 创建时间  
+    UpdateAt *gtime.Time `orm:"update_at"  json:"update_at"` // 更新时间  
+    DeleteAt *gtime.Time `orm:"delete_at"  json:"delete_at"` // 删除时间  
+    Name     string      `orm:"name"       json:"name"`      // 文件名    
+    Url      string      `orm:"url"        json:"url"`       // 文件地址  
+    Tag      string      `orm:"tag"        json:"tag"`       // 文件标签  
+    Key      string      `orm:"key"        json:"key"`       // 编号      
 }
 
 // OmitEmpty sets OPTION_OMITEMPTY option for the model, which automatically filers

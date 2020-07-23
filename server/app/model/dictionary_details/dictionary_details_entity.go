@@ -13,9 +13,9 @@ import (
 // Entity is the golang structure for table dictionary_details.
 type Entity struct {
     Id           uint        `orm:"id,primary"    json:"id"`            // 自增ID    
-    CreatedAt    *gtime.Time `orm:"created_at"    json:"created_at"`    // 创建时间  
-    UpdatedAt    *gtime.Time `orm:"updated_at"    json:"updated_at"`    // 更新时间  
-    DeletedAt    *gtime.Time `orm:"deleted_at"    json:"deleted_at"`    // 删除时间  
+    CreateAt     *gtime.Time `orm:"create_at"     json:"create_at"`     // 创建时间  
+    UpdateAt     *gtime.Time `orm:"update_at"     json:"update_at"`     // 更新时间  
+    DeleteAt     *gtime.Time `orm:"delete_at"     json:"delete_at"`     // 删除时间  
     Label        string      `orm:"label"         json:"label"`         // 展示值    
     Value        int         `orm:"value"         json:"value"`         // 字典值    
     Status       int         `orm:"status"        json:"status"`        // 启用状态  
