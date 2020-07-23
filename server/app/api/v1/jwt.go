@@ -1,6 +1,7 @@
 package v1
 
 import (
+	"errors"
 	"server/app/api/request"
 	"server/app/api/response"
 	"server/app/model/jwts"
@@ -162,9 +163,9 @@ func Authenticator(r *ghttp.Request) (interface{}, error) {
 		global.FailWithMessage(r, err.Error())
 		r.Exit()
 	}
-	//if !service.Store.Verify(L.CaptchaId, L.Captcha, true) { // 验证码校对
-	//	return nil, errors.New("验证码错误")
-	//}
+	if !service.Store.Verify(L.CaptchaId, L.Captcha, true) { // 验证码校对
+		return nil, errors.New("验证码错误")
+	}
 	admin, err := service.AdminLogin(&L)
 	if err != nil {
 		return nil, jwt.ErrFailedAuthentication
