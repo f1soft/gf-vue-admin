@@ -96,6 +96,15 @@ func DeleteBaseMenu(delete *request.GetById) (err error) {
 	return errors.New("此菜单存在子菜单不可删除")
 }
 
+// UpdateBaseMenu Update the routing
+// UpdateBaseMenu 更新路由
+func UpdateBaseMenu(update *request.UpdateBaseMenu) (err error) {
+	condition := g.Map{"id": update.Id}
+	updateDate := g.Map{}
+	_, err = menus.Update(updateDate, condition)
+	return err
+}
+
 // GetBaseMenuById get current menus
 // GetBaseMenuById 返回当前选中menu
 func GetBaseMenuById(idInfo *request.GetById) (menu *model.BaseMenu, err error) {

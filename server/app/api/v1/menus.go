@@ -128,6 +128,16 @@ func DeleteBaseMenu(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /menu/updateBaseMenu [post]
 func UpdateBaseMenu(r *ghttp.Request) {
+	var updateInfo request.UpdateBaseMenu
+	if err := r.Parse(&updateInfo); err != nil {
+		global.FailWithMessage(r, err.Error())
+		r.Exit()
+	}
+	if err := service.UpdateBaseMenu(&updateInfo); err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("删除菜单失败，err:%v", err))
+		r.Exit()
+	}
+	global.OkWithMessage(r, "修改成功")
 }
 
 // @Tags menus
