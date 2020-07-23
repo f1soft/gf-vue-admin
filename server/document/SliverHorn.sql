@@ -247,3 +247,33 @@ CREATE TABLE `operations`
   COLLATE = utf8mb4_bin
   ROW_FORMAT = Compact;
 
+-- ----------------------------
+-- Table structure for authority_resources Model
+-- ----------------------------
+create table authority_resources
+(
+    authority_id varchar(255) not null comment '权限id',
+    resources_id varchar(255) null comment '资源id'
+)charset = latin1;
+
+create index resources_id
+    on authority_resources (resources_id);
+
+create index authority_id
+    on authority_resources (authority_id);
+
+-- ----------------------------
+-- Table structure for authority_menu Model
+-- ----------------------------
+create table authority_menu
+(
+    authority_id varchar(255) not null comment '权限id',
+    menu_id      varchar(255) not null comment '菜单id'
+
+)charset = latin1;
+
+create index menu_id
+    on authority_menu (menu_id);
+
+create index authority_id
+    on authority_menu (authority_id);

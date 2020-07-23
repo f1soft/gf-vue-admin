@@ -4,33 +4,35 @@ import (
 	"errors"
 	"server/app/api/request"
 	"server/app/api/response"
+	"server/app/model/admins"
 	"server/app/model/authorities"
+	"server/app/model/authority_menu"
+	"server/app/model/authority_resources"
 	"server/library/global"
 
 	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/util/gconv"
 )
 
 // CreateAuthority Create a role
 // CreateAuthority 创建一个角色
-func CreateAuthority(auth request.CreateAuthority) (authority *authorities.Entity, err error) {
-	authority = &authorities.Entity{
-		AuthorityId:   auth.AuthorityId,
-		AuthorityName: auth.AuthorityName,
-		ParentId:      auth.ParentId,
+func CreateAuthority(create *request.CreateAuthority) (authority *authorities.Entity, err error) {
+	insert := &authorities.Entity{
+		AuthorityId:   create.AuthorityId,
+		AuthorityName: create.AuthorityName,
+		ParentId:      create.ParentId,
 	}
-	if !authorities.RecordNotFound(g.Map{"authority_id": auth.AuthorityId}) {
-		return authority, errors.New("存在相同角色id")
+	if !authorities.RecordNotFound(g.Map{"authority_id": insert.AuthorityId}) {
+		return insert, errors.New("存在相同角色id")
 	}
-	if _, err = authorities.Insert(authority); err != nil {
-		return authority, errors.New("创建角色失败")
+	if _, err = authorities.Insert(insert); err != nil {
+		return insert, errors.New("创建角色失败")
 	}
-	return authority, nil
+	return insert, nil
 }
 
 // CopyAuthority Copy a character
 // CopyAuthority 复制一个角色
-func CopyAuthority(copyInfo response.AuthorityCopyResponse) (authority *authorities.Authorities, err error) {
+func CopyAuthority(copyInfo response.AuthorityCopy) (authority *authorities.Authorities, err error) {
 	//var menusReturn []model.AuthorityMenus
 	//authority = &authorities.Authorities{
 	//	AuthorityId:   copyInfo.Authority.AuthorityId,
@@ -60,55 +62,52 @@ func CopyAuthority(copyInfo response.AuthorityCopyResponse) (authority *authorit
 
 // @title    UpdateAuthority
 // @description   更改一个角色
-func UpdateAuthority(auth *request.UpdateAuthority) (authority *request.UpdateAuthority, err error) {
-	_, err = authorities.Update(auth, "authority_id", auth.AuthorityId)
-	return auth, err
+func UpdateAuthority(update *request.UpdateAuthority) (authority *authorities.Entity, err error) {
+	updateData := &authorities.Entity{
+		AuthorityId:   update.AuthorityId,
+		AuthorityName: update.AuthorityName,
+		ParentId:      update.ParentId,
+	}
+	if _, err = authorities.Update(g.Map{"authority_id": update.AuthorityId}); err != nil {
+		return updateData, err
+	}
+	return updateData, nil
 }
 
 // DeleteAuthority Delete role
 // DeleteAuthority 删除角色
-func DeleteAuthority(auth *authorities.Authorities) (err error) {
-	if _, err = authorities.Delete(g.Map{"authority_id": auth.AuthorityId}); err != nil {
+func DeleteAuthority(auth *request.DeleteAuthority) (err error) {
+	if _, err = admins.FindOne(g.Map{"authority_id": auth.AuthorityId}); err != nil {
 		return errors.New("此角色有用户正在使用禁止删除")
 	}
 	if _, err = authorities.Delete(g.Map{"parent_id": auth.AuthorityId}); err != nil {
 		return errors.New("此角色存在子角色不允许删除")
 	}
-	// TODO 关联
-	//db := global.GVA_DB.Preload("SysBaseMenus").Where("authority_id = ?", auth.AuthorityId).First(auth).Unscoped().Delete(auth)
-	//if len(auth.SysBaseMenus) > 0 {
-	//	err = db.Association("SysBaseMenus").Delete(auth.SysBaseMenus).Error
-	//} else {
-	//	err = db.Error
-	//}
+	if _, err = authority_menu.Delete(g.Map{"authority_id": auth.AuthorityId}); err != nil {
+		return errors.New("菜单删除失败")
+	}
 	ClearCasbin(0, auth.AuthorityId)
 	return err
 }
 
 // GetInfoList Get data by page
 // GetInfoList 分页获取数据
-func GetAuthorityInfoList(info request.PageInfo) (list interface{}, total int, err error) {
-	var (
-		authorityList []authorities.Authorities
-		dataAuthority []*authorities.Authorities
-		dataEntity    []*authorities.Entity
-	)
-	db := global.GFVA_DB.Table("authorities").Safe()
+func GetAuthorityInfoList(info *request.PageInfo) (list interface{}, total int, err error) {
+	var associated []*authority_resources.Entity
+	authorityList := ([]*authorities.Authorities)(nil)
+	authorityDb := global.GFVA_DB.Table("authorities").Safe()
 	limit := info.PageSize
 	offset := info.PageSize * (info.Page - 1)
-	if err = db.Where(g.Map{"parent_id": "0"}).Limit(limit).Offset(offset).Scan(&authorityList); err != nil {
-		return authorityList, total, errors.New("查询失败! ")
-	}
-	// TODO 自关联
-	if dataEntity, err = authorities.FindAll(); err != nil {
-		return authorityList, total, errors.New("查询失败! ")
-	}
-	if len(authorityList) > 0 {
-		for k := range authorityList {
-			_ = gconv.Structs(dataEntity, dataAuthority)
-			authorityList[k].Children = dataAuthority
-			err = findChildrenAuthority(&authorityList[k])
+	err = authorityDb.Where(g.Map{"parent_id": "0"}).Limit(limit).Offset(offset).Structs(&authorityList)
+	for _, v := range authorityList {
+		associated, err = authority_resources.FindAll(g.Map{"authority_id": v.AuthorityId})
+		for _, a := range associated {
+			err = authorityDb.Where(g.Map{"authority_id": a.ResourcesId}).Scan(v.DataAuthority) // 资源权限
 		}
+		err = authorityDb.Where(g.Map{"parent_id": v.AuthorityId}).Scan(v.Children) // 子用户
+	}
+	if err != nil {
+		return authorityList, total, errors.New("查询失败! ")
 	}
 	return authorityList, total, err
 }
@@ -137,19 +136,6 @@ func SetMenuAuthority(auth *authorities.Authorities) (err error) {
 	//var s model.SysAuthority
 	//global.GVA_DB.Preload("SysBaseMenus").First(&s, "authority_id = ?", auth.AuthorityId)
 	//err := global.GVA_DB.Model(&s).Association("SysBaseMenus").Replace(&auth.SysBaseMenus).Error
-	//return err
-	return
-}
-
-// findChildrenAuthority Query subrole
-// findChildrenAuthority 查询子角色
-func findChildrenAuthority(authority *authorities.Authorities) (err error) {
-	//err = global.GVA_DB.Preload("DataAuthorityId").Where("parent_id = ?", authority.AuthorityId).Find(&authority.Children).Error
-	//if len(authority.Children) > 0 {
-	//	for k := range authority.Children {
-	//		err = findChildrenAuthority(&authority.Children[k])
-	//	}
-	//}
 	//return err
 	return
 }
