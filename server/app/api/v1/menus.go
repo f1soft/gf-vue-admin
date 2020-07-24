@@ -55,17 +55,6 @@ func GetMenuList(r *ghttp.Request) {
 	})
 }
 
-// @Tags menus
-// @Summary 新增菜单
-// @Security ApiKeyAuth
-// @accept application/json
-// @Produce application/json
-// @Param data body model.SysBaseMenu true "新增菜单"
-// @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
-// @Router /menu/addBaseMenu [post]
-func AddBaseMenu(r *ghttp.Request) {
-}
-
 // @Tags authorityAndMenu
 // @Summary 获取用户动态路由
 // @Security ApiKeyAuth
@@ -74,6 +63,12 @@ func AddBaseMenu(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"返回成功"}"
 // @Router /menu/getBaseMenuTree [post]
 func GetBaseMenuTree(r *ghttp.Request) {
+	menus, err := service.GetBaseMenuTree()
+	if err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("获取失败，%v", err))
+		r.Exit()
+	}
+	global.OkWithData(r, response.BaseMenus{Menus: menus})
 }
 
 // @Tags authorityAndMenu
@@ -85,6 +80,13 @@ func GetBaseMenuTree(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /menu/addMenuAuthority [post]
 func AddMenuAuthority(r *ghttp.Request) {
+	var addMenuAuthorityInfo request.AddMenuAuthorityInfo
+	err := service.AddMenuAuthority(&addMenuAuthorityInfo)
+	if err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("添加失败，%v", err))
+		r.Exit()
+	}
+	global.OkWithMessage(r, "添加成功")
 }
 
 // @Tags authorityAndMenu
@@ -92,10 +94,42 @@ func AddMenuAuthority(r *ghttp.Request) {
 // @Security ApiKeyAuth
 // @accept application/json
 // @Produce application/json
-// @Param data body request.AuthorityIdInfo true "增加menu和角色关联关系"
+// @Param data body request.AuthorityIdInfo true "获取指定角色menu"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /menu/GetMenuAuthority [post]
 func GetMenuAuthority(r *ghttp.Request) {
+	var authorityIdInfo request.AuthorityIdInfo
+	if err := r.Parse(&authorityIdInfo); err != nil {
+		global.FailWithMessage(r, err.Error())
+		r.Exit()
+	}
+	menus, err := service.GetMenuAuthority(&authorityIdInfo)
+	if err != nil {
+		global.FailWithDetailed(r, global.SUCCESS, response.AuthorityMenu{Menus: menus}, fmt.Sprintf("添加失败，%v", err))
+		r.Exit()
+	}
+	global.Result(r, global.SUCCESS, response.AuthorityMenu{Menus: menus}, "获取成功")
+}
+
+// @Tags menus
+// @Summary 新增菜单
+// @Security ApiKeyAuth
+// @accept application/json
+// @Produce application/json
+// @Param data body model.SysBaseMenu true "新增菜单"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
+// @Router /menu/addBaseMenu [post]
+func CreateBaseMenu(r *ghttp.Request) {
+	var create request.CreateBaseMenu
+	if err := r.Parse(&create); err != nil {
+		global.FailWithMessage(r, err.Error())
+		r.Exit()
+	}
+	if err := service.CreateBaseMenu(&create); err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("添加失败，%v", err))
+		r.Exit()
+	}
+	global.FailWithMessage(r, "添加成功")
 }
 
 // @Tags menu

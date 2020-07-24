@@ -13,7 +13,7 @@ func InitMenuRouter() {
 	{
 		MenuRouter.POST("getMenu", v1.GetMenu)                   // 获取菜单树
 		MenuRouter.POST("getMenuList", v1.GetMenuList)           // 分页获取基础menu列表
-		MenuRouter.POST("addBaseMenu", v1.AddBaseMenu)           // 新增菜单
+		MenuRouter.POST("addBaseMenu", v1.CreateBaseMenu)        // 新增菜单
 		MenuRouter.POST("getBaseMenuTree", v1.GetBaseMenuTree)   // 获取用户动态路由
 		MenuRouter.POST("addMenuAuthority", v1.AddMenuAuthority) // 增加menu和角色关联关系
 		MenuRouter.POST("getMenuAuthority", v1.GetMenuAuthority) // 获取指定角色menu

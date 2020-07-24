@@ -7,7 +7,7 @@ type AuthorityMenu struct {
 }
 
 type BaseMenus struct {
-	Menus []model.BaseMenu `json:"menus"`
+	Menus []*model.BaseMenu `json:"menus"`
 }
 
 type BaseMenu struct {

@@ -4,7 +4,9 @@ import (
 	"errors"
 	"server/app/api/request"
 	"server/app/model"
+	"server/app/model/authority_menu"
 	"server/app/model/menus"
+	"server/library/utils"
 	"strconv"
 
 	"github.com/gogf/gf/frame/g"
@@ -79,6 +81,62 @@ func GetMenuList() (list interface{}, total int, err error) {
 		err = getBaseChildrenList(menuList[i], treeMap)
 	}
 	return menuList, total, err
+}
+
+// GetBaseMenuTree A basic routing tree
+// GetBaseMenuTree 获取基础路由树
+func GetBaseMenuTree() (menu []*model.BaseMenu, err error) {
+	var treeMap map[string][]*model.BaseMenu
+	treeMap, err = getBaseMenuTreeMap()
+	menu = treeMap["0"]
+	for i := 0; i < len(menu); i++ {
+		err = getBaseChildrenList(menu[i], treeMap)
+	}
+	return menu, err
+}
+
+// AddMenuAuthority Menus are bound to roles
+// AddMenuAuthority 菜单与角色绑定
+func AddMenuAuthority(insert *request.AddMenuAuthorityInfo) (err error) {
+	condition := g.Map{"authority_id": insert.AuthorityId}
+	for _, v := range insert.Menus {
+		condition["menu_id"] = v.Id
+		if _, err = authority_menu.Insert(condition); err != nil {
+			return err
+		}
+	}
+	return err
+}
+
+// GetMenuAuthority View the current role tree
+// GetMenuAuthority 查看当前角色树
+func GetMenuAuthority(info *request.AuthorityIdInfo) (authorityMenus []*model.AuthorityMenu, err error) {
+	authorityMenus = ([]*model.AuthorityMenu)(nil)
+	err = g.DB("default").Table("menus m").Safe().RightJoin("authority_menu a", "m.id=a.menu_id").Where(g.Map{"authority_id": info.AuthorityId}).Structs(&authorityMenus)
+	return authorityMenus, err
+}
+
+// CreateBaseMenu Increase based routing
+// CreateBaseMenu 增加基础路由
+func CreateBaseMenu(create *request.CreateBaseMenu) (err error) {
+	var menu *menus.Entity
+	if menu, err = menus.FindOne(g.Map{"name": create.Name}); err != nil {
+		return err
+	}
+	if menu != nil {
+		return errors.New("存在重复name，请修改name")
+	}
+	insert := &menus.Entity{
+		MenuLevel: 0,
+		ParentId:  create.ParentId,
+		Path:      create.Path,
+		Name:      create.Name,
+		Hidden:    utils.BoolToInt(create.Hidden),
+		Component: create.Component,
+		Sort:      create.Sort,
+	}
+	_, err = menus.Insert(insert)
+	return err
 }
 
 // DeleteBaseMenu Delete the underlying route
