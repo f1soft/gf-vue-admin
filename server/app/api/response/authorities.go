@@ -8,5 +8,8 @@ type AuthorityCopy struct {
 }
 
 type Authority struct {
+	Authority *authorities.Entity `json:"authority"`
+}
+type CopyAuthority struct {
 	Authority *authorities.Authorities `json:"authority"`
 }

@@ -52,7 +52,7 @@ func CopyAuthority(r *ghttp.Request) {
 		global.FailWithMessage(r, fmt.Sprintf("拷贝失败，%v", err))
 		r.Exit()
 	}
-	global.OkWithData(r, response.Authority{Authority: authority})
+	global.OkWithData(r, response.CopyAuthority{Authority: authority})
 }
 
 // @Tags authority
