@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"server/app/api/request"
 	"server/app/api/response"
+	"server/app/model/authorities"
 	"server/app/service"
 	"server/library/global"
 
@@ -41,6 +42,17 @@ func CreateAuthority(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"拷贝成功"}"
 // @Router /authority/copyAuthority [post]
 func CopyAuthority(r *ghttp.Request) {
+	var copyInfo request.AuthorityCopy
+	if err := r.Parse(&copyInfo); err != nil {
+		global.FailWithMessage(r, err.Error())
+		r.Exit()
+	}
+	authority, err := service.CopyAuthority(&copyInfo)
+	if err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("拷贝失败，%v", err))
+		r.Exit()
+	}
+	global.OkWithData(r, response.Authority{Authority: authority})
 }
 
 // @Tags authority
@@ -117,5 +129,15 @@ func GetAuthorityList(r *ghttp.Request) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"设置成功"}"
 // @Router /authority/setDataAuthority [post]
 func SetDataAuthority(r *ghttp.Request) {
-
+	var auth authorities.Authorities
+	if err := r.Parse(&auth); err != nil {
+		global.FailWithMessage(r, err.Error())
+		r.Exit()
+	}
+	err := service.SetDataAuthority(&auth)
+	if err != nil {
+		global.FailWithMessage(r, fmt.Sprintf("设置关联失败，%v", err))
+		r.Exit()
+	}
+	global.Ok(r)
 }

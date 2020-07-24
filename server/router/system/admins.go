@@ -3,12 +3,14 @@ package system
 import (
 	v1 "server/app/api/v1"
 	"server/app/middleware"
-	"server/library/global"
+
+	"github.com/gogf/gf/frame/g"
 )
 
 // InitAdminsRouter 注册管理员路由
 func InitAdminsRouter() {
-	UserRouter := global.GFVA_SERVER.Group("user").Middleware(middleware.JwtAuth).Middleware(middleware.CasbinMiddleware)
+	UserRouter := g.Server().Group("user").Middleware(middleware.JwtAuth)
+	//UserRouter := global.GFVA_SERVER.Group("user").Middleware(middleware.JwtAuth).Middleware(middleware.CasbinMiddleware)
 	{
 		UserRouter.POST("changePassword", v1.ChangePassword)     // 修改密码
 		UserRouter.POST("uploadHeaderImg", v1.UploadHeaderImg)   // 上传头像

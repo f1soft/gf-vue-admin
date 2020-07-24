@@ -3,12 +3,14 @@ package service
 import (
 	"errors"
 	"server/app/api/request"
-	"server/app/api/response"
+	"server/app/model"
 	"server/app/model/admins"
 	"server/app/model/authorities"
 	"server/app/model/authority_menu"
 	"server/app/model/authority_resources"
 	"server/library/global"
+
+	"github.com/gogf/gf/util/gconv"
 
 	"github.com/gogf/gf/frame/g"
 )
@@ -32,7 +34,22 @@ func CreateAuthority(create *request.CreateAuthority) (authority *authorities.En
 
 // CopyAuthority Copy a character
 // CopyAuthority 复制一个角色
-func CopyAuthority(copyInfo response.AuthorityCopy) (authority *authorities.Authorities, err error) {
+func CopyAuthority(copyInfo *request.AuthorityCopy) (authority *authorities.Authorities, err error) {
+	var (
+		menuList []*model.AuthorityMenu
+		baseMenu []model.BaseMenu
+	)
+	if !authorities.RecordNotFound(g.Map{"authority_id": copyInfo.Authority.AuthorityId}) {
+		return authority, errors.New("存在相同角色id")
+	}
+	info := &request.AuthorityIdInfo{AuthorityId: copyInfo.OldAuthorityId}
+	menuList, err = GetMenuAuthority(info)
+	for _, v := range menuList {
+		v.BaseMenu.Id = gconv.Uint(v.MenuId)
+		baseMenu = append(baseMenu, v.BaseMenu)
+	}
+	copyInfo.Authority.BaseMenu = baseMenu
+
 	//var menusReturn []model.AuthorityMenus
 	//authority = &authorities.Authorities{
 	//	AuthorityId:   copyInfo.Authority.AuthorityId,
@@ -123,10 +140,16 @@ func GetAuthorityInfo(auth *authorities.Authorities) (err error, sa authorities.
 // SetDataAuthority Set role resource permissions
 // SetDataAuthority 设置角色资源权限
 func SetDataAuthority(auth *authorities.Authorities) (err error) {
-	//var s model.SysAuthority
-	//global.GVA_DB.Preload("DataAuthorityId").First(&s, "authority_id = ?", auth.AuthorityId)
-	//err := global.GVA_DB.Model(&s).Association("DataAuthorityId").Replace(&auth.DataAuthorityId).Error
-	//return
+	condition := g.Map{
+		"authority_id": auth.AuthorityId,
+		"resources_id": auth.ResourcesId,
+	}
+	for _, v := range auth.DataAuthority {
+		condition["resources_id"] = v.ResourcesId
+		if _, err = authority_resources.Insert(condition); err != nil {
+			return err
+		}
+	}
 	return
 }
 
