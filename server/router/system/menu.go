@@ -2,12 +2,13 @@ package system
 
 import (
 	v1 "server/app/api/v1"
+	"server/app/middleware"
 	"server/library/global"
 )
 
 // InitMenuRouter 注册menu路由
 func InitMenuRouter() {
-	MenuRouter := global.GFVA_SERVER.Group("menu")
+	MenuRouter := global.GFVA_SERVER.Group("menu").Middleware(middleware.JwtAuth)
 	//MenuRouter := global.GFVA_SERVER.Group("menu").Middleware(middleware.JwtAuth).Middleware(middleware.CasbinMiddleware)
 	{
 		MenuRouter.POST("getMenu", v1.GetMenu)                   // 获取菜单树

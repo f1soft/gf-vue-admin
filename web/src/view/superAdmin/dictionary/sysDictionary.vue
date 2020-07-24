@@ -98,7 +98,7 @@
         <el-input v-model="formData.desc" placeholder="请输入描述" clearable :style="{width: '100%'}"></el-input>
       </el-form-item>
     </el-form>
-      
+
       <div class="dialog-footer" slot="footer">
         <el-button @click="closeDialog">取 消</el-button>
         <el-button @click="enterDialog" type="primary">确 定</el-button>
@@ -179,10 +179,10 @@ export default {
       //条件搜索前端看此方法
       onSubmit() {
         this.page = 1
-        this.pageSize = 10        
+        this.pageSize = 10
         if (this.searchInfo.status==""){
           this.searchInfo.status=null
-        }       
+        }
         this.getTableData()
       },
     async updateSysDictionary(row) {

@@ -88,20 +88,38 @@ func DeleteBaseMenu(delete *request.GetById) (err error) {
 	if menu, err = menus.FindOne(g.Map{"parent_id": delete.Id}); err != nil {
 		return err
 	}
-	if menu.Id != 0 {
-		_, err = menus.Delete(g.Map{"id": delete.Id})
-		db := g.DB("default").Table("authority_menu").Safe()
-		_, err = db.Where(g.Map{"menu_id": delete.Id}).Delete()
+	if menu != nil {
+		return errors.New("此菜单存在子菜单不可删除")
 	}
-	return errors.New("此菜单存在子菜单不可删除")
+	_, err = menus.Delete(g.Map{"id": delete.Id})
+	db := g.DB("default").Table("authority_menu").Safe()
+	_, err = db.Where(g.Map{"menu_id": delete.Id}).Delete()
+	return err
 }
 
 // UpdateBaseMenu Update the routing
 // UpdateBaseMenu 更新路由
 func UpdateBaseMenu(update *request.UpdateBaseMenu) (err error) {
+	var menu *menus.Entity
 	condition := g.Map{"id": update.Id}
-	updateDate := g.Map{}
-	_, err = menus.Update(updateDate, condition)
+	updateDate := g.Map{
+		"keep_alive":   update.KeepAlive,
+		"default_menu": update.DefaultMenu,
+		"parent_id":    update.ParentId,
+		"path":         update.Path,
+		"name":         update.Name,
+		"hidden":       update.Hidden,
+		"component":    update.Component,
+		"title":        update.Title,
+		"icon":         update.Icon,
+		"sort":         update.Sort,
+	}
+	if menu, err = menus.FindOne(g.Map{"name": update.Name}); err != nil {
+		return errors.New("更新失败")
+	}
+	if menu.Name != update.Name {
+		_, err = menus.Update(updateDate, condition)
+	}
 	return err
 }
 

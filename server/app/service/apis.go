@@ -3,9 +3,8 @@ package service
 import (
 	"errors"
 	"server/app/api/request"
+	"server/app/api/response"
 	"server/app/model/apis"
-
-	"github.com/gogf/gf/util/gconv"
 
 	"github.com/gogf/gf/frame/g"
 )
@@ -59,51 +58,41 @@ func GetApiById(api *request.GetApiById) (apisReturn *apis.Entity, err error) {
 }
 
 // GetAllApis 获取所有的Api
-func GetAllApis() (apisReturn []*apis.Entity, err error) {
-	return apis.FindAll()
+func GetAllApis() (list []*response.Apis, err error) {
+	list = ([]*response.Apis)(nil)
+	db := g.DB("default").Table("apis").Safe()
+	err = db.Structs(&list)
+	return list, err
 }
 
+// GetApiInfoList Page to get the data
 // GetApiInfoList 分页获取数据
-// 未测试,不确定逻辑是否走得通
-func GetApiInfoList(api *request.GetApiList) (list interface{}, total int, err error) {
-	db := g.DB("default")
+func GetApiInfoList(api *request.GetApiList) (list []*response.Apis, total int, err error) {
+	list = ([]*response.Apis)(nil)
+	db := g.DB("default").Table("apis").Safe()
 	limit := api.PageSize
 	offset := api.PageSize * (api.Page - 1)
 	condition := g.Map{}
-	var apisList []apis.Entity
-	if api.Path != "" {
+	switch {
+	case api.Path != "":
 		condition["path like ?"] = "%" + api.Path + "%"
-	}
-	if api.Description != "" {
+	case api.Description != "":
 		condition["description like ?"] = "%" + api.Description + "%"
-	}
-	if api.Method != "" {
+	case api.Method != "":
 		condition["method"] = api.Method
-	}
-	if api.ApiGroup != "" {
+	case api.ApiGroup != "":
 		condition["api_group"] = api.ApiGroup
 	}
-	if total, findErr := db.Table("apis").Where(condition).Count(); findErr != nil {
-		return apisList, total, findErr
-	}
+	total, err = db.Where(condition).Count()
 	if api.OrderKey != "" && api.Desc == true {
 		orderStr := api.OrderKey + " desc"
-		r, err := db.Table("apis").Where(condition).Order(orderStr).Limit(limit).Offset(offset).FindAll()
-		if err != nil {
-			return apisList, total, err
-		}
-		if err := gconv.Struct(r, &apisList); err != nil {
-			return apisList, total, err
-		}
+		err = db.Limit(limit).Offset(offset).Order(orderStr).Where(condition).Structs(&list)
+		return list, total, err
 	}
 	if api.OrderKey != "" && api.Desc == false {
-		r, err := db.Table("apis").Where(condition).Order("api_group").Limit(limit).Offset(offset).FindAll()
-		if err != nil {
-			return apisList, total, err
-		}
-		if err := gconv.Struct(r, &apisList); err != nil {
-			return apisList, total, err
-		}
+		err = db.Where(condition).Order("api_group").Limit(limit).Offset(offset).Structs(&list)
+		return list, total, err
 	}
-	return apisList, total, err
+	err = db.Limit(limit).Offset(offset).Where(condition).Structs(&list)
+	return list, total, err
 }

@@ -105,6 +105,7 @@ func GetDictionaryDetailList(r *ghttp.Request) {
 	var pageInfoList request.GetDictionaryDetailList
 	if err := r.Parse(&pageInfoList); err != nil {
 		global.FailWithMessage(r, err.Error())
+		r.Exit()
 	}
 	list, total, err := service.GetDictionaryDetailList(&pageInfoList)
 	if err != nil {

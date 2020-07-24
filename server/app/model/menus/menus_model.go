@@ -25,9 +25,9 @@ var (
 	// Columns defines and stores column names for table menus.
 	Columns = struct {
 		Id           string // 自增ID                  
-        CreatedAt    string // 创建时间                
-        UpdatedAt    string // 更新时间                
-        DeletedAt    string // 删除时间                
+        CreateAt     string // 创建时间                
+        UpdateAt     string // 更新时间                
+        DeleteAt     string // 删除时间                
         MenuLevel    string // 菜单等级(预留字段)      
         ParentId     string // 父菜单ID                
         Path         string // 路由path                
@@ -41,9 +41,9 @@ var (
         DefaultMenu  string // 是否是基础路由(开发中)
 	}{
 		Id:          "id",            
-        CreatedAt:   "created_at",    
-        UpdatedAt:   "updated_at",    
-        DeletedAt:   "deleted_at",    
+        CreateAt:    "create_at",     
+        UpdateAt:    "update_at",     
+        DeleteAt:    "delete_at",     
         MenuLevel:   "menu_level",    
         ParentId:    "parent_id",     
         Path:        "path",          

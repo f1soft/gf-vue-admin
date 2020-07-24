@@ -35,9 +35,9 @@ type FindDictionary struct {
 
 // DictionaryInfoList 分页获取SysDictionary列表
 type DictionaryInfoList struct {
-	Name   string `p:"name" v:"required|length:1,1000#请输入字典中文名|字典中文名长度为:min到:max位"`
-	Type   string `p:"type" v:"required|length:1,1000#请输入字典英文名|字典英文名长度为:min到:max位"`
-	Status int    `p:"status" v:"required|length:1,1000#请输入状态|状态长度为:min到:max位"`
-	Desc   string `p:"desc" v:"required|length:1,1000#请输入描述|描述长度为:min到:max位"`
+	Name   string `p:"name"`
+	Type   string `p:"type"`
+	Status int    `p:"status"`
+	Desc   string `p:"desc"`
 	PageInfo
 }
